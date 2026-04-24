@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tareas · Panel Docente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/styles.css">
+  <!-- PWA + iOS -->
+  <meta name="theme-color" content="#FFB800">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MEC EDU">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='38' fill='%23FFB800'/%3E%3Ctext x='90' y='128' text-anchor='middle' font-size='105' font-family='Arial Black' font-weight='900' fill='%231a1200'%3EM%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="app">
+  <aside class="sidebar">
+    <a href="dashboard.html" class="brand">
+      <span class="brand-mark"><i class="fa-solid fa-helmet-safety"></i></span>
+      <div>Maq. y Equipo<small>Panel Docente</small></div>
+    </a>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Principal</div>
+      <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+      <a href="cursos.html" class="nav-item"><i class="fa-solid fa-folder-open"></i> Mis cursos <span class="count">3</span></a>
+      <a href="calendario.html" class="nav-item"><i class="fa-solid fa-calendar-days"></i> Calendario</a>
+      <a href="mensajes.html" class="nav-item"><i class="fa-solid fa-comment-dots"></i> Mensajes <span class="count">5</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Gestión académica</div>
+      <a href="tareas.html" class="nav-item is-active"><i class="fa-solid fa-file-circle-check"></i> Tareas <span class="count">7</span></a>
+      <a href="materiales.html" class="nav-item"><i class="fa-solid fa-folder-tree"></i> Materiales</a>
+      <a href="anuncios.html" class="nav-item"><i class="fa-solid fa-bullhorn"></i> Anuncios</a>
+      <a href="estudiantes.html" class="nav-item"><i class="fa-solid fa-users"></i> Estudiantes</a>
+      <a href="calificaciones.html" class="nav-item"><i class="fa-solid fa-award"></i> Calificaciones</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Herramientas técnicas</div>
+      <a href="herramientas.html" class="nav-item"><i class="fa-solid fa-toolbox"></i> Módulos técnicos</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Cuenta</div>
+      <a href="../perfil.html" class="nav-item"><i class="fa-solid fa-user"></i> Perfil</a>
+      <a href="../configuracion.html" class="nav-item"><i class="fa-solid fa-gear"></i> Configuración</a>
+      <a href="../index.html" class="nav-item"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</a>
+    </div>
+    <div class="sidebar-foot">
+      <div class="avatar">CR</div>
+      <div style="flex:1;min-width:0"><div class="name">Ing. Carlos Rojas</div><div class="role">Docente</div></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn btn-sidebar-toggle" data-sidebar-toggle><i class="fa-solid fa-bars"></i></button>
+      <div class="topbar-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Buscar tarea…"><kbd>⌘K</kbd></div>
+      <div class="topbar-actions">
+        <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="dot-badge"></span></button>
+        <a href="../perfil.html" class="user-chip"><span class="avatar">CR</span><span class="name hide-mobile">Carlos R.</span></a>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="page-head anim-up">
+        <div>
+          <div class="crumbs"><a href="dashboard.html">Inicio</a> <i class="fa-solid fa-chevron-right"></i> <span>Tareas</span></div>
+          <h1>Tareas y prácticas</h1>
+          <p>Administra todas las tareas de tus cursos. Crea, califica y consulta entregas en un solo lugar.</p>
+        </div>
+        <div class="actions">
+          <button class="btn btn-secondary"><i class="fa-solid fa-filter"></i> Filtrar</button>
+          <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Nueva tarea</button>
+        </div>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card"><div class="label"><i class="fa-solid fa-list-check"></i> Tareas totales</div><div class="value">15</div><div class="delta">7 abiertas</div></div>
+        <div class="stat-card s-orange"><div class="label"><i class="fa-solid fa-inbox"></i> Por revisar</div><div class="value">24</div><div class="delta down">5 atrasadas</div></div>
+        <div class="stat-card s-blue"><div class="label"><i class="fa-solid fa-circle-check"></i> Calificadas</div><div class="value">128</div><div class="delta">+22 esta semana</div></div>
+        <div class="stat-card s-green"><div class="label"><i class="fa-solid fa-percent"></i> Promedio entregas</div><div class="value">82</div><div class="delta">+1.5%</div></div>
+      </div>
+
+      <div class="tabs" data-tabs>
+        <button class="tab is-active" data-tab="abiertas"><i class="fa-solid fa-circle-dot"></i> Abiertas <span class="count">7</span></button>
+        <button class="tab" data-tab="revisar"><i class="fa-solid fa-inbox"></i> Por revisar <span class="count">24</span></button>
+        <button class="tab" data-tab="calificadas"><i class="fa-solid fa-circle-check"></i> Calificadas</button>
+        <button class="tab" data-tab="borrador"><i class="fa-regular fa-file"></i> Borradores</button>
+      </div>
+
+      <div data-tab-panel="abiertas">
+        <div class="table-wrap">
+          <table class="table">
+            <thead><tr><th>Tarea</th><th>Curso</th><th>Tipo</th><th>Cierre</th><th>Entregas</th><th></th></tr></thead>
+            <tbody>
+              <tr>
+                <td><strong>Informe · Volquetas 6x4</strong><br><span style="color:var(--text-tertiary);font-size:0.78rem">Análisis técnico individual</span></td>
+                <td><span class="badge badge--yellow">CIV-305</span></td>
+                <td>Informe PDF</td>
+                <td class="mono">22 Abr · 23:59 <span class="badge badge--orange" style="margin-left:0.4rem">3 días</span></td>
+                <td><div style="display:flex;align-items:center;gap:0.5rem"><div class="progress" style="width:90px"><div class="progress-bar" style="width:42%"></div></div><span class="mono" style="font-size:0.78rem">18/42</span></div></td>
+                <td><button class="btn btn-primary btn-sm">Revisar</button></td>
+              </tr>
+              <tr>
+                <td><strong>Práctica 04 · Rendimiento de excavadora</strong><br><span style="color:var(--text-tertiary);font-size:0.78rem">Cálculo + planilla técnica</span></td>
+                <td><span class="badge badge--yellow">CIV-305</span></td>
+                <td>Práctica</td>
+                <td class="mono">25 Abr · 23:59 <span class="badge badge--yellow" style="margin-left:0.4rem">6 días</span></td>
+                <td><div style="display:flex;align-items:center;gap:0.5rem"><div class="progress" style="width:90px"><div class="progress-bar" style="width:28%"></div></div><span class="mono" style="font-size:0.78rem">12/42</span></div></td>
+                <td><button class="btn btn-secondary btn-sm">Revisar</button></td>
+              </tr>
+              <tr>
+                <td><strong>Cuestionario · Compactadoras vibratorias</strong><br><span style="color:var(--text-tertiary);font-size:0.78rem">10 preguntas online</span></td>
+                <td><span class="badge badge--yellow">CIV-305</span></td>
+                <td>Cuestionario</td>
+                <td class="mono">28 Abr · 18:00 <span class="badge badge--blue" style="margin-left:0.4rem">9 días</span></td>
+                <td><div style="display:flex;align-items:center;gap:0.5rem"><div class="progress" style="width:90px"><div class="progress-bar" style="width:14%"></div></div><span class="mono" style="font-size:0.78rem">6/42</span></div></td>
+                <td><button class="btn btn-secondary btn-sm">Revisar</button></td>
+              </tr>
+              <tr>
+                <td><strong>Examen parcial · Unidad 2</strong><br><span style="color:var(--text-tertiary);font-size:0.78rem">Presencial · Aula 302</span></td>
+                <td><span class="badge badge--yellow">CIV-305</span></td>
+                <td>Examen</td>
+                <td class="mono">30 Abr · 14:00 <span class="badge badge--blue" style="margin-left:0.4rem">11 días</span></td>
+                <td><span style="color:var(--text-tertiary);font-size:0.82rem">—</span></td>
+                <td><button class="btn btn-ghost btn-sm">Editar</button></td>
+              </tr>
+              <tr>
+                <td><strong>Informe de planificación · Cronograma de obra</strong><br><span style="color:var(--text-tertiary);font-size:0.78rem">Grupal · MS Project + PDF</span></td>
+                <td><span class="badge badge--blue">CIV-412</span></td>
+                <td>Proyecto</td>
+                <td class="mono">05 May · 23:59 <span class="badge badge--blue" style="margin-left:0.4rem">16 días</span></td>
+                <td><div style="display:flex;align-items:center;gap:0.5rem"><div class="progress" style="width:90px"><div class="progress-bar blue" style="width:8%"></div></div><span class="mono" style="font-size:0.78rem">3/38</span></div></td>
+                <td><button class="btn btn-secondary btn-sm">Revisar</button></td>
+              </tr>
+              <tr>
+                <td><strong>Visita técnica · Informe de campo</strong><br><span style="color:var(--text-tertiary);font-size:0.78rem">Grupal · PDF + fotos</span></td>
+                <td><span class="badge badge--blue">CIV-412</span></td>
+                <td>Informe</td>
+                <td class="mono">10 May · 23:59 <span class="badge badge--blue" style="margin-left:0.4rem">21 días</span></td>
+                <td><span style="color:var(--text-tertiary);font-size:0.82rem">—</span></td>
+                <td><button class="btn btn-ghost btn-sm">Editar</button></td>
+              </tr>
+              <tr>
+                <td><strong>Lectura crítica · Manual ASTM compactación</strong><br><span style="color:var(--text-tertiary);font-size:0.78rem">Reporte 2 pág.</span></td>
+                <td><span class="badge badge--yellow">CIV-305</span></td>
+                <td>Lectura</td>
+                <td class="mono">15 May · 23:59 <span class="badge badge--blue" style="margin-left:0.4rem">26 días</span></td>
+                <td><span style="color:var(--text-tertiary);font-size:0.82rem">—</span></td>
+                <td><button class="btn btn-ghost btn-sm">Editar</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div data-tab-panel="revisar" style="display:none">
+        <div class="feed">
+          <div class="feed-item">
+            <div class="feed-ico blue"><i class="fa-solid fa-file-pdf"></i></div>
+            <div class="feed-body">
+              <h4>María Quispe · <strong>Práctica 04 · Rendimiento excavadora</strong></h4>
+              <p>practica-04-mquispe.pdf · 3.2 MB</p>
+              <div class="feed-meta"><span><i class="fa-regular fa-clock"></i> Hace 12 min</span><span><i class="fa-solid fa-circle-check" style="color:var(--success)"></i> A tiempo</span><span><i class="fa-solid fa-book"></i> CIV-305</span></div>
+            </div>
+            <button class="btn btn-primary btn-sm">Calificar</button>
+          </div>
+          <div class="feed-item">
+            <div class="feed-ico blue"><i class="fa-solid fa-file-pdf"></i></div>
+            <div class="feed-body">
+              <h4>Luis Mendoza · <strong>Práctica 04 · Rendimiento excavadora</strong></h4>
+              <p>practica-04-lmendoza.pdf · 2.8 MB</p>
+              <div class="feed-meta"><span><i class="fa-regular fa-clock"></i> Hace 1 h</span><span><i class="fa-solid fa-circle-check" style="color:var(--success)"></i> A tiempo</span><span><i class="fa-solid fa-book"></i> CIV-305</span></div>
+            </div>
+            <button class="btn btn-primary btn-sm">Calificar</button>
+          </div>
+          <div class="feed-item">
+            <div class="feed-ico orange"><i class="fa-solid fa-file-pdf"></i></div>
+            <div class="feed-body">
+              <h4>Diego Vargas · <strong>Informe Volquetas 6x4</strong></h4>
+              <p>informe-volquetas-dvargas.pdf · 1.9 MB</p>
+              <div class="feed-meta"><span><i class="fa-regular fa-clock"></i> Hace 3 h</span><span style="color:var(--warning)"><i class="fa-solid fa-clock"></i> Atrasado · 2 días</span><span><i class="fa-solid fa-book"></i> CIV-305</span></div>
+            </div>
+            <button class="btn btn-secondary btn-sm">Revisar</button>
+          </div>
+          <div class="feed-item">
+            <div class="feed-ico"><i class="fa-solid fa-folder-open"></i></div>
+            <div class="feed-body">
+              <h4>5 entregas pendientes · <strong>Cuestionario Motoniveladora</strong></h4>
+              <p>Lote de revisión disponible.</p>
+              <div class="feed-meta"><span><i class="fa-regular fa-clock"></i> Hace 5 h</span><span><i class="fa-solid fa-book"></i> CIV-305</span></div>
+            </div>
+            <button class="btn btn-secondary btn-sm">Ver lote</button>
+          </div>
+        </div>
+      </div>
+
+      <div data-tab-panel="calificadas" style="display:none">
+        <div class="empty">
+          <i class="fa-solid fa-circle-check"></i>
+          <h3>128 tareas calificadas este semestre</h3>
+          <p>Selecciona un curso para revisar el historial detallado de calificaciones y comentarios entregados.</p>
+          <button class="btn btn-secondary"><i class="fa-solid fa-folder"></i> Ver historial</button>
+        </div>
+      </div>
+
+      <div data-tab-panel="borrador" style="display:none">
+        <div class="empty">
+          <i class="fa-regular fa-file"></i>
+          <h3>No hay borradores pendientes</h3>
+          <p>Las tareas que estés preparando aparecerán aquí hasta que decidas publicarlas.</p>
+          <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Crear borrador</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/main.js"></script>
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js').catch(()=>{});
+}
+</script>
+</body>
+</html>

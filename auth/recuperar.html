@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recuperar contraseña · Maquinaria y Equipo de Construcción</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/styles.css">
+  <!-- PWA + iOS -->
+  <meta name="theme-color" content="#FFB800">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MEC EDU">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='38' fill='%23FFB800'/%3E%3Ctext x='90' y='128' text-anchor='middle' font-size='105' font-family='Arial Black' font-weight='900' fill='%231a1200'%3EM%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="auth-page">
+  <aside class="auth-aside">
+    <a href="../index.html" class="brand" style="position:relative;z-index:2">
+      <span class="brand-mark"><i class="fa-solid fa-helmet-safety"></i></span>
+      <div>Maq. y Equipo<small>de Construcción</small></div>
+    </a>
+    <div class="auth-aside-content">
+      <span class="eyebrow">RECUPERACIÓN SEGURA</span>
+      <h2 style="margin-top:0.8rem">Te enviaremos un enlace a tu correo institucional para restablecer tu acceso.</h2>
+      <p>El enlace expira en 30 minutos y solo funciona una vez. Si no lo solicitaste, puedes ignorar el mensaje.</p>
+    </div>
+    <div class="auth-aside-foot">// password recovery portal</div>
+  </aside>
+
+  <main class="auth-main">
+    <div class="auth-form-wrap">
+      <a href="login.html" style="color:var(--text-tertiary);font-size:0.85rem;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem"><i class="fa-solid fa-arrow-left"></i> Volver al inicio de sesión</a>
+
+      <form class="auth-form" data-fake-submit>
+        <h2>Recuperar contraseña</h2>
+        <p>Ingresa tu correo institucional y recibirás instrucciones para crear una nueva contraseña.</p>
+
+        <div class="form-group">
+          <label class="form-label">Correo institucional</label>
+          <div class="input-group">
+            <span class="input-icon"><i class="fa-solid fa-envelope"></i></span>
+            <input type="email" class="form-control" placeholder="tu.correo@universidad.edu" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg"><i class="fa-solid fa-paper-plane"></i> Enviar enlace de recuperación</button>
+
+        <div class="auth-footer-link">
+          ¿Recordaste tu contraseña? <a href="login.html">Iniciar sesión</a>
+        </div>
+      </form>
+    </div>
+  </main>
+</div>
+
+<script src="../assets/js/main.js"></script>
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js').catch(()=>{});
+}
+</script>
+</body>
+</html>

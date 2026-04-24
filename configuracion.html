@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Configuración · Maquinaria y Equipo de Construcción</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+<style>
+  .settings-nav{position:sticky;top:1rem;display:flex;flex-direction:column;gap:0.25rem}
+  .settings-nav a{display:flex;align-items:center;gap:0.7rem;padding:0.7rem 0.9rem;border-radius:var(--r-md);color:var(--text-secondary);font-size:0.86rem;font-weight:500;border:1px solid transparent;transition:all .2s}
+  .settings-nav a:hover{background:var(--bg-tertiary);color:var(--text-primary)}
+  .settings-nav a.is-active{background:linear-gradient(90deg,rgba(255,184,0,0.10),rgba(255,184,0,0.02));border-color:rgba(255,184,0,0.25);color:var(--text-primary)}
+  .settings-nav a.is-active i{color:var(--brand-yellow)}
+  .settings-nav i{width:18px;color:var(--text-tertiary)}
+  .theme-card{position:relative;border:2px solid var(--border-subtle);border-radius:var(--r-md);padding:1rem;cursor:pointer;background:var(--bg-tertiary);transition:all .2s}
+  .theme-card:hover{transform:translateY(-2px);border-color:var(--border-strong)}
+  .theme-card.is-selected{border-color:var(--brand-yellow);box-shadow:0 0 0 3px rgba(255,184,0,0.15)}
+  .theme-preview{height:80px;border-radius:8px;margin-bottom:0.7rem;position:relative;overflow:hidden}
+  .theme-preview.dark{background:linear-gradient(135deg,#0a0e1a,#141a2b)}
+  .theme-preview.midnight{background:linear-gradient(135deg,#000814,#001d3d)}
+  .theme-preview.steel{background:linear-gradient(135deg,#1e293b,#334155)}
+  .theme-preview::after{content:'';position:absolute;top:8px;left:8px;width:30px;height:6px;background:rgba(255,255,255,0.3);border-radius:3px;box-shadow:0 12px 0 rgba(255,255,255,0.15),0 22px 0 rgba(255,255,255,0.1)}
+  .accent-dot{width:34px;height:34px;border-radius:50%;border:2px solid transparent;cursor:pointer;transition:all .2s;position:relative}
+  .accent-dot.is-selected{border-color:var(--text-primary);transform:scale(1.1)}
+  .accent-dot.yellow{background:#FFB800}
+  .accent-dot.orange{background:#FF6B35}
+  .accent-dot.blue{background:#3B82F6}
+  .accent-dot.green{background:#10b981}
+  .accent-dot.violet{background:#8b5cf6}
+  .danger-zone{border:1px solid rgba(239,68,68,0.3);background:rgba(239,68,68,0.04);border-radius:var(--r-lg);padding:1.5rem}
+  .danger-zone h3{color:#fca5a5}
+</style>
+  <!-- PWA + iOS -->
+  <meta name="theme-color" content="#FFB800">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MEC EDU">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='38' fill='%23FFB800'/%3E%3Ctext x='90' y='128' text-anchor='middle' font-size='105' font-family='Arial Black' font-weight='900' fill='%231a1200'%3EM%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="app">
+  <aside class="sidebar">
+    <a href="docente/dashboard.html" class="brand">
+      <span class="brand-mark"><i class="fa-solid fa-helmet-safety"></i></span>
+      <div>Maq. y Equipo<small>Panel Docente</small></div>
+    </a>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Principal</div>
+      <a href="docente/dashboard.html" class="nav-item"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+      <a href="docente/cursos.html" class="nav-item"><i class="fa-solid fa-folder-open"></i> Mis cursos <span class="count">3</span></a>
+      <a href="docente/calendario.html" class="nav-item"><i class="fa-solid fa-calendar-days"></i> Calendario</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Gestión académica</div>
+      <a href="docente/tareas.html" class="nav-item"><i class="fa-solid fa-file-circle-check"></i> Tareas</a>
+      <a href="docente/materiales.html" class="nav-item"><i class="fa-solid fa-folder-tree"></i> Materiales</a>
+      <a href="docente/estudiantes.html" class="nav-item"><i class="fa-solid fa-users"></i> Estudiantes</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Cuenta</div>
+      <a href="perfil.html" class="nav-item"><i class="fa-solid fa-user"></i> Perfil</a>
+      <a href="configuracion.html" class="nav-item is-active"><i class="fa-solid fa-gear"></i> Configuración</a>
+      <a href="index.html" class="nav-item"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</a>
+    </div>
+    <div class="sidebar-foot">
+      <div class="avatar">CR</div>
+      <div style="flex:1;min-width:0"><div class="name">Ing. Carlos Rojas</div><div class="role">Docente</div></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn btn-sidebar-toggle" data-sidebar-toggle><i class="fa-solid fa-bars"></i></button>
+      <div class="topbar-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Buscar en configuración…"></div>
+      <div class="topbar-actions">
+        <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
+        <a href="perfil.html" class="user-chip"><span class="avatar">CR</span><span class="name hide-mobile">Carlos R.</span></a>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="page-head anim-up">
+        <div>
+          <div class="crumbs"><a href="docente/dashboard.html">Inicio</a> <i class="fa-solid fa-chevron-right"></i> <span>Configuración</span></div>
+          <h1>Configuración de la cuenta</h1>
+          <p>Personaliza tu experiencia en Maquinaria y Equipo de Construcción: notificaciones, apariencia, privacidad e integraciones.</p>
+        </div>
+      </div>
+
+      <div class="grid-2" style="grid-template-columns:240px 1fr;gap:2rem;align-items:start">
+
+        <!-- Navegación lateral interna -->
+        <nav class="settings-nav reveal">
+          <a href="#notificaciones" class="is-active"><i class="fa-regular fa-bell"></i> Notificaciones</a>
+          <a href="#apariencia"><i class="fa-solid fa-palette"></i> Apariencia</a>
+          <a href="#idioma"><i class="fa-solid fa-globe"></i> Idioma y región</a>
+          <a href="#privacidad"><i class="fa-solid fa-shield-halved"></i> Privacidad</a>
+          <a href="#accesibilidad"><i class="fa-solid fa-universal-access"></i> Accesibilidad</a>
+          <a href="#integraciones"><i class="fa-solid fa-plug"></i> Integraciones</a>
+          <a href="#datos"><i class="fa-solid fa-database"></i> Datos y exportación</a>
+          <a href="#peligro"><i class="fa-solid fa-triangle-exclamation"></i> Zona de peligro</a>
+        </nav>
+
+        <div style="display:flex;flex-direction:column;gap:1.5rem">
+
+          <!-- Notificaciones -->
+          <div class="settings-section reveal" id="notificaciones">
+            <h3>Notificaciones</h3>
+            <p>Decide qué eventos quieres recibir y por qué canal.</p>
+
+            <div class="toggle-row">
+              <div class="info"><h4>Nuevas entregas de tareas</h4><p>Avísame cuando un estudiante envía una tarea</p></div>
+              <label class="switch"><input type="checkbox" checked><span class="switch-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div class="info"><h4>Comentarios en anuncios</h4><p>Responder rápido a tus estudiantes</p></div>
+              <label class="switch"><input type="checkbox" checked><span class="switch-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div class="info"><h4>Recordatorios de fechas límite</h4><p>24h antes del cierre de cada tarea</p></div>
+              <label class="switch"><input type="checkbox" checked><span class="switch-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div class="info"><h4>Resumen semanal</h4><p>Reporte de actividad cada lunes a las 8:00 AM</p></div>
+              <label class="switch"><input type="checkbox"><span class="switch-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div class="info"><h4>Novedades de la plataforma</h4><p>Nuevos módulos, herramientas técnicas y mejoras</p></div>
+              <label class="switch"><input type="checkbox" checked><span class="switch-slider"></span></label>
+            </div>
+
+            <h4 style="margin-top:1.5rem;font-size:0.88rem;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.5px">Canales de envío</h4>
+            <div class="form-row" style="margin-top:0.7rem">
+              <div class="form-group">
+                <label class="form-label"><input type="checkbox" checked style="margin-right:0.5rem"> Correo electrónico</label>
+              </div>
+              <div class="form-group">
+                <label class="form-label"><input type="checkbox" checked style="margin-right:0.5rem"> Notificaciones en plataforma</label>
+              </div>
+              <div class="form-group">
+                <label class="form-label"><input type="checkbox" style="margin-right:0.5rem"> Notificaciones push (móvil)</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Apariencia -->
+          <div class="settings-section reveal" id="apariencia">
+            <h3>Apariencia</h3>
+            <p>Elige el tema visual que prefieres para tu panel.</p>
+
+            <div class="grid-3" style="margin-top:1rem">
+              <div class="theme-card is-selected">
+                <div class="theme-preview dark"></div>
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                  <div><strong style="font-size:0.9rem">Constructa Dark</strong><div style="font-size:0.75rem;color:var(--text-tertiary)">Por defecto</div></div>
+                  <i class="fa-solid fa-circle-check" style="color:var(--brand-yellow)"></i>
+                </div>
+              </div>
+              <div class="theme-card">
+                <div class="theme-preview midnight"></div>
+                <div><strong style="font-size:0.9rem">Midnight Blue</strong><div style="font-size:0.75rem;color:var(--text-tertiary)">Tonos profundos</div></div>
+              </div>
+              <div class="theme-card">
+                <div class="theme-preview steel"></div>
+                <div><strong style="font-size:0.9rem">Steel Gray</strong><div style="font-size:0.75rem;color:var(--text-tertiary)">Industrial claro</div></div>
+              </div>
+            </div>
+
+            <h4 style="margin-top:1.5rem;font-size:0.88rem;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.5px">Color de acento</h4>
+            <div style="display:flex;gap:0.7rem;margin-top:0.7rem">
+              <span class="accent-dot yellow is-selected" title="Amarillo maquinaria"></span>
+              <span class="accent-dot orange" title="Naranja obra"></span>
+              <span class="accent-dot blue" title="Azul técnico"></span>
+              <span class="accent-dot green" title="Verde"></span>
+              <span class="accent-dot violet" title="Violeta"></span>
+            </div>
+
+            <div class="toggle-row" style="margin-top:1.5rem">
+              <div class="info"><h4>Densidad compacta</h4><p>Reduce los espacios para mostrar más contenido</p></div>
+              <label class="switch"><input type="checkbox"><span class="switch-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div class="info"><h4>Animaciones reducidas</h4><p>Minimiza efectos de movimiento en la interfaz</p></div>
+              <label class="switch"><input type="checkbox"><span class="switch-slider"></span></label>
+            </div>
+          </div>
+
+          <!-- Idioma -->
+          <div class="settings-section reveal" id="idioma">
+            <h3>Idioma y región</h3>
+            <p>Adapta Maquinaria y Equipo de Construcción a tu zona horaria y formato preferido.</p>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Idioma de la interfaz</label>
+                <select class="form-control">
+                  <option>Español (Bolivia)</option>
+                  <option>Español (España)</option>
+                  <option>English (US)</option>
+                  <option>Português (BR)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Zona horaria</label>
+                <select class="form-control">
+                  <option>(GMT-4) La Paz, Bolivia</option>
+                  <option>(GMT-5) Lima, Bogotá</option>
+                  <option>(GMT-3) Buenos Aires</option>
+                  <option>(GMT-6) Ciudad de México</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Formato de fecha</label>
+                <select class="form-control"><option>DD / MM / AAAA</option><option>MM / DD / AAAA</option><option>AAAA - MM - DD</option></select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Sistema de unidades</label>
+                <select class="form-control"><option>Métrico (m, kg, °C)</option><option>Imperial (ft, lb, °F)</option></select>
+              </div>
+            </div>
+            <button class="btn btn-primary"><i class="fa-solid fa-check"></i> Aplicar cambios</button>
+          </div>
+
+          <!-- Privacidad -->
+          <div class="settings-section reveal" id="privacidad">
+            <h3>Privacidad</h3>
+            <p>Controla quién puede ver tu información dentro de la plataforma.</p>
+
+            <div class="toggle-row">
+              <div class="info"><h4>Perfil visible para estudiantes</h4><p>Tu biografía y contacto son visibles dentro de tus cursos</p></div>
+              <label class="switch"><input type="checkbox" checked><span class="switch-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div class="info"><h4>Mostrar estado en línea</h4><p>Otros docentes ven cuándo estás conectado</p></div>
+              <label class="switch"><input type="checkbox" checked><span class="switch-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div class="info"><h4>Compartir estadísticas anónimas</h4><p>Ayuda a mejorar Maquinaria y Equipo de Construcción con datos de uso anónimos</p></div>
+              <label class="switch"><input type="checkbox"><span class="switch-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div class="info"><h4>Indexar contenido público</h4><p>Permite que tus cursos abiertos aparezcan en buscadores</p></div>
+              <label class="switch"><input type="checkbox"><span class="switch-slider"></span></label>
+            </div>
+          </div>
+
+          <!-- Accesibilidad -->
+          <div class="settings-section reveal" id="accesibilidad">
+            <h3>Accesibilidad</h3>
+            <p>Personaliza la experiencia para que sea cómoda para ti.</p>
+
+            <div class="form-group">
+              <label class="form-label">Tamaño de fuente</label>
+              <select class="form-control"><option>Pequeño</option><option selected>Normal</option><option>Grande</option><option>Extra grande</option></select>
+            </div>
+            <div class="toggle-row">
+              <div class="info"><h4>Alto contraste</h4><p>Aumenta el contraste de texto y bordes</p></div>
+              <label class="switch"><input type="checkbox"><span class="switch-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div class="info"><h4>Subrayar enlaces</h4><p>Muestra todos los enlaces siempre subrayados</p></div>
+              <label class="switch"><input type="checkbox"><span class="switch-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div class="info"><h4>Lectura por voz (TTS)</h4><p>Activa botón de lectura en anuncios y materiales</p></div>
+              <label class="switch"><input type="checkbox"><span class="switch-slider"></span></label>
+            </div>
+          </div>
+
+          <!-- Integraciones -->
+          <div class="settings-section reveal" id="integraciones">
+            <h3>Integraciones</h3>
+            <p>Conecta Maquinaria y Equipo de Construcción con servicios externos para optimizar tu trabajo.</p>
+
+            <div class="toggle-row">
+              <div class="info">
+                <h4><i class="fa-brands fa-google" style="color:#ea4335"></i> &nbsp;Google Drive</h4>
+                <p>Importa archivos directamente desde tu Drive institucional</p>
+              </div>
+              <button class="btn btn-secondary btn-sm">Conectar</button>
+            </div>
+            <div class="toggle-row">
+              <div class="info">
+                <h4><i class="fa-brands fa-microsoft" style="color:#0078d4"></i> &nbsp;OneDrive · Office 365</h4>
+                <p>Sincroniza documentos Word, Excel y PowerPoint</p>
+              </div>
+              <button class="btn btn-secondary btn-sm">Conectar</button>
+            </div>
+            <div class="toggle-row">
+              <div class="info">
+                <h4><i class="fa-solid fa-video" style="color:#2d8cff"></i> &nbsp;Zoom</h4>
+                <p>Programa clases en vivo desde el calendario</p>
+              </div>
+              <span class="badge badge--green">Conectado</span>
+            </div>
+            <div class="toggle-row">
+              <div class="info">
+                <h4><i class="fa-brands fa-github" style="color:#fff"></i> &nbsp;GitHub Classroom</h4>
+                <p>Enlace de tareas con repositorios para prácticas técnicas</p>
+              </div>
+              <button class="btn btn-secondary btn-sm">Conectar</button>
+            </div>
+            <div class="toggle-row">
+              <div class="info">
+                <h4><i class="fa-solid fa-cube" style="color:var(--brand-orange)"></i> &nbsp;AutoCAD Web</h4>
+                <p>Visualizador embebido para planos y archivos DWG <span class="badge badge--orange">Próximamente</span></p>
+              </div>
+              <button class="btn btn-ghost btn-sm" disabled>No disponible</button>
+            </div>
+          </div>
+
+          <!-- Datos -->
+          <div class="settings-section reveal" id="datos">
+            <h3>Datos y exportación</h3>
+            <p>Administra tu información y descargas.</p>
+
+            <div class="toggle-row">
+              <div class="info"><h4>Exportar mi actividad</h4><p>Descarga un archivo con tus cursos, tareas y materiales</p></div>
+              <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-download"></i> Exportar</button>
+            </div>
+            <div class="toggle-row">
+              <div class="info"><h4>Copia de seguridad de calificaciones</h4><p>Genera un CSV con todas las notas del semestre actual</p></div>
+              <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-file-csv"></i> Generar CSV</button>
+            </div>
+            <div class="toggle-row">
+              <div class="info"><h4>Historial de inicio de sesión</h4><p>Revisa todas las sesiones de los últimos 90 días</p></div>
+              <button class="btn btn-ghost btn-sm">Ver historial</button>
+            </div>
+          </div>
+
+          <!-- Zona de peligro -->
+          <div class="danger-zone reveal" id="peligro">
+            <h3 style="color:#fca5a5;font-family:var(--font-display);font-size:1.05rem;margin-bottom:0.4rem"><i class="fa-solid fa-triangle-exclamation"></i> Zona de peligro</h3>
+            <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:1.2rem">Estas acciones son permanentes y no se pueden deshacer.</p>
+
+            <div class="toggle-row" style="border-color:rgba(239,68,68,0.2)">
+              <div class="info"><h4>Pausar mi cuenta</h4><p>Tus cursos quedan inaccesibles temporalmente</p></div>
+              <button class="btn btn-secondary btn-sm">Pausar</button>
+            </div>
+            <div class="toggle-row" style="border-color:rgba(239,68,68,0.2)">
+              <div class="info"><h4>Transferir titularidad de cursos</h4><p>Asigna otro docente como responsable principal</p></div>
+              <button class="btn btn-secondary btn-sm">Transferir</button>
+            </div>
+            <div class="toggle-row" style="border-color:rgba(239,68,68,0.2);border-bottom:none">
+              <div class="info"><h4 style="color:#fca5a5">Eliminar cuenta permanentemente</h4><p>Borra todos tus datos, cursos y materiales sin posibilidad de recuperación</p></div>
+              <button class="btn btn-sm" style="background:rgba(239,68,68,0.15);color:#fca5a5;border:1px solid rgba(239,68,68,0.4)"><i class="fa-solid fa-trash"></i> Eliminar</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+<script>
+  // Resaltar la sección activa al hacer click en la nav lateral
+  document.querySelectorAll('.settings-nav a').forEach(link => {
+    link.addEventListener('click', e => {
+      document.querySelectorAll('.settings-nav a').forEach(a => a.classList.remove('is-active'));
+      link.classList.add('is-active');
+    });
+  });
+  // Selección de tema
+  document.querySelectorAll('.theme-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.theme-card').forEach(c => c.classList.remove('is-selected'));
+      card.classList.add('is-selected');
+    });
+  });
+  // Selección de color de acento
+  document.querySelectorAll('.accent-dot').forEach(dot => {
+    dot.addEventListener('click', () => {
+      document.querySelectorAll('.accent-dot').forEach(d => d.classList.remove('is-selected'));
+      dot.classList.add('is-selected');
+    });
+  });
+</script>
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js').catch(()=>{});
+}
+</script>
+</body>
+</html>

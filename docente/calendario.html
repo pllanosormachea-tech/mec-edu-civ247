@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendario · Panel Docente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/styles.css">
+  <!-- PWA + iOS -->
+  <meta name="theme-color" content="#FFB800">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MEC EDU">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='38' fill='%23FFB800'/%3E%3Ctext x='90' y='128' text-anchor='middle' font-size='105' font-family='Arial Black' font-weight='900' fill='%231a1200'%3EM%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="app">
+  <aside class="sidebar">
+    <a href="dashboard.html" class="brand">
+      <span class="brand-mark"><i class="fa-solid fa-helmet-safety"></i></span>
+      <div>Maq. y Equipo<small>Panel Docente</small></div>
+    </a>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Principal</div>
+      <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+      <a href="cursos.html" class="nav-item"><i class="fa-solid fa-folder-open"></i> Mis cursos <span class="count">3</span></a>
+      <a href="calendario.html" class="nav-item is-active"><i class="fa-solid fa-calendar-days"></i> Calendario</a>
+      <a href="mensajes.html" class="nav-item"><i class="fa-solid fa-comment-dots"></i> Mensajes <span class="count">5</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Gestión académica</div>
+      <a href="tareas.html" class="nav-item"><i class="fa-solid fa-file-circle-check"></i> Tareas <span class="count">7</span></a>
+      <a href="materiales.html" class="nav-item"><i class="fa-solid fa-folder-tree"></i> Materiales</a>
+      <a href="anuncios.html" class="nav-item"><i class="fa-solid fa-bullhorn"></i> Anuncios</a>
+      <a href="estudiantes.html" class="nav-item"><i class="fa-solid fa-users"></i> Estudiantes</a>
+      <a href="calificaciones.html" class="nav-item"><i class="fa-solid fa-award"></i> Calificaciones</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Herramientas técnicas</div>
+      <a href="herramientas.html" class="nav-item"><i class="fa-solid fa-toolbox"></i> Módulos técnicos</a>
+    </div>
+    <div class="sidebar-foot">
+      <div class="avatar">CR</div>
+      <div style="flex:1;min-width:0"><div class="name">Ing. Carlos Rojas</div><div class="role">Docente</div></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn btn-sidebar-toggle" data-sidebar-toggle><i class="fa-solid fa-bars"></i></button>
+      <div class="topbar-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Buscar evento…"></div>
+      <div class="topbar-actions">
+        <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
+        <a href="../perfil.html" class="user-chip"><span class="avatar">CR</span><span class="name hide-mobile">Carlos R.</span></a>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="page-head anim-up">
+        <div>
+          <div class="crumbs"><a href="dashboard.html">Inicio</a> <i class="fa-solid fa-chevron-right"></i> <span>Calendario</span></div>
+          <h1>Calendario académico</h1>
+          <p>Programa clases, evaluaciones, visitas técnicas y eventos importantes del semestre.</p>
+        </div>
+        <div class="actions">
+          <button class="btn btn-secondary"><i class="fa-solid fa-file-export"></i> Exportar (.ics)</button>
+          <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Nuevo evento</button>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="calendar reveal">
+          <div class="calendar-head">
+            <div>
+              <h3>Abril · 2025</h3>
+              <p style="font-size:0.78rem;color:var(--text-tertiary);margin-top:0.2rem;font-family:var(--font-mono)">Semana 16 · Gestión 2025-I</p>
+            </div>
+            <div style="display:flex;gap:0.5rem;align-items:center">
+              <div class="nav-btns">
+                <button class="icon-btn" style="width:34px;height:34px"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="btn btn-secondary btn-sm">Hoy</button>
+                <button class="icon-btn" style="width:34px;height:34px"><i class="fa-solid fa-chevron-right"></i></button>
+              </div>
+              <select class="form-control" style="width:auto;padding:0.4rem 2rem 0.4rem 0.7rem;font-size:0.82rem"><option>Mes</option><option>Semana</option><option>Día</option></select>
+            </div>
+          </div>
+          <div class="cal-grid">
+            <div class="hd">Lun</div><div class="hd">Mar</div><div class="hd">Mié</div><div class="hd">Jue</div><div class="hd">Vie</div><div class="hd">Sáb</div><div class="hd">Dom</div>
+
+            <div class="day is-muted"><span class="n">31</span></div>
+            <div class="day"><span class="n">01</span></div>
+            <div class="day"><span class="n">02</span><span class="cal-evt">Clase · Mód. 2</span></div>
+            <div class="day"><span class="n">03</span></div>
+            <div class="day"><span class="n">04</span><span class="cal-evt blue">Clase · Mód. 2</span></div>
+            <div class="day"><span class="n">05</span></div>
+            <div class="day"><span class="n">06</span></div>
+
+            <div class="day"><span class="n">07</span><span class="cal-evt">Clase</span></div>
+            <div class="day"><span class="n">08</span></div>
+            <div class="day"><span class="n">09</span><span class="cal-evt">Clase</span></div>
+            <div class="day"><span class="n">10</span></div>
+            <div class="day"><span class="n">11</span><span class="cal-evt blue">Clase · Obras</span></div>
+            <div class="day"><span class="n">12</span></div>
+            <div class="day"><span class="n">13</span></div>
+
+            <div class="day"><span class="n">14</span><span class="cal-evt">Clase</span></div>
+            <div class="day"><span class="n">15</span></div>
+            <div class="day"><span class="n">16</span><span class="cal-evt">Clase</span><span class="cal-evt orange">Cuestionario · Motonivel.</span></div>
+            <div class="day"><span class="n">17</span></div>
+            <div class="day is-today"><span class="n">18</span><span class="cal-evt blue">Clase · Obras</span><span class="cal-evt green">Reunión equipo</span></div>
+            <div class="day"><span class="n">19</span></div>
+            <div class="day"><span class="n">20</span></div>
+
+            <div class="day"><span class="n">21</span><span class="cal-evt">Clase · Mód. 3</span></div>
+            <div class="day"><span class="n">22</span><span class="cal-evt orange">Cierre · Volquetas</span></div>
+            <div class="day"><span class="n">23</span><span class="cal-evt">Clase</span></div>
+            <div class="day"><span class="n">24</span></div>
+            <div class="day"><span class="n">25</span><span class="cal-evt blue">Clase</span><span class="cal-evt orange">Cierre · Práctica 04</span></div>
+            <div class="day"><span class="n">26</span></div>
+            <div class="day"><span class="n">27</span></div>
+
+            <div class="day"><span class="n">28</span><span class="cal-evt">Clase</span><span class="cal-evt orange">Cierre · Cuestionario</span></div>
+            <div class="day"><span class="n">29</span></div>
+            <div class="day"><span class="n">30</span><span class="cal-evt orange">EXAMEN PARCIAL</span></div>
+            <div class="day is-muted"><span class="n">01</span></div>
+            <div class="day is-muted"><span class="n">02</span><span class="cal-evt blue">Visita técnica</span></div>
+            <div class="day is-muted"><span class="n">03</span></div>
+            <div class="day is-muted"><span class="n">04</span></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="panel" style="margin-bottom:1.5rem">
+            <div class="panel-header"><h3>Eventos próximos</h3></div>
+            <div class="panel-body" style="padding:0">
+              <div style="padding:1rem 1.5rem;border-bottom:1px solid var(--border-subtle);display:flex;align-items:center;gap:1rem">
+                <div style="width:46px;text-align:center;background:rgba(255,107,53,0.1);border:1px solid rgba(255,107,53,0.3);border-radius:10px;padding:0.4rem 0">
+                  <div style="font-family:var(--font-mono);font-size:0.68rem;color:var(--brand-orange-soft);text-transform:uppercase">Abr</div>
+                  <div style="font-family:var(--font-display);font-size:1.2rem;font-weight:700">22</div>
+                </div>
+                <div style="flex:1"><h4 style="font-size:0.92rem">Cierre · Informe Volquetas</h4><div style="font-size:0.78rem;color:var(--text-tertiary);margin-top:0.2rem"><i class="fa-solid fa-clock"></i> 23:59 · CIV-305</div></div>
+              </div>
+              <div style="padding:1rem 1.5rem;border-bottom:1px solid var(--border-subtle);display:flex;align-items:center;gap:1rem">
+                <div style="width:46px;text-align:center;background:var(--bg-elevated);border:1px solid var(--border-default);border-radius:10px;padding:0.4rem 0">
+                  <div style="font-family:var(--font-mono);font-size:0.68rem;color:var(--brand-yellow);text-transform:uppercase">Abr</div>
+                  <div style="font-family:var(--font-display);font-size:1.2rem;font-weight:700">25</div>
+                </div>
+                <div style="flex:1"><h4 style="font-size:0.92rem">Clase · Compactadoras</h4><div style="font-size:0.78rem;color:var(--text-tertiary);margin-top:0.2rem"><i class="fa-solid fa-clock"></i> 14:00 - 16:00 · Aula 302</div></div>
+              </div>
+              <div style="padding:1rem 1.5rem;border-bottom:1px solid var(--border-subtle);display:flex;align-items:center;gap:1rem">
+                <div style="width:46px;text-align:center;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:10px;padding:0.4rem 0">
+                  <div style="font-family:var(--font-mono);font-size:0.68rem;color:#fca5a5;text-transform:uppercase">Abr</div>
+                  <div style="font-family:var(--font-display);font-size:1.2rem;font-weight:700">30</div>
+                </div>
+                <div style="flex:1"><h4 style="font-size:0.92rem">Examen parcial · Unidad 2</h4><div style="font-size:0.78rem;color:var(--text-tertiary);margin-top:0.2rem"><i class="fa-solid fa-clock"></i> 14:00 · Aula 302</div></div>
+              </div>
+              <div style="padding:1rem 1.5rem;display:flex;align-items:center;gap:1rem">
+                <div style="width:46px;text-align:center;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.3);border-radius:10px;padding:0.4rem 0">
+                  <div style="font-family:var(--font-mono);font-size:0.68rem;color:var(--brand-blue-light);text-transform:uppercase">May</div>
+                  <div style="font-family:var(--font-display);font-size:1.2rem;font-weight:700">02</div>
+                </div>
+                <div style="flex:1"><h4 style="font-size:0.92rem">Visita técnica · Viaducto Norte</h4><div style="font-size:0.78rem;color:var(--text-tertiary);margin-top:0.2rem"><i class="fa-solid fa-clock"></i> 07:30 · Punto: portal facultad</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header"><h3>Filtrar por curso</h3></div>
+            <div class="panel-body">
+              <label class="checkbox" style="display:flex;padding:0.6rem 0"><input type="checkbox" checked> <span style="display:inline-flex;align-items:center;gap:0.5rem"><span style="width:10px;height:10px;border-radius:3px;background:var(--brand-yellow)"></span> CIV-305 · Maquinaria</span></label>
+              <label class="checkbox" style="display:flex;padding:0.6rem 0"><input type="checkbox" checked> <span style="display:inline-flex;align-items:center;gap:0.5rem"><span style="width:10px;height:10px;border-radius:3px;background:var(--brand-blue)"></span> CIV-412 · Obras Civiles</span></label>
+              <label class="checkbox" style="display:flex;padding:0.6rem 0"><input type="checkbox"> <span style="display:inline-flex;align-items:center;gap:0.5rem"><span style="width:10px;height:10px;border-radius:3px;background:var(--brand-orange)"></span> CIV-218 · Equipos Auxiliares</span></label>
+              <label class="checkbox" style="display:flex;padding:0.6rem 0"><input type="checkbox" checked> <span style="display:inline-flex;align-items:center;gap:0.5rem"><span style="width:10px;height:10px;border-radius:3px;background:var(--success)"></span> Eventos personales</span></label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/main.js"></script>
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js').catch(()=>{});
+}
+</script>
+</body>
+</html>

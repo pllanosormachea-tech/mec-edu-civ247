@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro institucional · Maquinaria y Equipo de Construcción</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FFB800'/%3E%3Cpath d='M16 44 L28 24 L36 36 L48 20' stroke='%231a1200' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <!-- PWA + iOS -->
+  <meta name="theme-color" content="#FFB800">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MEC EDU">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='38' fill='%23FFB800'/%3E%3Ctext x='90' y='128' text-anchor='middle' font-size='105' font-family='Arial Black' font-weight='900' fill='%231a1200'%3EM%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="auth-page">
+  <aside class="auth-aside">
+    <a href="../index.html" class="brand" style="position:relative;z-index:2">
+      <span class="brand-mark"><i class="fa-solid fa-helmet-safety"></i></span>
+      <div>Maq. y Equipo<small>de Construcción</small></div>
+    </a>
+
+    <div class="auth-aside-content">
+      <span class="eyebrow">NUEVO ACCESO</span>
+      <h2 style="margin-top:0.8rem">Crea tu cuenta con el correo institucional de tu universidad.</h2>
+      <p>La validación con dominio universitario garantiza un entorno académico cerrado, serio y libre de accesos externos.</p>
+
+      <div class="auth-feat-list">
+        <div class="auth-feat">
+          <i class="fa-solid fa-envelope-circle-check"></i>
+          <div><h4>Correo .edu obligatorio</h4><p>Solo se aceptan dominios universitarios válidos.</p></div>
+        </div>
+        <div class="auth-feat">
+          <i class="fa-solid fa-bell-concierge"></i>
+          <div><h4>Notificaciones al correo</h4><p>Recibe avisos cuando el docente publique algo importante.</p></div>
+        </div>
+        <div class="auth-feat">
+          <i class="fa-solid fa-fingerprint"></i>
+          <div><h4>Un solo perfil</h4><p>Tu cuenta se conecta a todas las materias donde seas asignado.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="auth-aside-foot">// M.E.C. · v2.4 · institutional registration</div>
+  </aside>
+
+  <main class="auth-main">
+    <div class="auth-form-wrap">
+      <a href="../index.html" style="color:var(--text-tertiary);font-size:0.85rem;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem"><i class="fa-solid fa-arrow-left"></i> Volver al inicio</a>
+
+      <div data-auth-tabs class="auth-tabs">
+        <button class="auth-tab is-active" data-role="teacher"><i class="fa-solid fa-chalkboard-user"></i> Soy docente</button>
+        <button class="auth-tab" data-role="student"><i class="fa-solid fa-user-graduate"></i> Soy estudiante</button>
+      </div>
+
+      <!-- REGISTRO DOCENTE -->
+      <form class="auth-form" data-auth-form="teacher" data-fake-submit data-redirect="../docente/dashboard.html">
+        <h2>Registro de docente</h2>
+        <p>Ingresa tus datos institucionales para crear tu perfil académico.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Nombres</label>
+            <input type="text" class="form-control" placeholder="Carlos Andrés" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Apellidos</label>
+            <input type="text" class="form-control" placeholder="Rojas Paredes" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Correo institucional</label>
+          <div class="input-group">
+            <span class="input-icon"><i class="fa-solid fa-envelope"></i></span>
+            <input type="email" class="form-control" placeholder="docente@universidad.edu" required data-institutional-email>
+          </div>
+          <div class="form-help"><i class="fa-solid fa-circle-info"></i> Solo se permiten correos institucionales (@umss.edu, @uni.edu, etc).</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Departamento / Facultad</label>
+          <select class="form-control">
+            <option>Ingeniería Civil</option>
+            <option>Ingeniería de Construcción</option>
+            <option>Ingeniería Industrial</option>
+            <option>Arquitectura</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Contraseña</label>
+            <div class="input-group">
+              <span class="input-icon"><i class="fa-solid fa-lock"></i></span>
+              <input type="password" class="form-control" placeholder="••••••••" required minlength="8">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Confirmar</label>
+            <div class="input-group">
+              <span class="input-icon"><i class="fa-solid fa-lock"></i></span>
+              <input type="password" class="form-control" placeholder="••••••••" required minlength="8">
+            </div>
+          </div>
+        </div>
+
+        <label class="checkbox" style="margin-bottom:1.2rem"><input type="checkbox" required> Acepto los términos académicos y la política de privacidad.</label>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg"><i class="fa-solid fa-user-plus"></i> Crear cuenta docente</button>
+
+        <div class="auth-footer-link">
+          ¿Ya tienes cuenta? <a href="login.html">Iniciar sesión</a>
+        </div>
+      </form>
+
+      <!-- REGISTRO ESTUDIANTE -->
+      <form class="auth-form" data-auth-form="student" style="display:none" data-fake-submit data-redirect="../estudiante/dashboard.html">
+        <h2>Registro de estudiante</h2>
+        <p>Usa tu correo universitario oficial para acceder a los cursos asignados.</p>
+
+        <!-- Foto de perfil -->
+        <div class="auth-avatar-upload" data-avatar-upload>
+          <div class="auth-avatar-preview" id="student-avatar-preview">
+            <i class="fa-solid fa-camera"></i>
+          </div>
+          <input type="file" id="student-avatar-input" accept="image/*" style="display:none">
+          <div class="auth-avatar-info">
+            <strong>Foto de perfil</strong>
+            <span>Haz clic para seleccionar una imagen</span>
+            <em>JPG, PNG · máx. 5 MB · Opcional</em>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Nombres</label>
+            <input type="text" class="form-control" placeholder="María José" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Apellidos</label>
+            <input type="text" class="form-control" placeholder="Quispe Alarcón" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Correo institucional</label>
+          <div class="input-group">
+            <span class="input-icon"><i class="fa-solid fa-envelope"></i></span>
+            <input type="email" class="form-control" placeholder="nombre.apellido@est.universidad.edu" required data-institutional-email>
+          </div>
+          <div class="form-help"><i class="fa-solid fa-circle-info"></i> Obligatorio. Solo se aceptan dominios universitarios.</div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Carrera</label>
+            <select class="form-control">
+              <option>Ingeniería Civil</option>
+              <option>Ingeniería de Construcción</option>
+              <option>Arquitectura</option>
+              <option>Ingeniería Industrial</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Código / Matrícula</label>
+            <input type="text" class="form-control" placeholder="2024-05678" required>
+          </div>
+        </div>
+
+        <!-- Semestre y año -->
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Semestre de inscripción</label>
+            <div class="sem-toggle" data-sem-toggle>
+              <button type="button" class="sem-btn is-active" data-sem="I">Semestre I</button>
+              <button type="button" class="sem-btn" data-sem="II">Semestre II</button>
+            </div>
+            <input type="hidden" name="semestre" value="I" data-sem-value>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Año académico</label>
+            <select class="form-control" name="anio">
+              <option>2025</option>
+              <option selected>2026</option>
+              <option>2027</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Secciones -->
+        <div class="form-group">
+          <label class="form-label">Sección(es) en las que estás inscrito</label>
+          <div class="section-checks">
+            <label class="section-check">
+              <input type="checkbox" name="seccion" value="A">
+              <span>Sección A — Teoría</span>
+              <span class="sec-tag">Teoría</span>
+            </label>
+            <label class="section-check">
+              <input type="checkbox" name="seccion" value="B">
+              <span>Sección B — JTP / Práctica</span>
+              <span class="sec-tag sec-tag--jtp">JTP</span>
+            </label>
+          </div>
+          <div class="form-help" style="margin-top:.5rem"><i class="fa-solid fa-circle-info"></i> Puedes estar inscrito en ambas. Consúltalo con tu docente si no estás seguro.</div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Contraseña</label>
+            <div class="input-group">
+              <span class="input-icon"><i class="fa-solid fa-lock"></i></span>
+              <input type="password" class="form-control" placeholder="••••••••" required minlength="8">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Confirmar contraseña</label>
+            <div class="input-group">
+              <span class="input-icon"><i class="fa-solid fa-lock"></i></span>
+              <input type="password" class="form-control" placeholder="••••••••" required minlength="8">
+            </div>
+          </div>
+        </div>
+
+        <label class="checkbox" style="margin-bottom:1.2rem"><input type="checkbox" required> Acepto recibir notificaciones académicas en mi correo institucional.</label>
+
+        <button type="submit" class="btn btn-blue btn-block btn-lg"><i class="fa-solid fa-user-plus"></i> Crear cuenta de estudiante</button>
+
+        <div class="auth-footer-link">
+          ¿Ya tienes cuenta? <a href="login.html" style="color:var(--brand-blue-light)">Iniciar sesión</a>
+        </div>
+      </form>
+    </div>
+  </main>
+</div>
+
+<script src="../assets/js/main.js"></script>
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js').catch(()=>{});
+}
+</script>
+</body>
+</html>

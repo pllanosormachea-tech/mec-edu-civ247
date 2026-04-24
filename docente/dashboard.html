@@ -1,0 +1,2120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Maquinaria y Equipo de Construcción · Panel Docente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/dashboard.css">
+<link rel="stylesheet" href="../assets/css/asistencia.css">
+<script>
+window.calendarEvents=[
+  {date:'2026-04-22',title:'Examen Parcial I',type:'exam'},
+  {date:'2026-04-25',title:'Entrega Informe U3',type:'task'},
+  {date:'2026-04-28',title:'Exposición Grupal',type:'expo'},
+  {date:'2026-05-02',title:'Cierre Unidad 3',type:'class'},
+  {date:'2026-05-12',title:'Práctica de Campo',type:'class'},
+  {date:'2026-05-15',title:'Examen Parcial II',type:'exam'},
+  {date:'2026-06-05',title:'Entrega Proyecto Final',type:'task'},
+];
+</script>
+  <!-- PWA + iOS -->
+  <meta name="theme-color" content="#FFB800">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MEC EDU">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='38' fill='%23FFB800'/%3E%3Ctext x='90' y='128' text-anchor='middle' font-size='105' font-family='Arial Black' font-weight='900' fill='%231a1200'%3EM%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- SVG gradient defs (hidden) -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFB800"/>
+      <stop offset="100%" stop-color="#FF6B35"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<div class="db-layout">
+
+<!-- ══════════════ SIDEBAR ══════════════ -->
+<aside class="db-sb">
+  <a href="../index.html" class="db-sb__logo">
+    <div class="db-sb__logo-ico">C</div>
+    <div class="db-sb__logo-txt">
+      <strong>Maq. y Equipo</strong>
+      <span>EDU · PLATAFORMA</span>
+    </div>
+  </a>
+
+  <div class="db-sb__course">
+    <strong>CIV 247</strong>
+    Maquinaria y Equipos de Construcción
+  </div>
+
+  <!-- Sección activa label (readonly indicator) -->
+  <div style="padding:.3rem 1.2rem .1rem;font-size:.63rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.2);font-family:var(--f-mono)">CIV 247 · <span data-sec-label style="color:rgba(255,184,0,.5)">Sec. A — Teoría</span></div>
+
+  <nav class="db-nav">
+    <div class="db-nav__lbl">Principal</div>
+    <div class="db-nav__item is-active" data-view="inicio" data-title="Panel Docente" data-sub="CIV 247 · Semestre I 2026">
+      <i class="fa-solid fa-house"></i> Inicio
+    </div>
+    <div class="db-nav__item" data-view="anuncios" data-title="Anuncios" data-sub="Gestión de comunicados">
+      <i class="fa-solid fa-bullhorn"></i> Anuncios
+    </div>
+    <div class="db-nav__item" data-view="tareas" data-title="Tareas y Entregas" data-sub="Gestión y revisión">
+      <i class="fa-solid fa-list-check"></i> Tareas
+      <span class="db-nav__badge">8</span>
+    </div>
+    <div class="db-nav__lbl">Gestión</div>
+    <div class="db-nav__item" data-view="recursos" data-title="Recursos del curso" data-sub="Material de enseñanza">
+      <i class="fa-solid fa-folder-open"></i> Recursos
+    </div>
+    <div class="db-nav__item" data-view="calendario" data-title="Calendario" data-sub="Fechas académicas">
+      <i class="fa-solid fa-calendar-days"></i> Calendario
+    </div>
+    <div class="db-nav__item" data-view="estudiantes" data-title="Estudiantes" data-sub="Seguimiento del grupo">
+      <i class="fa-solid fa-users"></i> Estudiantes
+    </div>
+    <div class="db-nav__item" data-view="calificaciones" data-title="Calificaciones" data-sub="Registro de notas">
+      <i class="fa-solid fa-chart-bar"></i> Calificaciones
+    </div>
+    <div class="db-nav__lbl">Asistencia</div>
+    <div class="db-nav__item" data-view="asistencia" data-title="Control de Asistencia" data-sub="Sesiones · Revisión · Reportes">
+      <i class="fa-solid fa-clipboard-user"></i> Asistencia
+      <span class="db-nav__badge db-nav__badge--warn" id="att-pending-badge" style="display:none">0</span>
+    </div>
+  </nav>
+
+  <div class="db-sb__foot">
+    <div class="db-sb__user">
+      <div class="db-sb__avatar">JG</div>
+      <div class="db-sb__user-info">
+        <strong>José Luis Gómez</strong>
+        <span>Docente</span>
+      </div>
+      <a href="../index.html" class="db-sb__logout" title="Salir">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+      </a>
+    </div>
+  </div>
+</aside>
+
+<!-- ══════════════ MAIN ══════════════ -->
+<div class="db-main">
+
+  <!-- Topbar -->
+  <header class="db-tb">
+    <button class="db-tb__menu"><i class="fa-solid fa-bars"></i></button>
+    <div class="db-tb__bread">
+      <div class="db-tb__title">Panel Docente</div>
+      <div class="db-tb__sub">CIV 247 · Semestre I 2026</div>
+    </div>
+    <div class="db-tb__acts">
+      <button class="db-btn db-btn--primary db-btn--sm" data-open="modal-nueva-tarea">
+        <i class="fa-solid fa-plus"></i> Nueva tarea
+      </button>
+      <div class="db-tb__notif">
+        <i class="fa-solid fa-bell"></i>
+        <span class="db-tb__notif-dot"></span>
+        <div class="db-notif-panel">
+          <div class="db-notif-panel__head">
+            Notificaciones
+            <span class="db-notif-panel__clear">Marcar leídas</span>
+          </div>
+          <div class="db-notif-item db-notif-item--unread">
+            <div class="db-notif-item__ico" style="background:rgba(255,184,0,.1);color:#b45309"><i class="fa-solid fa-file-arrow-up"></i></div>
+            <div>
+              <div class="db-notif-item__text"><strong>8 nuevas entregas</strong> pendientes de revisión</div>
+              <div class="db-notif-item__time">hace 1 h</div>
+            </div>
+          </div>
+          <div class="db-notif-item db-notif-item--unread">
+            <div class="db-notif-item__ico" style="background:rgba(99,102,241,.1);color:#6366f1"><i class="fa-solid fa-comment"></i></div>
+            <div>
+              <div class="db-notif-item__text"><strong>María Gutierrez</strong> envió una consulta sobre la tarea</div>
+              <div class="db-notif-item__time">hace 3 h</div>
+            </div>
+          </div>
+          <div class="db-notif-item">
+            <div class="db-notif-item__ico" style="background:rgba(16,185,129,.1);color:#059669"><i class="fa-solid fa-calendar-check"></i></div>
+            <div>
+              <div class="db-notif-item__text">Examen Parcial I mañana — <strong>Sala B-201</strong></div>
+              <div class="db-notif-item__time">hace 6 h</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="db-tb__user">
+        <div class="db-tb__user-av">JG</div>
+        <span class="db-tb__user-name">J.L. Gómez</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="db-content">
+
+    <!-- ═══════════ VIEW: INICIO ═══════════ -->
+    <div class="db-view is-active" id="view-inicio">
+
+      <!-- Welcome banner -->
+      <div class="db-welcome">
+        <div class="db-welcome__grid"></div>
+        <div class="db-welcome__glow"></div>
+        <div class="db-welcome__inner">
+
+          <!-- IZQUIERDA: info dinámica por sección -->
+          <div style="flex:1;min-width:0">
+            <div class="db-welcome__tag"><i class="fa-solid fa-chalkboard-user"></i> Docente · CIV 247 · Semestre I 2026</div>
+            <h1>Bienvenido, Prof. Gómez</h1>
+            <div class="db-sec-content" data-sec="A">
+              <p class="db-welcome__sub">Tienes <strong>8 entregas pendientes</strong> de revisión. El <strong>Examen Parcial I</strong> es mañana 22 de abril en Sala B-201.</p>
+              <div class="db-welcome__btns">
+                <button class="db-btn db-btn--primary" onclick="document.querySelector('[data-view=tareas]').click()"><i class="fa-solid fa-inbox"></i> Ver entregas</button>
+                <button class="db-btn db-btn--outline" data-open="modal-nuevo-anuncio"><i class="fa-solid fa-bullhorn"></i> Nuevo anuncio</button>
+              </div>
+            </div>
+            <div class="db-sec-content" data-sec="B" style="display:none">
+              <p class="db-welcome__sub">Tienes <strong>6 informes JTP pendientes</strong> de revisión. La <strong>Práctica 5 — Compactación</strong> es el 28 de abril en el Taller.</p>
+              <div class="db-welcome__btns">
+                <button class="db-btn db-btn--primary" onclick="document.querySelector('[data-view=tareas]').click()"><i class="fa-solid fa-inbox"></i> Ver informes</button>
+                <button class="db-btn db-btn--outline" data-open="modal-nuevo-anuncio"><i class="fa-solid fa-bullhorn"></i> Nuevo anuncio</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- DERECHA: selector de sección + ring -->
+          <div class="db-welcome__right" style="gap:1rem;align-items:flex-end">
+
+            <!-- ★ SELECTOR DE SECCIÓN ★ -->
+            <div class="db-welcome__sec-selector">
+              <div style="font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);font-family:var(--f-mono);margin-bottom:.1rem">Vista de sección</div>
+              <button class="db-welcome__sec-card is-active" data-switch-sec="A" onclick="setGlobalSection('A')">
+                <div class="db-welcome__sec-card__ico" style="background:rgba(255,184,0,.15);border:1px solid rgba(255,184,0,.3)">
+                  <i class="fa-solid fa-chalkboard" style="color:#FFB800"></i>
+                </div>
+                <div class="db-welcome__sec-card__info">
+                  <strong>Teoría</strong>
+                  <span>Sección A · 24 estudiantes</span>
+                </div>
+                <div class="db-welcome__sec-card__check" id="sec-check-A">
+                  <i class="fa-solid fa-circle-check"></i>
+                </div>
+              </button>
+              <button class="db-welcome__sec-card" data-switch-sec="B" onclick="setGlobalSection('B')">
+                <div class="db-welcome__sec-card__ico" style="background:rgba(255,107,53,.12);border:1px solid rgba(255,107,53,.25)">
+                  <i class="fa-solid fa-flask" style="color:#FF6B35"></i>
+                </div>
+                <div class="db-welcome__sec-card__info">
+                  <strong>JTP / Práctica</strong>
+                  <span>Sección B · 5 estudiantes</span>
+                </div>
+                <div class="db-welcome__sec-card__check" id="sec-check-B">
+                  <i class="fa-solid fa-circle"></i>
+                </div>
+              </button>
+            </div>
+
+            <!-- Progress ring -->
+            <div style="display:flex;flex-direction:column;align-items:center;gap:.5rem">
+              <div class="db-prog-ring-wrap">
+                <svg class="db-prog-ring-svg" viewBox="0 0 88 88">
+                  <circle class="db-prog-ring-track" cx="44" cy="44" r="36"/>
+                  <circle class="db-prog-ring-fill" cx="44" cy="44" r="36" data-progress="58"/>
+                </svg>
+                <div class="db-prog-ring-label">
+                  <span class="db-prog-ring-val">58%</span>
+                  <span class="db-prog-ring-sub">semestre</span>
+                </div>
+              </div>
+              <div class="db-welcome__prog-lbl">Avance del semestre<br><strong>Unidad 3 en curso</strong></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Stat cards -->
+      <div class="db-sec-content" data-sec="A">
+      <div class="db-stats">
+        <div class="db-stat"><div class="db-stat__head"><div class="db-stat__ico db-stat__ico--blue"><i class="fa-solid fa-users"></i></div><span class="db-stat__trend db-stat__trend--up">Activos</span></div><div class="db-stat__val" data-count="24">24</div><div class="db-stat__lbl">Estudiantes inscritos</div><div class="db-stat__hint">22 activos · 2 rezagados</div></div>
+        <div class="db-stat"><div class="db-stat__head"><div class="db-stat__ico db-stat__ico--orange"><i class="fa-solid fa-inbox"></i></div><span class="db-stat__trend db-stat__trend--warn">Por revisar</span></div><div class="db-stat__val" data-count="8">8</div><div class="db-stat__lbl">Entregas pendientes</div><div class="db-stat__hint">Tarea: Informe de Campo</div></div>
+        <div class="db-stat"><div class="db-stat__head"><div class="db-stat__ico db-stat__ico--gold"><i class="fa-solid fa-list-check"></i></div></div><div class="db-stat__val" data-count="5">5</div><div class="db-stat__lbl">Tareas publicadas</div><div class="db-stat__hint">2 activas · 3 cerradas</div></div>
+        <div class="db-stat"><div class="db-stat__head"><div class="db-stat__ico db-stat__ico--green"><i class="fa-solid fa-star"></i></div><span class="db-stat__trend db-stat__trend--up">Bueno</span></div><div class="db-stat__val" data-count="79">79</div><div class="db-stat__lbl">Promedio del grupo</div><div class="db-stat__hint">Sobre 4 actividades</div><div class="db-prog" style="margin-top:.6rem"><div class="db-prog__fill db-prog__fill--green" data-w="79"></div></div></div>
+      </div>
+      </div><!-- /stats sec A -->
+      <div class="db-sec-content" data-sec="B" style="display:none">
+      <div class="db-stats">
+        <div class="db-stat"><div class="db-stat__head"><div class="db-stat__ico db-stat__ico--blue"><i class="fa-solid fa-users"></i></div><span class="db-stat__trend db-stat__trend--up">JTP</span></div><div class="db-stat__val" data-count="5">5</div><div class="db-stat__lbl">Estudiantes JTP</div><div class="db-stat__hint">5 activos</div></div>
+        <div class="db-stat"><div class="db-stat__head"><div class="db-stat__ico db-stat__ico--orange"><i class="fa-solid fa-inbox"></i></div><span class="db-stat__trend db-stat__trend--warn">Por revisar</span></div><div class="db-stat__val" data-count="6">6</div><div class="db-stat__lbl">Informes pendientes</div><div class="db-stat__hint">Memoria P4 · Informe P3</div></div>
+        <div class="db-stat"><div class="db-stat__head"><div class="db-stat__ico db-stat__ico--gold"><i class="fa-solid fa-flask"></i></div></div><div class="db-stat__val" data-count="4">4</div><div class="db-stat__lbl">Prácticas publicadas</div><div class="db-stat__hint">2 activas · 2 cerradas</div></div>
+        <div class="db-stat"><div class="db-stat__head"><div class="db-stat__ico db-stat__ico--green"><i class="fa-solid fa-star"></i></div><span class="db-stat__trend db-stat__trend--up">Regular</span></div><div class="db-stat__val" data-count="75">75</div><div class="db-stat__lbl">Promedio JTP</div><div class="db-stat__hint">Sobre 3 prácticas</div><div class="db-prog" style="margin-top:.6rem"><div class="db-prog__fill" data-w="75"></div></div></div>
+      </div>
+      </div><!-- /stats sec B -->
+
+      <!-- Quick actions -->
+      <div class="db-qacts">
+        <div class="db-qact" data-open="modal-nuevo-anuncio">
+          <div class="db-qact__ico db-qact__ico--gold"><i class="fa-solid fa-bullhorn"></i></div>
+          <div class="db-qact__lbl">Nuevo anuncio</div>
+          <div class="db-qact__sub">Publicar comunicado al grupo</div>
+        </div>
+        <div class="db-qact" data-open="modal-nueva-tarea">
+          <div class="db-qact__ico db-qact__ico--orange"><i class="fa-solid fa-file-circle-plus"></i></div>
+          <div class="db-qact__lbl">Nueva tarea</div>
+          <div class="db-qact__sub">Asignar actividad con fecha límite</div>
+        </div>
+        <div class="db-qact" data-open="modal-subir-recurso">
+          <div class="db-qact__ico db-qact__ico--blue"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+          <div class="db-qact__lbl">Subir material</div>
+          <div class="db-qact__sub">PDF, presentación, video o enlace</div>
+        </div>
+        <div class="db-qact" data-att-open-session>
+          <div class="db-qact__ico" style="background:rgba(16,185,129,.12);color:#10b981"><i class="fa-solid fa-clipboard-user"></i></div>
+          <div class="db-qact__lbl">Abrir asistencia</div>
+          <div class="db-qact__sub">Controlar sesión en tiempo real</div>
+        </div>
+        <div class="db-qact" data-open="modal-nuevo-evento">
+          <div class="db-qact__ico db-qact__ico--green"><i class="fa-solid fa-calendar-plus"></i></div>
+          <div class="db-qact__lbl">Añadir evento</div>
+          <div class="db-qact__sub">Examen, clase o actividad</div>
+        </div>
+        <div class="db-qact" onclick="document.querySelector('[data-view=calificaciones]').click()">
+          <div class="db-qact__ico db-qact__ico--gold"><i class="fa-solid fa-star"></i></div>
+          <div class="db-qact__lbl">Calificar</div>
+          <div class="db-qact__sub">Registrar notas del grupo</div>
+        </div>
+        <div class="db-qact" onclick="document.querySelector('[data-view=estudiantes]').click()">
+          <div class="db-qact__ico db-qact__ico--orange"><i class="fa-solid fa-chart-simple"></i></div>
+          <div class="db-qact__lbl">Ver progreso</div>
+          <div class="db-qact__sub">Seguimiento por estudiante</div>
+        </div>
+      </div>
+
+      <!-- Main grid: Sección A -->
+      <div class="db-sec-content db-grid-main" data-sec="A">
+        <div>
+          <!-- Pending submissions -->
+          <div class="db-card">
+            <div class="db-card__head">
+              <div class="db-card__title"><i class="fa-solid fa-inbox"></i> Entregas por revisar — Sec. A</div>
+              <a class="db-card__lnk" onclick="document.querySelector('[data-view=tareas]').click()">Ver todas</a>
+            </div>
+            <div class="db-tasks">
+              <div class="db-task db-task--pending">
+                <div class="db-task__dot db-task__dot--pending"></div>
+                <div class="db-task__body">
+                  <div class="db-task__name">Ana Torres — Informe de Campo · Compactación</div>
+                  <div class="db-task__meta">Unidad 2 · Entregada hace 2 h</div>
+                </div>
+                <div class="db-task__right">
+                  <button class="db-btn db-btn--sm db-btn--primary" data-open="modal-revisar">Revisar</button>
+                </div>
+              </div>
+              <div class="db-task db-task--pending">
+                <div class="db-task__dot db-task__dot--pending"></div>
+                <div class="db-task__body">
+                  <div class="db-task__name">Carlos Reinaga — Informe de Campo · Compactación</div>
+                  <div class="db-task__meta">Unidad 2 · Entregada hace 4 h</div>
+                </div>
+                <div class="db-task__right">
+                  <button class="db-btn db-btn--sm db-btn--primary" data-open="modal-revisar">Revisar</button>
+                </div>
+              </div>
+              <div class="db-task db-task--pending">
+                <div class="db-task__dot db-task__dot--pending"></div>
+                <div class="db-task__body">
+                  <div class="db-task__name">Luis Mamani — Informe de Campo · Compactación</div>
+                  <div class="db-task__meta">Unidad 2 · Entregada hace 6 h</div>
+                </div>
+                <div class="db-task__right">
+                  <button class="db-btn db-btn--sm db-btn--primary" data-open="modal-revisar">Revisar</button>
+                </div>
+              </div>
+              <div class="db-task db-task--pending">
+                <div class="db-task__dot db-task__dot--pending"></div>
+                <div class="db-task__body">
+                  <div class="db-task__name">María Gutierrez — Práctica de Topografía</div>
+                  <div class="db-task__meta">Unidad 2 · Entregada ayer</div>
+                </div>
+                <div class="db-task__right">
+                  <button class="db-btn db-btn--sm db-btn--primary" data-open="modal-revisar">Revisar</button>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top:.9rem;padding-top:.9rem;border-top:1px solid var(--card-border);text-align:center">
+              <span style="font-size:.75rem;color:var(--t3);font-family:var(--f-mono)">+4 entregas más por revisar</span>
+            </div>
+          </div>
+
+          <!-- Activity feed -->
+          <div class="db-card">
+            <div class="db-card__head">
+              <div class="db-card__title"><i class="fa-solid fa-bolt"></i> Actividad reciente</div>
+            </div>
+            <div class="db-feed">
+              <div class="db-feed__item">
+                <div class="db-feed__ico" style="background:rgba(255,184,0,.1);color:var(--gold)"><i class="fa-solid fa-file-arrow-up"></i></div>
+                <div class="db-feed__body">
+                  <div class="db-feed__text"><strong>Ana Torres</strong> entregó el Informe de Campo</div>
+                  <div class="db-feed__time">hace 2 h</div>
+                </div>
+              </div>
+              <div class="db-feed__item">
+                <div class="db-feed__ico" style="background:rgba(99,102,241,.1);color:var(--info)"><i class="fa-solid fa-comment"></i></div>
+                <div class="db-feed__body">
+                  <div class="db-feed__text"><strong>María Gutierrez</strong> envió una consulta sobre la exposición</div>
+                  <div class="db-feed__time">hace 3 h</div>
+                </div>
+              </div>
+              <div class="db-feed__item">
+                <div class="db-feed__ico" style="background:rgba(16,185,129,.1);color:var(--success)"><i class="fa-solid fa-check-circle"></i></div>
+                <div class="db-feed__body">
+                  <div class="db-feed__text">Calificaste <strong>Análisis de Excavadoras</strong> — Promedio 79/100</div>
+                  <div class="db-feed__time">hace 8 h</div>
+                </div>
+              </div>
+              <div class="db-feed__item">
+                <div class="db-feed__ico" style="background:rgba(255,107,53,.1);color:var(--orange)"><i class="fa-solid fa-bullhorn"></i></div>
+                <div class="db-feed__body">
+                  <div class="db-feed__text">Publicaste el anuncio <strong>"Examen Parcial I — Sala B-201"</strong></div>
+                  <div class="db-feed__time">ayer</div>
+                </div>
+              </div>
+              <div class="db-feed__item">
+                <div class="db-feed__ico" style="background:rgba(255,184,0,.1);color:var(--gold)"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                <div class="db-feed__body">
+                  <div class="db-feed__text">Subiste el material de la <strong>Unidad 3 — Ciclos de Trabajo</strong></div>
+                  <div class="db-feed__time">hace 2 días</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right sidebar -->
+        <div>
+          <!-- Mini calendar -->
+          <div class="db-card" data-mini-cal>
+            <div class="db-mini-cal__head">
+              <span class="db-mini-cal__month"></span>
+              <div class="db-mini-cal__nav">
+                <button data-cal-prev><i class="fa-solid fa-chevron-left"></i></button>
+                <button data-cal-next><i class="fa-solid fa-chevron-right"></i></button>
+              </div>
+            </div>
+            <div class="db-mini-cal__grid">
+              <div class="db-mini-cal__dow">D</div>
+              <div class="db-mini-cal__dow">L</div>
+              <div class="db-mini-cal__dow">M</div>
+              <div class="db-mini-cal__dow">X</div>
+              <div class="db-mini-cal__dow">J</div>
+              <div class="db-mini-cal__dow">V</div>
+              <div class="db-mini-cal__dow">S</div>
+            </div>
+          </div>
+
+          <!-- Upcoming events -->
+          <div class="db-card">
+            <div class="db-card__head">
+              <div class="db-card__title"><i class="fa-solid fa-calendar-check"></i> Próximos eventos</div>
+              <button class="db-btn db-btn--sm db-btn--ghost" data-open="modal-nuevo-evento"><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <div class="db-ev-list">
+              <div class="db-ev-item">
+                <div class="db-ev-item__dot db-ev-item__dot--exam"></div>
+                <div class="db-ev-item__body">
+                  <div class="db-ev-item__title">Examen Parcial I</div>
+                  <div class="db-ev-item__date">22 abr · 08:00 · Sala B-201</div>
+                </div>
+              </div>
+              <div class="db-ev-item">
+                <div class="db-ev-item__dot db-ev-item__dot--task"></div>
+                <div class="db-ev-item__body">
+                  <div class="db-ev-item__title">Cierre Informe Técnico U3</div>
+                  <div class="db-ev-item__date">25 abr · 23:59</div>
+                </div>
+              </div>
+              <div class="db-ev-item">
+                <div class="db-ev-item__dot db-ev-item__dot--expo"></div>
+                <div class="db-ev-item__body">
+                  <div class="db-ev-item__title">Exposición Grupal</div>
+                  <div class="db-ev-item__date">28 abr · 10:00 · Aula principal</div>
+                </div>
+              </div>
+              <div class="db-ev-item">
+                <div class="db-ev-item__dot db-ev-item__dot--class"></div>
+                <div class="db-ev-item__body">
+                  <div class="db-ev-item__title">Práctica de Campo</div>
+                  <div class="db-ev-item__date">12 may · 07:30 · Taller</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Group summary -->
+          <div class="db-card">
+            <div class="db-card__head">
+              <div class="db-card__title"><i class="fa-solid fa-chart-pie"></i> Resumen del grupo</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:.85rem">
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:.77rem;margin-bottom:.35rem">
+                  <span style="color:var(--t2);font-weight:600">Entregas a tiempo</span>
+                  <span style="color:var(--success);font-weight:700;font-family:var(--f-mono)">83%</span>
+                </div>
+                <div class="db-prog"><div class="db-prog__fill db-prog__fill--green" data-w="83"></div></div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:.77rem;margin-bottom:.35rem">
+                  <span style="color:var(--t2);font-weight:600">Promedio general</span>
+                  <span style="color:var(--gold);font-weight:700;font-family:var(--f-mono)">79%</span>
+                </div>
+                <div class="db-prog"><div class="db-prog__fill" data-w="79"></div></div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:.77rem;margin-bottom:.35rem">
+                  <span style="color:var(--t2);font-weight:600">Participación</span>
+                  <span style="color:var(--info);font-weight:700;font-family:var(--f-mono)">92%</span>
+                </div>
+                <div class="db-prog"><div class="db-prog__fill db-prog__fill--blue" data-w="92"></div></div>
+              </div>
+              <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.3rem">
+                <span class="db-badge db-badge--done"><i class="fa-solid fa-circle-check"></i> 20 aprobados</span>
+                <span class="db-badge db-badge--warn" style="background:rgba(245,158,11,.1);color:#d97706;border:1px solid rgba(245,158,11,.2)"><i class="fa-solid fa-circle-exclamation"></i> 4 en riesgo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /db-grid-main sec A -->
+
+      <!-- Main grid: Sección B -->
+      <div class="db-sec-content db-grid-main" data-sec="B" style="display:none">
+        <div>
+          <div class="db-card">
+            <div class="db-card__head">
+              <div class="db-card__title"><i class="fa-solid fa-inbox"></i> Informes por revisar — Sec. B JTP</div>
+              <a class="db-card__lnk" onclick="document.querySelector('[data-view=tareas]').click()">Ver todas</a>
+            </div>
+            <div class="db-tasks">
+              <div class="db-task db-task--pending"><div class="db-task__dot db-task__dot--pending"></div><div class="db-task__body"><div class="db-task__name">Carlos Reinaga — Memoria de Práctica 4</div><div class="db-task__meta">Práctica 4 · Entregada hace 3 h</div></div><div class="db-task__right"><button class="db-btn db-btn--sm db-btn--primary" data-open="modal-revisar">Revisar</button></div></div>
+              <div class="db-task db-task--pending"><div class="db-task__dot db-task__dot--pending"></div><div class="db-task__body"><div class="db-task__name">Juan Carlos Flores — Memoria de Práctica 4</div><div class="db-task__meta">Práctica 4 · Entregada hace 5 h</div></div><div class="db-task__right"><button class="db-btn db-btn--sm db-btn--primary" data-open="modal-revisar">Revisar</button></div></div>
+              <div class="db-task db-task--pending"><div class="db-task__dot db-task__dot--pending"></div><div class="db-task__body"><div class="db-task__name">Lucía Vargas — Análisis de Equipos P3</div><div class="db-task__meta">Práctica 3 · Entregada ayer</div></div><div class="db-task__right"><button class="db-btn db-btn--sm db-btn--primary" data-open="modal-revisar">Revisar</button></div></div>
+              <div class="db-task db-task--pending"><div class="db-task__dot db-task__dot--pending"></div><div class="db-task__body"><div class="db-task__name">Ana Condori — Análisis de Equipos P3</div><div class="db-task__meta">Práctica 3 · Entregada ayer</div></div><div class="db-task__right"><button class="db-btn db-btn--sm db-btn--primary" data-open="modal-revisar">Revisar</button></div></div>
+            </div>
+            <div style="margin-top:.9rem;padding-top:.9rem;border-top:1px solid var(--card-border);text-align:center"><span style="font-size:.75rem;color:var(--t3);font-family:var(--f-mono)">+2 informes más por revisar</span></div>
+          </div>
+          <div class="db-card">
+            <div class="db-card__head"><div class="db-card__title"><i class="fa-solid fa-bolt"></i> Actividad reciente — JTP</div></div>
+            <div class="db-feed">
+              <div class="db-feed__item"><div class="db-feed__ico" style="background:rgba(255,107,53,.1);color:var(--orange)"><i class="fa-solid fa-file-arrow-up"></i></div><div class="db-feed__body"><div class="db-feed__text"><strong>Carlos Reinaga</strong> entregó la Memoria de Práctica 4</div><div class="db-feed__time">hace 3 h</div></div></div>
+              <div class="db-feed__item"><div class="db-feed__ico" style="background:rgba(255,107,53,.1);color:var(--orange)"><i class="fa-solid fa-file-arrow-up"></i></div><div class="db-feed__body"><div class="db-feed__text"><strong>Juan Carlos Flores</strong> entregó la Memoria de Práctica 4</div><div class="db-feed__time">hace 5 h</div></div></div>
+              <div class="db-feed__item"><div class="db-feed__ico" style="background:rgba(99,102,241,.1);color:var(--info)"><i class="fa-solid fa-comment"></i></div><div class="db-feed__body"><div class="db-feed__text"><strong>Ana Condori</strong> envió consulta sobre el informe de la visita de campo</div><div class="db-feed__time">hace 6 h</div></div></div>
+              <div class="db-feed__item"><div class="db-feed__ico" style="background:rgba(16,185,129,.1);color:var(--success)"><i class="fa-solid fa-check-circle"></i></div><div class="db-feed__body"><div class="db-feed__text">Calificaste <strong>Análisis de Equipos P3</strong> — Promedio 75/100</div><div class="db-feed__time">hace 2 días</div></div></div>
+              <div class="db-feed__item"><div class="db-feed__ico" style="background:rgba(255,107,53,.1);color:var(--orange)"><i class="fa-solid fa-bullhorn"></i></div><div class="db-feed__body"><div class="db-feed__text">Publicaste el anuncio <strong>"Práctica 5 — Compactación 28 abr"</strong></div><div class="db-feed__time">ayer</div></div></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="db-card" data-mini-cal style="display:none"><!-- mini-cal sería duplicado, se omite --></div>
+          <div class="db-card">
+            <div class="db-card__head"><div class="db-card__title"><i class="fa-solid fa-calendar-check"></i> Próximos eventos — JTP</div><button class="db-btn db-btn--sm db-btn--ghost" data-open="modal-nuevo-evento"><i class="fa-solid fa-plus"></i></button></div>
+            <div class="db-ev-list">
+              <div class="db-ev-item"><div class="db-ev-item__dot db-ev-item__dot--class"></div><div class="db-ev-item__body"><div class="db-ev-item__title">Práctica 5 — Compactación</div><div class="db-ev-item__date">28 abr · 07:30 · Taller Maquinaria</div></div></div>
+              <div class="db-ev-item"><div class="db-ev-item__dot db-ev-item__dot--task"></div><div class="db-ev-item__body"><div class="db-ev-item__title">Cierre Informe Técnico JTP</div><div class="db-ev-item__date">30 abr · 23:59</div></div></div>
+              <div class="db-ev-item"><div class="db-ev-item__dot db-ev-item__dot--task"></div><div class="db-ev-item__body"><div class="db-ev-item__title">Entrega Memoria JTP</div><div class="db-ev-item__date">5 may · 23:59</div></div></div>
+              <div class="db-ev-item"><div class="db-ev-item__dot db-ev-item__dot--class"></div><div class="db-ev-item__body"><div class="db-ev-item__title">Visita a Obra — JTP</div><div class="db-ev-item__date">12 may · 07:30 · Salida desde campus</div></div></div>
+            </div>
+          </div>
+          <div class="db-card">
+            <div class="db-card__head"><div class="db-card__title"><i class="fa-solid fa-chart-pie"></i> Resumen JTP</div></div>
+            <div style="display:flex;flex-direction:column;gap:.85rem">
+              <div><div style="display:flex;justify-content:space-between;font-size:.77rem;margin-bottom:.35rem"><span style="color:var(--t2);font-weight:600">Entregas a tiempo</span><span style="color:var(--success);font-weight:700;font-family:var(--f-mono)">78%</span></div><div class="db-prog"><div class="db-prog__fill db-prog__fill--green" data-w="78"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:.77rem;margin-bottom:.35rem"><span style="color:var(--t2);font-weight:600">Promedio general</span><span style="color:var(--orange);font-weight:700;font-family:var(--f-mono)">75%</span></div><div class="db-prog"><div class="db-prog__fill db-prog__fill--orange" data-w="75"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;font-size:.77rem;margin-bottom:.35rem"><span style="color:var(--t2);font-weight:600">Asistencia</span><span style="color:var(--info);font-weight:700;font-family:var(--f-mono)">88%</span></div><div class="db-prog"><div class="db-prog__fill db-prog__fill--blue" data-w="88"></div></div></div>
+              <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.3rem">
+                <span class="db-badge db-badge--done"><i class="fa-solid fa-circle-check"></i> 4 aprobados</span>
+                <span class="db-badge db-badge--warn" style="background:rgba(245,158,11,.1);color:#d97706;border:1px solid rgba(245,158,11,.2)"><i class="fa-solid fa-circle-exclamation"></i> 1 en riesgo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /db-grid-main sec B -->
+    </div><!-- /view-inicio -->
+
+    <!-- ═══════════ VIEW: ANUNCIOS ═══════════ -->
+    <div class="db-view" id="view-anuncios">
+      <div class="db-sh">
+        <div><h2>Anuncios</h2><p>Comunicados para <span data-sec-label>Sección A — Teoría</span></p></div>
+        <button class="db-btn db-btn--primary" data-open="modal-nuevo-anuncio">
+          <i class="fa-solid fa-plus"></i> Nuevo anuncio
+        </button>
+      </div>
+
+      <!-- ══ Sección A ══ -->
+      <div class="db-sec-content" data-sec="A">
+        <div class="db-ann-full db-ann-full--feat">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:.8rem">
+            <div style="flex:1">
+              <div class="db-ann-full__tag"><i class="fa-solid fa-triangle-exclamation"></i> Urgente · Sec. A — Teoría</div>
+              <div class="db-ann-full__title">Examen Parcial I — Información y Sala</div>
+              <div class="db-ann-full__body">El examen de mitad de semestre se realizará el <strong>miércoles 22 de abril a las 08:00 en la Sala B-201</strong>. Cubre Unidades 1 y 2. Se permite calculadora científica no programable. Duración: 2 horas.</div>
+            </div>
+            <button class="db-btn db-btn--sm db-btn--danger" data-ann-delete style="flex-shrink:0;margin-top:.2rem"><i class="fa-solid fa-trash"></i></button>
+          </div>
+          <div class="db-ann-full__foot"><i class="fa-solid fa-calendar"></i> 19 abr 2026 <span class="db-badge db-badge--overdue"><i class="fa-solid fa-eye"></i> 22 vistas</span></div>
+        </div>
+        <div class="db-ann-full">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:.8rem">
+            <div style="flex:1">
+              <div class="db-ann-full__tag"><i class="fa-solid fa-folder-open"></i> Recursos · Sec. A — Teoría</div>
+              <div class="db-ann-full__title">Material de Unidad 3 disponible en la plataforma</div>
+              <div class="db-ann-full__body">Se publicó el material completo de la Unidad 3: presentación PDF, formulario de rendimientos y video de clase del 14 de abril. El informe técnico tiene fecha límite el 25 de abril.</div>
+            </div>
+            <button class="db-btn db-btn--sm db-btn--danger" data-ann-delete style="flex-shrink:0;margin-top:.2rem"><i class="fa-solid fa-trash"></i></button>
+          </div>
+          <div class="db-ann-full__foot"><i class="fa-solid fa-calendar"></i> 17 abr 2026 <span class="db-badge db-badge--info"><i class="fa-solid fa-eye"></i> 24 vistas</span></div>
+        </div>
+        <div class="db-ann-full">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:.8rem">
+            <div style="flex:1">
+              <div class="db-ann-full__tag"><i class="fa-solid fa-users"></i> Grupos · Sec. A — Teoría</div>
+              <div class="db-ann-full__title">Conformación de grupos para la exposición</div>
+              <div class="db-ann-full__body">Los grupos para la exposición grupal deben registrarse antes del viernes 24 de abril. Cada grupo tendrá entre 3 y 4 integrantes. El tema será asignado por sorteo el día de la exposición.</div>
+            </div>
+            <button class="db-btn db-btn--sm db-btn--danger" data-ann-delete style="flex-shrink:0;margin-top:.2rem"><i class="fa-solid fa-trash"></i></button>
+          </div>
+          <div class="db-ann-full__foot"><i class="fa-solid fa-calendar"></i> 15 abr 2026 <span class="db-badge db-badge--info"><i class="fa-solid fa-eye"></i> 21 vistas</span></div>
+        </div>
+        <div class="db-ann-full">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:.8rem">
+            <div style="flex:1">
+              <div class="db-ann-full__tag"><i class="fa-solid fa-star"></i> Calificaciones · Sec. A — Teoría</div>
+              <div class="db-ann-full__title">Notas de Análisis de Excavadoras publicadas</div>
+              <div class="db-ann-full__body">Se publicaron las calificaciones del trabajo "Análisis de Excavadoras". El promedio del curso fue 79/100. Pueden ver sus observaciones en la sección Calificaciones.</div>
+            </div>
+            <button class="db-btn db-btn--sm db-btn--danger" data-ann-delete style="flex-shrink:0;margin-top:.2rem"><i class="fa-solid fa-trash"></i></button>
+          </div>
+          <div class="db-ann-full__foot"><i class="fa-solid fa-calendar"></i> 12 abr 2026 <span class="db-badge db-badge--info"><i class="fa-solid fa-eye"></i> 24 vistas</span></div>
+        </div>
+      </div><!-- /data-sec A -->
+
+      <!-- ══ Sección B ══ -->
+      <div class="db-sec-content" data-sec="B" style="display:none">
+        <div class="db-ann-full db-ann-full--feat">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:.8rem">
+            <div style="flex:1">
+              <div class="db-ann-full__tag"><i class="fa-solid fa-triangle-exclamation"></i> Urgente · Sec. B — JTP</div>
+              <div class="db-ann-full__title">Práctica 5 — Compactación de Suelos · 28 de abril</div>
+              <div class="db-ann-full__body">La próxima práctica de campo se realizará el <strong>lunes 28 de abril a las 07:30 en el Taller de Maquinaria</strong>. Es obligatorio presentarse con EPP completo (casco, chaleco, botas de seguridad). Llevar el formulario de campo firmado.</div>
+            </div>
+            <button class="db-btn db-btn--sm db-btn--danger" data-ann-delete style="flex-shrink:0;margin-top:.2rem"><i class="fa-solid fa-trash"></i></button>
+          </div>
+          <div class="db-ann-full__foot"><i class="fa-solid fa-calendar"></i> 20 abr 2026 <span class="db-badge db-badge--overdue"><i class="fa-solid fa-eye"></i> 14 vistas</span></div>
+        </div>
+        <div class="db-ann-full">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:.8rem">
+            <div style="flex:1">
+              <div class="db-ann-full__tag"><i class="fa-solid fa-folder-open"></i> Recursos · Sec. B — JTP</div>
+              <div class="db-ann-full__title">Guía de laboratorio Práctica 5 disponible</div>
+              <div class="db-ann-full__body">Se publicó la guía oficial para la Práctica 5. Incluye procedimientos, tablas de registro y criterios de evaluación. Deben leerla <strong>antes de asistir a la práctica</strong>. Disponible en la sección de Recursos.</div>
+            </div>
+            <button class="db-btn db-btn--sm db-btn--danger" data-ann-delete style="flex-shrink:0;margin-top:.2rem"><i class="fa-solid fa-trash"></i></button>
+          </div>
+          <div class="db-ann-full__foot"><i class="fa-solid fa-calendar"></i> 18 abr 2026 <span class="db-badge db-badge--info"><i class="fa-solid fa-eye"></i> 13 vistas</span></div>
+        </div>
+        <div class="db-ann-full">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:.8rem">
+            <div style="flex:1">
+              <div class="db-ann-full__tag"><i class="fa-solid fa-file-lines"></i> Entregas · Sec. B — JTP</div>
+              <div class="db-ann-full__title">Fecha límite: Informe Técnico JTP — 30 de abril</div>
+              <div class="db-ann-full__body">El informe técnico de la Práctica 3 (Visita a Obra) debe entregarse antes del <strong>miércoles 30 de abril a las 23:59</strong>. Formato PDF, máximo 10 páginas. Incluir registro fotográfico y análisis de los equipos observados.</div>
+            </div>
+            <button class="db-btn db-btn--sm db-btn--danger" data-ann-delete style="flex-shrink:0;margin-top:.2rem"><i class="fa-solid fa-trash"></i></button>
+          </div>
+          <div class="db-ann-full__foot"><i class="fa-solid fa-calendar"></i> 15 abr 2026 <span class="db-badge db-badge--info"><i class="fa-solid fa-eye"></i> 15 vistas</span></div>
+        </div>
+        <div class="db-ann-full">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:.8rem">
+            <div style="flex:1">
+              <div class="db-ann-full__tag"><i class="fa-solid fa-shield-halved"></i> Seguridad · Sec. B — JTP</div>
+              <div class="db-ann-full__title">Recordatorio: normas de seguridad para prácticas</div>
+              <div class="db-ann-full__body">Es obligatorio el uso de EPP durante todas las prácticas de campo. Los estudiantes que lleguen sin equipamiento no podrán participar y se registrará inasistencia. Consultar el reglamento en la sección de Recursos.</div>
+            </div>
+            <button class="db-btn db-btn--sm db-btn--danger" data-ann-delete style="flex-shrink:0;margin-top:.2rem"><i class="fa-solid fa-trash"></i></button>
+          </div>
+          <div class="db-ann-full__foot"><i class="fa-solid fa-calendar"></i> 10 abr 2026 <span class="db-badge db-badge--info"><i class="fa-solid fa-eye"></i> 17 vistas</span></div>
+        </div>
+      </div><!-- /data-sec B -->
+    </div><!-- /view-anuncios -->
+
+    <!-- ═══════════ VIEW: TAREAS ═══════════ -->
+    <div class="db-view" id="view-tareas">
+      <div class="db-sh">
+        <div><h2>Tareas y Entregas</h2><p>Actividades de <span data-sec-label>Sección A — Teoría</span></p></div>
+        <button class="db-btn db-btn--primary" data-open="modal-nueva-tarea">
+          <i class="fa-solid fa-plus"></i> Nueva tarea
+        </button>
+      </div>
+      <div class="db-sec-content" data-sec="A">
+      <!-- Active tasks summary -->
+      <div class="db-stats" style="grid-template-columns:repeat(3,1fr);margin-bottom:1.4rem">
+        <div class="db-stat">
+          <div class="db-stat__head">
+            <div class="db-stat__ico db-stat__ico--orange"><i class="fa-solid fa-inbox"></i></div>
+            <span class="db-stat__trend db-stat__trend--warn">Urgente</span>
+          </div>
+          <div class="db-stat__val" data-count="8">8</div>
+          <div class="db-stat__lbl">Por revisar</div>
+          <div class="db-stat__hint">Informe de Campo (5) · Topografía (3)</div>
+        </div>
+        <div class="db-stat">
+          <div class="db-stat__head">
+            <div class="db-stat__ico db-stat__ico--green"><i class="fa-solid fa-check-circle"></i></div>
+          </div>
+          <div class="db-stat__val" data-count="16">16</div>
+          <div class="db-stat__lbl">Revisadas</div>
+          <div class="db-stat__hint">Este semestre</div>
+        </div>
+        <div class="db-stat">
+          <div class="db-stat__head">
+            <div class="db-stat__ico db-stat__ico--gold"><i class="fa-solid fa-file-circle-plus"></i></div>
+          </div>
+          <div class="db-stat__val" data-count="5">5</div>
+          <div class="db-stat__lbl">Tareas publicadas</div>
+          <div class="db-stat__hint">2 activas · 3 cerradas</div>
+        </div>
+      </div>
+
+      <!-- Entregas pendientes -->
+      <div class="db-card" style="margin-bottom:1.2rem">
+        <div class="db-card__head">
+          <div class="db-card__title"><i class="fa-solid fa-inbox"></i> Entregas pendientes de revisión</div>
+          <span class="db-badge db-badge--pending">8 sin revisar</span>
+        </div>
+        <div class="db-tbl-wrap">
+          <table class="db-tbl">
+            <thead>
+              <tr>
+                <th>Estudiante</th>
+                <th>Tarea</th>
+                <th>Unidad</th>
+                <th>Entregada</th>
+                <th>Estado</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:600">Ana Torres</td>
+                <td>Informe de Campo – Compactación</td>
+                <td><span class="db-badge db-badge--info">U2</span></td>
+                <td style="font-family:var(--f-mono);font-size:.78rem">hace 2 h</td>
+                <td><span class="db-badge db-badge--pending"><i class="fa-solid fa-clock"></i> Pendiente</span></td>
+                <td><button class="db-btn db-btn--sm db-btn--primary" data-open="modal-revisar">Revisar</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight:600">Carlos Reinaga</td>
+                <td>Informe de Campo – Compactación</td>
+                <td><span class="db-badge db-badge--info">U2</span></td>
+                <td style="font-family:var(--f-mono);font-size:.78rem">hace 4 h</td>
+                <td><span class="db-badge db-badge--pending"><i class="fa-solid fa-clock"></i> Pendiente</span></td>
+                <td><button class="db-btn db-btn--sm db-btn--primary" data-open="modal-revisar">Revisar</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight:600">Luis Mamani</td>
+                <td>Informe de Campo – Compactación</td>
+                <td><span class="db-badge db-badge--info">U2</span></td>
+                <td style="font-family:var(--f-mono);font-size:.78rem">hace 6 h</td>
+                <td><span class="db-badge db-badge--pending"><i class="fa-solid fa-clock"></i> Pendiente</span></td>
+                <td><button class="db-btn db-btn--sm db-btn--primary" data-open="modal-revisar">Revisar</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight:600">María Gutierrez</td>
+                <td>Práctica de Topografía</td>
+                <td><span class="db-badge db-badge--info">U2</span></td>
+                <td style="font-family:var(--f-mono);font-size:.78rem">ayer</td>
+                <td><span class="db-badge db-badge--pending"><i class="fa-solid fa-clock"></i> Pendiente</span></td>
+                <td><button class="db-btn db-btn--sm db-btn--primary" data-open="modal-revisar">Revisar</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight:600">Roberto Quispe</td>
+                <td>Práctica de Topografía</td>
+                <td><span class="db-badge db-badge--info">U2</span></td>
+                <td style="font-family:var(--f-mono);font-size:.78rem">ayer</td>
+                <td><span class="db-badge db-badge--pending"><i class="fa-solid fa-clock"></i> Pendiente</span></td>
+                <td><button class="db-btn db-btn--sm db-btn--primary" data-open="modal-revisar">Revisar</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight:600">Sofía Vargas</td>
+                <td>Análisis de Excavadoras</td>
+                <td><span class="db-badge db-badge--info">U2</span></td>
+                <td style="font-family:var(--f-mono);font-size:.78rem">hace 2 días</td>
+                <td><span class="db-badge db-badge--done"><i class="fa-solid fa-check"></i> Revisada</span></td>
+                <td><button class="db-btn db-btn--sm db-btn--outline" data-open="modal-revisar">Ver</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Task list -->
+      <div class="db-card">
+        <div class="db-card__head">
+          <div class="db-card__title"><i class="fa-solid fa-list-check"></i> Tareas publicadas</div>
+        </div>
+        <div class="db-tasks">
+          <div class="db-task db-task--pending">
+            <div class="db-task__dot db-task__dot--pending"></div>
+            <div class="db-task__body">
+              <div class="db-task__name">Informe Técnico Unidad 3</div>
+              <div class="db-task__meta">Unidad 3 · Cierre: 25 abr · 24 estudiantes asignados</div>
+            </div>
+            <div class="db-task__right">
+              <span class="db-badge db-badge--pending">Activa</span>
+              <span style="font-size:.75rem;color:var(--t3);font-family:var(--f-mono)">0/24 entregadas</span>
+            </div>
+          </div>
+          <div class="db-task db-task--pending">
+            <div class="db-task__dot db-task__dot--overdue"></div>
+            <div class="db-task__body">
+              <div class="db-task__name">Informe de Campo – Compactación</div>
+              <div class="db-task__meta">Unidad 2 · Cerrada 15 abr · 8 sin revisar</div>
+            </div>
+            <div class="db-task__right">
+              <span class="db-badge db-badge--overdue">8 pendientes</span>
+              <span style="font-size:.75rem;color:var(--t3);font-family:var(--f-mono)">16/24 revisadas</span>
+            </div>
+          </div>
+          <div class="db-task db-task--graded">
+            <div class="db-task__dot db-task__dot--graded"></div>
+            <div class="db-task__body">
+              <div class="db-task__name">Análisis de Excavadoras</div>
+              <div class="db-task__meta">Unidad 2 · Cerrada 10 abr · Promedio: 79/100</div>
+            </div>
+            <div class="db-task__right">
+              <span class="db-badge db-badge--graded">Completa</span>
+              <span style="font-size:.75rem;color:var(--t3);font-family:var(--f-mono)">24/24 revisadas</span>
+            </div>
+          </div>
+          <div class="db-task db-task--done">
+            <div class="db-task__dot db-task__dot--done"></div>
+            <div class="db-task__body">
+              <div class="db-task__name">Práctica de Topografía</div>
+              <div class="db-task__meta">Unidad 2 · Cerrada 5 abr</div>
+            </div>
+            <div class="db-task__right">
+              <span class="db-badge db-badge--info">3 pendientes</span>
+            </div>
+          </div>
+          <div class="db-task db-task--done">
+            <div class="db-task__dot db-task__dot--done"></div>
+            <div class="db-task__body">
+              <div class="db-task__name">Resumen Clasificación de Maquinaria</div>
+              <div class="db-task__meta">Unidad 1 · Cerrada 15 mar · Promedio: 76/100</div>
+            </div>
+            <div class="db-task__right">
+              <span class="db-badge db-badge--graded">Completa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div><!-- /data-sec A -->
+
+      <!-- ══ Sección B ══ -->
+      <div class="db-sec-content" data-sec="B" style="display:none">
+        <div class="db-stats" style="grid-template-columns:repeat(3,1fr);margin-bottom:1.4rem">
+          <div class="db-stat">
+            <div class="db-stat__head"><div class="db-stat__ico db-stat__ico--orange"><i class="fa-solid fa-inbox"></i></div><span class="db-stat__trend db-stat__trend--warn">Urgente</span></div>
+            <div class="db-stat__val" data-count="6">6</div>
+            <div class="db-stat__lbl">Por revisar</div>
+            <div class="db-stat__hint">Memoria P4 (4) · Análisis (2)</div>
+          </div>
+          <div class="db-stat">
+            <div class="db-stat__head"><div class="db-stat__ico db-stat__ico--green"><i class="fa-solid fa-check-circle"></i></div></div>
+            <div class="db-stat__val" data-count="8">8</div>
+            <div class="db-stat__lbl">Revisadas</div>
+            <div class="db-stat__hint">Este semestre</div>
+          </div>
+          <div class="db-stat">
+            <div class="db-stat__head"><div class="db-stat__ico db-stat__ico--gold"><i class="fa-solid fa-file-circle-plus"></i></div></div>
+            <div class="db-stat__val" data-count="4">4</div>
+            <div class="db-stat__lbl">Prácticas publicadas</div>
+            <div class="db-stat__hint">2 activas · 2 cerradas</div>
+          </div>
+        </div>
+
+        <div class="db-card" style="margin-bottom:1.2rem">
+          <div class="db-card__head">
+            <div class="db-card__title"><i class="fa-solid fa-inbox"></i> Informes pendientes de revisión — JTP</div>
+            <span class="db-badge db-badge--pending">6 sin revisar</span>
+          </div>
+          <div class="db-tbl-wrap">
+            <table class="db-tbl">
+              <thead><tr><th>Estudiante</th><th>Informe / Práctica</th><th>Práctica</th><th>Entregado</th><th>Estado</th><th>Acción</th></tr></thead>
+              <tbody>
+                <tr><td style="font-weight:600">Carlos Reinaga</td><td>Memoria de Práctica 4 — Ciclos</td><td><span class="db-badge db-badge--info">P4</span></td><td style="font-family:var(--f-mono);font-size:.78rem">hace 3 h</td><td><span class="db-badge db-badge--pending"><i class="fa-solid fa-clock"></i> Pendiente</span></td><td><button class="db-btn db-btn--sm db-btn--primary" data-open="modal-revisar">Revisar</button></td></tr>
+                <tr><td style="font-weight:600">Juan Carlos Flores</td><td>Memoria de Práctica 4 — Ciclos</td><td><span class="db-badge db-badge--info">P4</span></td><td style="font-family:var(--f-mono);font-size:.78rem">hace 5 h</td><td><span class="db-badge db-badge--pending"><i class="fa-solid fa-clock"></i> Pendiente</span></td><td><button class="db-btn db-btn--sm db-btn--primary" data-open="modal-revisar">Revisar</button></td></tr>
+                <tr><td style="font-weight:600">Ana Condori</td><td>Memoria de Práctica 4 — Ciclos</td><td><span class="db-badge db-badge--info">P4</span></td><td style="font-family:var(--f-mono);font-size:.78rem">ayer</td><td><span class="db-badge db-badge--pending"><i class="fa-solid fa-clock"></i> Pendiente</span></td><td><button class="db-btn db-btn--sm db-btn--primary" data-open="modal-revisar">Revisar</button></td></tr>
+                <tr><td style="font-weight:600">Lucía Vargas</td><td>Análisis de Equipos — Visita Obra</td><td><span class="db-badge db-badge--info">P3</span></td><td style="font-family:var(--f-mono);font-size:.78rem">ayer</td><td><span class="db-badge db-badge--pending"><i class="fa-solid fa-clock"></i> Pendiente</span></td><td><button class="db-btn db-btn--sm db-btn--primary" data-open="modal-revisar">Revisar</button></td></tr>
+                <tr><td style="font-weight:600">Sofía Limachi</td><td>Análisis de Equipos — Visita Obra</td><td><span class="db-badge db-badge--info">P3</span></td><td style="font-family:var(--f-mono);font-size:.78rem">hace 2 días</td><td><span class="db-badge db-badge--done"><i class="fa-solid fa-check"></i> Revisada</span></td><td><button class="db-btn db-btn--sm db-btn--outline" data-open="modal-revisar">Ver</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="db-card">
+          <div class="db-card__head"><div class="db-card__title"><i class="fa-solid fa-list-check"></i> Prácticas publicadas — JTP</div></div>
+          <div class="db-tasks">
+            <div class="db-task db-task--pending">
+              <div class="db-task__dot db-task__dot--pending"></div>
+              <div class="db-task__body"><div class="db-task__name">Informe Técnico JTP — Visita Obra</div><div class="db-task__meta">Práctica 3 · Cierre: 30 abr · 5 estudiantes asignados</div></div>
+              <div class="db-task__right"><span class="db-badge db-badge--pending">Activa</span><span style="font-size:.75rem;color:var(--t3);font-family:var(--f-mono)">2/5 entregadas</span></div>
+            </div>
+            <div class="db-task db-task--pending">
+              <div class="db-task__dot db-task__dot--overdue"></div>
+              <div class="db-task__body"><div class="db-task__name">Memoria de Práctica 4 — Ciclos de Trabajo</div><div class="db-task__meta">Práctica 4 · Cerrada 18 abr · 4 sin revisar</div></div>
+              <div class="db-task__right"><span class="db-badge db-badge--overdue">4 pendientes</span><span style="font-size:.75rem;color:var(--t3);font-family:var(--f-mono)">1/5 revisadas</span></div>
+            </div>
+            <div class="db-task db-task--graded">
+              <div class="db-task__dot db-task__dot--graded"></div>
+              <div class="db-task__body"><div class="db-task__name">Análisis de Equipos — Visita a Obra</div><div class="db-task__meta">Práctica 3 · Cerrada 10 abr · Promedio: 75/100</div></div>
+              <div class="db-task__right"><span class="db-badge db-badge--graded">Completa</span><span style="font-size:.75rem;color:var(--t3);font-family:var(--f-mono)">5/5 revisadas</span></div>
+            </div>
+            <div class="db-task db-task--done">
+              <div class="db-task__dot db-task__dot--done"></div>
+              <div class="db-task__body"><div class="db-task__name">Formulario de Campo — Práctica 2</div><div class="db-task__meta">Práctica 2 · Cerrada 20 mar · Promedio: 71/100</div></div>
+              <div class="db-task__right"><span class="db-badge db-badge--graded">Completa</span></div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /data-sec B -->
+    </div><!-- /view-tareas -->
+
+    <!-- ═══════════ VIEW: RECURSOS ═══════════ -->
+    <div class="db-view" id="view-recursos">
+      <div class="db-sh">
+        <div><h2>Recursos del curso</h2><p>Material de <span data-sec-label>Sección A — Teoría</span></p></div>
+        <button class="db-btn db-btn--primary" data-open="modal-subir-recurso">
+          <i class="fa-solid fa-cloud-arrow-up"></i> Subir material
+        </button>
+      </div>
+
+      <div class="db-sec-content" data-sec="A">
+      <div class="db-unit-lbl" style="display:flex;align-items:center;gap:.6rem">
+        Unidad 4 — Compactación y Acabados
+        <span style="font-size:.7rem;background:rgba(96,165,250,.12);color:#60a5fa;border:1px solid rgba(96,165,250,.25);border-radius:20px;padding:.15rem .6rem;font-weight:600;letter-spacing:.03em">PRÓXIMA</span>
+      </div>
+      <div class="db-res-row" data-publish-date="2026-05-05">
+        <div class="db-res-row__ico db-res__ico--slides"><i class="fa-solid fa-file-powerpoint"></i></div>
+        <div class="db-res-row__body">
+          <div class="db-res-row__title">
+            Compactadoras y Vibrocompactadoras
+            <span class="db-scheduled-badge" style="display:none"><i class="fa-solid fa-clock"></i> Publica 5 mayo</span>
+          </div>
+          <div class="db-res-row__meta">PPT · 42 diapositivas · programado — Sección A y B</div>
+        </div>
+        <div class="db-res-row__actions">
+          <button class="db-btn db-btn--sm db-btn--outline"><i class="fa-solid fa-pencil"></i></button>
+          <button class="db-btn db-btn--sm db-btn--danger" data-res-delete><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </div>
+      <div class="db-res-row" data-publish-date="2026-05-12">
+        <div class="db-res-row__ico db-res__ico--pdf"><i class="fa-solid fa-file-pdf"></i></div>
+        <div class="db-res-row__body">
+          <div class="db-res-row__title">
+            Guía de Práctica — Compactación de Suelos
+            <span class="db-scheduled-badge" style="display:none"><i class="fa-solid fa-clock"></i> Publica 12 mayo</span>
+          </div>
+          <div class="db-res-row__meta">PDF · 8 páginas · programado — Sección B (JTP)</div>
+        </div>
+        <div class="db-res-row__actions">
+          <button class="db-btn db-btn--sm db-btn--outline"><i class="fa-solid fa-pencil"></i></button>
+          <button class="db-btn db-btn--sm db-btn--danger" data-res-delete><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </div>
+
+      <div class="db-unit-lbl">Unidad 3 — Ciclos de Trabajo</div>
+      <div class="db-res-row">
+        <div class="db-res-row__ico db-res__ico--pdf"><i class="fa-solid fa-file-pdf"></i></div>
+        <div class="db-res-row__body">
+          <div class="db-res-row__title">Presentación Ciclos de Trabajo</div>
+          <div class="db-res-row__meta">PDF · 45 diapositivas · 8.2 MB · Subido 17 abr</div>
+        </div>
+        <div class="db-res-row__actions">
+          <button class="db-btn db-btn--sm db-btn--outline"><i class="fa-solid fa-download"></i></button>
+          <button class="db-btn db-btn--sm db-btn--danger" data-res-delete><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </div>
+      <div class="db-res-row">
+        <div class="db-res-row__ico db-res__ico--doc"><i class="fa-solid fa-file-excel"></i></div>
+        <div class="db-res-row__body">
+          <div class="db-res-row__title">Formulario de Rendimientos</div>
+          <div class="db-res-row__meta">Excel · 2.1 MB · Subido 17 abr</div>
+        </div>
+        <div class="db-res-row__actions">
+          <button class="db-btn db-btn--sm db-btn--outline"><i class="fa-solid fa-download"></i></button>
+          <button class="db-btn db-btn--sm db-btn--danger" data-res-delete><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </div>
+      <div class="db-res-row">
+        <div class="db-res-row__ico db-res__ico--video"><i class="fa-solid fa-circle-play"></i></div>
+        <div class="db-res-row__body">
+          <div class="db-res-row__title">Video grabado — Clase 14 abr</div>
+          <div class="db-res-row__meta">MP4 · 1 h 24 min · Subido 15 abr</div>
+        </div>
+        <div class="db-res-row__actions">
+          <button class="db-btn db-btn--sm db-btn--outline"><i class="fa-solid fa-play"></i></button>
+          <button class="db-btn db-btn--sm db-btn--danger" data-res-delete><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </div>
+      <div class="db-res-row">
+        <div class="db-res-row__ico db-res__ico--norm"><i class="fa-solid fa-file-lines"></i></div>
+        <div class="db-res-row__body">
+          <div class="db-res-row__title">Rúbrica — Informe Técnico U3</div>
+          <div class="db-res-row__meta">PDF · 1 página · Subido 17 abr</div>
+        </div>
+        <div class="db-res-row__actions">
+          <button class="db-btn db-btn--sm db-btn--outline"><i class="fa-solid fa-download"></i></button>
+          <button class="db-btn db-btn--sm db-btn--danger" data-res-delete><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </div>
+
+      <div class="db-unit-lbl">Unidad 2 — Movimiento de Tierras</div>
+      <div class="db-res-row">
+        <div class="db-res-row__ico db-res__ico--slides"><i class="fa-solid fa-file-powerpoint"></i></div>
+        <div class="db-res-row__body">
+          <div class="db-res-row__title">Slides Excavadoras y Bulldozers</div>
+          <div class="db-res-row__meta">PPT · 38 diapositivas · 12 MB · Subido 5 abr</div>
+        </div>
+        <div class="db-res-row__actions">
+          <button class="db-btn db-btn--sm db-btn--outline"><i class="fa-solid fa-download"></i></button>
+          <button class="db-btn db-btn--sm db-btn--danger" data-res-delete><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </div>
+      <div class="db-res-row">
+        <div class="db-res-row__ico db-res__ico--pdf"><i class="fa-solid fa-file-pdf"></i></div>
+        <div class="db-res-row__body">
+          <div class="db-res-row__title">Manual Técnico CAT 320</div>
+          <div class="db-res-row__meta">PDF · 120 páginas · Subido 3 abr</div>
+        </div>
+        <div class="db-res-row__actions">
+          <button class="db-btn db-btn--sm db-btn--outline"><i class="fa-solid fa-download"></i></button>
+          <button class="db-btn db-btn--sm db-btn--danger" data-res-delete><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </div>
+
+      <div class="db-unit-lbl">Unidad 1 — Fundamentos de Maquinaria</div>
+      <div class="db-res-row">
+        <div class="db-res-row__ico db-res__ico--pdf"><i class="fa-solid fa-file-pdf"></i></div>
+        <div class="db-res-row__body">
+          <div class="db-res-row__title">Introducción a la Maquinaria de Construcción</div>
+          <div class="db-res-row__meta">PDF · 30 páginas · Subido 2 mar</div>
+        </div>
+        <div class="db-res-row__actions">
+          <button class="db-btn db-btn--sm db-btn--outline"><i class="fa-solid fa-download"></i></button>
+          <button class="db-btn db-btn--sm db-btn--danger" data-res-delete><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </div>
+      <div class="db-res-row">
+        <div class="db-res-row__ico db-res__ico--norm"><i class="fa-solid fa-gavel"></i></div>
+        <div class="db-res-row__body">
+          <div class="db-res-row__title">Normativa ISO 15143-3</div>
+          <div class="db-res-row__meta">PDF · Norma técnica · Subido 2 mar</div>
+        </div>
+        <div class="db-res-row__actions">
+          <button class="db-btn db-btn--sm db-btn--outline"><i class="fa-solid fa-download"></i></button>
+          <button class="db-btn db-btn--sm db-btn--danger" data-res-delete><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </div>
+      </div><!-- /data-sec A -->
+
+      <!-- ══ Sección B ══ -->
+      <div class="db-sec-content" data-sec="B" style="display:none">
+        <div class="db-unit-lbl" style="display:flex;align-items:center;gap:.6rem">
+          Práctica 5 — Compactación de Suelos
+          <span style="font-size:.7rem;background:rgba(96,165,250,.12);color:#60a5fa;border:1px solid rgba(96,165,250,.25);border-radius:20px;padding:.15rem .6rem;font-weight:600;letter-spacing:.03em">PRÓXIMA · 28 ABR</span>
+        </div>
+        <div class="db-res-row" data-publish-date="2026-04-28">
+          <div class="db-res-row__ico db-res__ico--pdf"><i class="fa-solid fa-file-pdf"></i></div>
+          <div class="db-res-row__body">
+            <div class="db-res-row__title">Guía de Práctica 5 — Compactación<span class="db-scheduled-badge" style="display:none"><i class="fa-solid fa-clock"></i> Publica 28 abr</span></div>
+            <div class="db-res-row__meta">PDF · 12 páginas · programado — Sección B (JTP)</div>
+          </div>
+          <div class="db-res-row__actions"><button class="db-btn db-btn--sm db-btn--outline"><i class="fa-solid fa-pencil"></i></button><button class="db-btn db-btn--sm db-btn--danger" data-res-delete><i class="fa-solid fa-trash"></i></button></div>
+        </div>
+
+        <div class="db-unit-lbl">Práctica 4 — Ciclos de Trabajo</div>
+        <div class="db-res-row">
+          <div class="db-res-row__ico db-res__ico--pdf"><i class="fa-solid fa-file-pdf"></i></div>
+          <div class="db-res-row__body"><div class="db-res-row__title">Guía de Práctica 4 — Formulario de Ciclos</div><div class="db-res-row__meta">PDF · 6 páginas · Subido 14 abr</div></div>
+          <div class="db-res-row__actions"><button class="db-btn db-btn--sm db-btn--outline"><i class="fa-solid fa-download"></i></button><button class="db-btn db-btn--sm db-btn--danger" data-res-delete><i class="fa-solid fa-trash"></i></button></div>
+        </div>
+        <div class="db-res-row">
+          <div class="db-res-row__ico db-res__ico--doc"><i class="fa-solid fa-file-excel"></i></div>
+          <div class="db-res-row__body"><div class="db-res-row__title">Tabla de registro de ciclos — Excel</div><div class="db-res-row__meta">Excel · 1.2 MB · Subido 14 abr</div></div>
+          <div class="db-res-row__actions"><button class="db-btn db-btn--sm db-btn--outline"><i class="fa-solid fa-download"></i></button><button class="db-btn db-btn--sm db-btn--danger" data-res-delete><i class="fa-solid fa-trash"></i></button></div>
+        </div>
+
+        <div class="db-unit-lbl">Práctica 3 — Visita a Obra Civil</div>
+        <div class="db-res-row">
+          <div class="db-res-row__ico db-res__ico--pdf"><i class="fa-solid fa-file-pdf"></i></div>
+          <div class="db-res-row__body"><div class="db-res-row__title">Guía de Práctica 3 — Visita de Campo</div><div class="db-res-row__meta">PDF · 8 páginas · Subido 5 abr</div></div>
+          <div class="db-res-row__actions"><button class="db-btn db-btn--sm db-btn--outline"><i class="fa-solid fa-download"></i></button><button class="db-btn db-btn--sm db-btn--danger" data-res-delete><i class="fa-solid fa-trash"></i></button></div>
+        </div>
+        <div class="db-res-row">
+          <div class="db-res-row__ico db-res__ico--norm"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="db-res-row__body"><div class="db-res-row__title">Manual de EPP — Normas de Seguridad</div><div class="db-res-row__meta">PDF · Reglamento · Subido 1 mar</div></div>
+          <div class="db-res-row__actions"><button class="db-btn db-btn--sm db-btn--outline"><i class="fa-solid fa-download"></i></button><button class="db-btn db-btn--sm db-btn--danger" data-res-delete><i class="fa-solid fa-trash"></i></button></div>
+        </div>
+
+        <div class="db-unit-lbl">Prácticas 1 y 2 — Fundamentos</div>
+        <div class="db-res-row">
+          <div class="db-res-row__ico db-res__ico--slides"><i class="fa-solid fa-file-powerpoint"></i></div>
+          <div class="db-res-row__body"><div class="db-res-row__title">Slides Introducción al JTP</div><div class="db-res-row__meta">PPT · 22 diapositivas · Subido 1 mar</div></div>
+          <div class="db-res-row__actions"><button class="db-btn db-btn--sm db-btn--outline"><i class="fa-solid fa-download"></i></button><button class="db-btn db-btn--sm db-btn--danger" data-res-delete><i class="fa-solid fa-trash"></i></button></div>
+        </div>
+        <div class="db-res-row">
+          <div class="db-res-row__ico db-res__ico--norm"><i class="fa-solid fa-gavel"></i></div>
+          <div class="db-res-row__body"><div class="db-res-row__title">Normativa ISO 15143-3</div><div class="db-res-row__meta">PDF · Norma técnica · Subido 1 mar</div></div>
+          <div class="db-res-row__actions"><button class="db-btn db-btn--sm db-btn--outline"><i class="fa-solid fa-download"></i></button><button class="db-btn db-btn--sm db-btn--danger" data-res-delete><i class="fa-solid fa-trash"></i></button></div>
+        </div>
+      </div><!-- /data-sec B -->
+    </div><!-- /view-recursos -->
+
+    <!-- ═══════════ VIEW: CALENDARIO ═══════════ -->
+    <div class="db-view" id="view-calendario">
+      <div class="db-sh">
+        <div><h2>Calendario académico</h2><p>Cronograma de <span data-sec-label>Sección A — Teoría</span></p></div>
+        <button class="db-btn db-btn--primary" data-open="modal-nuevo-evento">
+          <i class="fa-solid fa-plus"></i> Añadir evento
+        </button>
+      </div>
+      <div class="db-card">
+        <div class="db-cal-full__head">
+          <div class="db-cal-full__month"></div>
+          <div style="display:flex;gap:.4rem">
+            <button class="db-btn db-btn--sm db-btn--outline" data-cal-prev><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="db-btn db-btn--sm db-btn--outline" data-cal-next><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+        <div class="db-cal-full__grid" data-full-cal>
+          <div class="db-cal-full__dow">Dom</div>
+          <div class="db-cal-full__dow">Lun</div>
+          <div class="db-cal-full__dow">Mar</div>
+          <div class="db-cal-full__dow">Mié</div>
+          <div class="db-cal-full__dow">Jue</div>
+          <div class="db-cal-full__dow">Vie</div>
+          <div class="db-cal-full__dow">Sáb</div>
+        </div>
+        <div class="db-cal-legend">
+          <div class="db-cal-legend__item"><div class="db-cal-legend__dot" style="background:var(--danger)"></div>Examen</div>
+          <div class="db-cal-legend__item"><div class="db-cal-legend__dot" style="background:var(--warning)"></div>Entrega</div>
+          <div class="db-cal-legend__item"><div class="db-cal-legend__dot" style="background:var(--info)"></div>Exposición</div>
+          <div class="db-cal-legend__item"><div class="db-cal-legend__dot" style="background:var(--success)"></div>Clase/Práctica</div>
+        </div>
+      </div>
+    </div><!-- /view-calendario -->
+
+    <!-- ═══════════ VIEW: ESTUDIANTES ═══════════ -->
+    <div class="db-view" id="view-estudiantes">
+      <div class="db-sh">
+        <div><h2>Estudiantes</h2><p>Seguimiento de <span data-sec-label>Sección A — Teoría</span></p></div>
+      </div>
+
+      <div class="db-sec-content" data-sec="A">
+      <div class="db-stats" style="grid-template-columns:repeat(4,1fr);margin-bottom:1.4rem">
+        <div class="db-stat">
+          <div class="db-stat__head"><div class="db-stat__ico db-stat__ico--blue"><i class="fa-solid fa-users"></i></div></div>
+          <div class="db-stat__val" data-count="24">24</div>
+          <div class="db-stat__lbl">Inscritos</div>
+        </div>
+        <div class="db-stat">
+          <div class="db-stat__head"><div class="db-stat__ico db-stat__ico--green"><i class="fa-solid fa-circle-check"></i></div></div>
+          <div class="db-stat__val" data-count="20">20</div>
+          <div class="db-stat__lbl">Aprobados</div>
+          <div class="db-stat__hint">Promedio ≥ 51</div>
+        </div>
+        <div class="db-stat">
+          <div class="db-stat__head"><div class="db-stat__ico db-stat__ico--orange"><i class="fa-solid fa-circle-exclamation"></i></div><span class="db-stat__trend db-stat__trend--warn">Atención</span></div>
+          <div class="db-stat__val" data-count="4">4</div>
+          <div class="db-stat__lbl">En riesgo</div>
+          <div class="db-stat__hint">Promedio &lt; 51</div>
+        </div>
+        <div class="db-stat">
+          <div class="db-stat__head"><div class="db-stat__ico db-stat__ico--gold"><i class="fa-solid fa-star"></i></div></div>
+          <div class="db-stat__val" data-count="79">79</div>
+          <div class="db-stat__lbl">Promedio grupo</div>
+          <div class="db-prog" style="margin-top:.5rem"><div class="db-prog__fill" data-w="79"></div></div>
+        </div>
+      </div>
+
+      <div class="db-card">
+        <div class="db-tbl-wrap">
+          <table class="db-tbl">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Estudiante</th>
+                <th>Entregas</th>
+                <th>Promedio</th>
+                <th>Asistencia</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="color:var(--t3);font-family:var(--f-mono)">01</td>
+                <td style="font-weight:600">Ana Torres Flores</td>
+                <td style="font-family:var(--f-mono)">4/5</td>
+                <td><div class="db-grade db-grade--hi">88</div></td>
+                <td>
+                  <div style="display:flex;align-items:center;gap:.5rem">
+                    <div class="db-prog" style="width:70px"><div class="db-prog__fill db-prog__fill--green" data-w="95"></div></div>
+                    <span style="font-size:.72rem;font-family:var(--f-mono);color:var(--t2)">95%</span>
+                  </div>
+                </td>
+                <td><span class="db-badge db-badge--done">Aprobado</span></td>
+              </tr>
+              <tr>
+                <td style="color:var(--t3);font-family:var(--f-mono)">02</td>
+                <td style="font-weight:600">Carlos Reinaga</td>
+                <td style="font-family:var(--f-mono)">4/5</td>
+                <td><div class="db-grade db-grade--hi">82</div></td>
+                <td>
+                  <div style="display:flex;align-items:center;gap:.5rem">
+                    <div class="db-prog" style="width:70px"><div class="db-prog__fill db-prog__fill--green" data-w="88"></div></div>
+                    <span style="font-size:.72rem;font-family:var(--f-mono);color:var(--t2)">88%</span>
+                  </div>
+                </td>
+                <td><span class="db-badge db-badge--done">Aprobado</span></td>
+              </tr>
+              <tr>
+                <td style="color:var(--t3);font-family:var(--f-mono)">03</td>
+                <td style="font-weight:600">María Gutierrez</td>
+                <td style="font-family:var(--f-mono)">4/5</td>
+                <td><div class="db-grade db-grade--hi">85</div></td>
+                <td>
+                  <div style="display:flex;align-items:center;gap:.5rem">
+                    <div class="db-prog" style="width:70px"><div class="db-prog__fill db-prog__fill--green" data-w="90"></div></div>
+                    <span style="font-size:.72rem;font-family:var(--f-mono);color:var(--t2)">90%</span>
+                  </div>
+                </td>
+                <td><span class="db-badge db-badge--done">Aprobado</span></td>
+              </tr>
+              <tr>
+                <td style="color:var(--t3);font-family:var(--f-mono)">04</td>
+                <td style="font-weight:600">Luis Mamani</td>
+                <td style="font-family:var(--f-mono)">3/5</td>
+                <td><div class="db-grade db-grade--mid">67</div></td>
+                <td>
+                  <div style="display:flex;align-items:center;gap:.5rem">
+                    <div class="db-prog" style="width:70px"><div class="db-prog__fill" data-w="72"></div></div>
+                    <span style="font-size:.72rem;font-family:var(--f-mono);color:var(--t2)">72%</span>
+                  </div>
+                </td>
+                <td><span class="db-badge db-badge--done">Aprobado</span></td>
+              </tr>
+              <tr>
+                <td style="color:var(--t3);font-family:var(--f-mono)">05</td>
+                <td style="font-weight:600">Roberto Quispe</td>
+                <td style="font-family:var(--f-mono)">2/5</td>
+                <td><div class="db-grade db-grade--lo">44</div></td>
+                <td>
+                  <div style="display:flex;align-items:center;gap:.5rem">
+                    <div class="db-prog" style="width:70px"><div class="db-prog__fill" data-w="55" style="background:var(--danger)"></div></div>
+                    <span style="font-size:.72rem;font-family:var(--f-mono);color:var(--danger)">55%</span>
+                  </div>
+                </td>
+                <td><span class="db-badge db-badge--overdue"><i class="fa-solid fa-triangle-exclamation"></i> En riesgo</span></td>
+              </tr>
+              <tr>
+                <td style="color:var(--t3);font-family:var(--f-mono)">06</td>
+                <td style="font-weight:600">Sofía Vargas</td>
+                <td style="font-family:var(--f-mono)">5/5</td>
+                <td><div class="db-grade db-grade--hi">91</div></td>
+                <td>
+                  <div style="display:flex;align-items:center;gap:.5rem">
+                    <div class="db-prog" style="width:70px"><div class="db-prog__fill db-prog__fill--green" data-w="100"></div></div>
+                    <span style="font-size:.72rem;font-family:var(--f-mono);color:var(--t2)">100%</span>
+                  </div>
+                </td>
+                <td><span class="db-badge db-badge--done">Aprobado</span></td>
+              </tr>
+              <tr>
+                <td style="color:var(--t3);font-family:var(--f-mono)">…</td>
+                <td colspan="5" style="color:var(--t3);font-size:.8rem;font-family:var(--f-mono)">+18 estudiantes más</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </div><!-- /data-sec A -->
+
+      <!-- ══ Sección B ══ -->
+      <div class="db-sec-content" data-sec="B" style="display:none">
+        <div class="db-stats" style="grid-template-columns:repeat(4,1fr);margin-bottom:1.4rem">
+          <div class="db-stat"><div class="db-stat__head"><div class="db-stat__ico db-stat__ico--blue"><i class="fa-solid fa-users"></i></div></div><div class="db-stat__val" data-count="5">5</div><div class="db-stat__lbl">Inscritos JTP</div></div>
+          <div class="db-stat"><div class="db-stat__head"><div class="db-stat__ico db-stat__ico--green"><i class="fa-solid fa-circle-check"></i></div></div><div class="db-stat__val" data-count="4">4</div><div class="db-stat__lbl">Aprobados</div><div class="db-stat__hint">Promedio ≥ 51</div></div>
+          <div class="db-stat"><div class="db-stat__head"><div class="db-stat__ico db-stat__ico--orange"><i class="fa-solid fa-circle-exclamation"></i></div><span class="db-stat__trend db-stat__trend--warn">Atención</span></div><div class="db-stat__val" data-count="1">1</div><div class="db-stat__lbl">En riesgo</div><div class="db-stat__hint">Promedio &lt; 51</div></div>
+          <div class="db-stat"><div class="db-stat__head"><div class="db-stat__ico db-stat__ico--gold"><i class="fa-solid fa-star"></i></div></div><div class="db-stat__val" data-count="75">75</div><div class="db-stat__lbl">Promedio JTP</div><div class="db-prog" style="margin-top:.5rem"><div class="db-prog__fill" data-w="75"></div></div></div>
+        </div>
+        <div class="db-card">
+          <div class="db-tbl-wrap">
+            <table class="db-tbl">
+              <thead><tr><th>#</th><th>Estudiante</th><th>Prácticas</th><th>Promedio</th><th>Asistencia</th><th>Estado</th></tr></thead>
+              <tbody>
+                <tr><td style="color:var(--t3);font-family:var(--f-mono)">01</td><td style="font-weight:600">Carlos Reinaga</td><td style="font-family:var(--f-mono)">3/4</td><td><div class="db-grade db-grade--hi">80</div></td><td><div style="display:flex;align-items:center;gap:.5rem"><div class="db-prog" style="width:70px"><div class="db-prog__fill db-prog__fill--green" data-w="88"></div></div><span style="font-size:.72rem;font-family:var(--f-mono);color:var(--t2)">88%</span></div></td><td><span class="db-badge db-badge--done">Aprobado</span></td></tr>
+                <tr><td style="color:var(--t3);font-family:var(--f-mono)">02</td><td style="font-weight:600">Juan Carlos Flores</td><td style="font-family:var(--f-mono)">4/4</td><td><div class="db-grade db-grade--hi">78</div></td><td><div style="display:flex;align-items:center;gap:.5rem"><div class="db-prog" style="width:70px"><div class="db-prog__fill db-prog__fill--green" data-w="100"></div></div><span style="font-size:.72rem;font-family:var(--f-mono);color:var(--t2)">100%</span></div></td><td><span class="db-badge db-badge--done">Aprobado</span></td></tr>
+                <tr><td style="color:var(--t3);font-family:var(--f-mono)">03</td><td style="font-weight:600">Ana Condori Mamani</td><td style="font-family:var(--f-mono)">2/4</td><td><div class="db-grade db-grade--lo">48</div></td><td><div style="display:flex;align-items:center;gap:.5rem"><div class="db-prog" style="width:70px"><div class="db-prog__fill" data-w="60" style="background:var(--danger)"></div></div><span style="font-size:.72rem;font-family:var(--f-mono);color:var(--danger)">60%</span></div></td><td><span class="db-badge db-badge--overdue"><i class="fa-solid fa-triangle-exclamation"></i> En riesgo</span></td></tr>
+                <tr><td style="color:var(--t3);font-family:var(--f-mono)">04</td><td style="font-weight:600">Lucía Vargas Copa</td><td style="font-family:var(--f-mono)">4/4</td><td><div class="db-grade db-grade--hi">88</div></td><td><div style="display:flex;align-items:center;gap:.5rem"><div class="db-prog" style="width:70px"><div class="db-prog__fill db-prog__fill--green" data-w="100"></div></div><span style="font-size:.72rem;font-family:var(--f-mono);color:var(--t2)">100%</span></div></td><td><span class="db-badge db-badge--done">Aprobado</span></td></tr>
+                <tr><td style="color:var(--t3);font-family:var(--f-mono)">05</td><td style="font-weight:600">Sofía Limachi Paco</td><td style="font-family:var(--f-mono)">3/4</td><td><div class="db-grade db-grade--hi">76</div></td><td><div style="display:flex;align-items:center;gap:.5rem"><div class="db-prog" style="width:70px"><div class="db-prog__fill" data-w="80"></div></div><span style="font-size:.72rem;font-family:var(--f-mono);color:var(--t2)">80%</span></div></td><td><span class="db-badge db-badge--done">Aprobado</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div><!-- /data-sec B -->
+    </div><!-- /view-estudiantes -->
+
+    <!-- ═══════════ VIEW: CALIFICACIONES ═══════════ -->
+    <div class="db-view" id="view-calificaciones">
+      <div class="db-sh">
+        <div><h2>Calificaciones</h2><p>Notas de <span data-sec-label>Sección A — Teoría</span></p></div>
+        <button class="db-btn db-btn--primary" data-open="modal-calificar">
+          <i class="fa-solid fa-star"></i> Registrar notas
+        </button>
+      </div>
+
+      <div class="db-sec-content" data-sec="A">
+      <div class="db-stats" style="grid-template-columns:repeat(3,1fr);margin-bottom:1.4rem">
+        <div class="db-stat">
+          <div class="db-stat__head"><div class="db-stat__ico db-stat__ico--blue"><i class="fa-solid fa-calculator"></i></div><span class="db-stat__trend db-stat__trend--up">Aprobatorio</span></div>
+          <div class="db-stat__val" data-count="79">79</div>
+          <div class="db-stat__lbl">Promedio del grupo</div>
+          <div class="db-prog" style="margin-top:.5rem"><div class="db-prog__fill db-prog__fill--blue" data-w="79"></div></div>
+        </div>
+        <div class="db-stat">
+          <div class="db-stat__head"><div class="db-stat__ico db-stat__ico--green"><i class="fa-solid fa-trophy"></i></div></div>
+          <div class="db-stat__val" data-count="91">91</div>
+          <div class="db-stat__lbl">Nota más alta</div>
+          <div class="db-stat__hint">Sofía Vargas</div>
+        </div>
+        <div class="db-stat">
+          <div class="db-stat__head"><div class="db-stat__ico db-stat__ico--orange"><i class="fa-solid fa-star-half-stroke"></i></div></div>
+          <div class="db-stat__val" data-count="5">5</div>
+          <div class="db-stat__lbl">Actividades evaluadas</div>
+          <div class="db-stat__hint">De 8 planificadas</div>
+        </div>
+      </div>
+
+      <div class="db-card">
+        <div class="db-tbl-wrap">
+          <table class="db-tbl">
+            <thead>
+              <tr>
+                <th>Actividad</th>
+                <th>Tipo</th>
+                <th>Cierre</th>
+                <th>Entregas</th>
+                <th>Promedio</th>
+                <th>Estado</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight:600">Cuestionario Introductorio</td>
+                <td>Cuestionario</td>
+                <td style="font-family:var(--f-mono);font-size:.78rem">08 mar</td>
+                <td style="font-family:var(--f-mono)">24/24</td>
+                <td><div class="db-grade db-grade--hi">84</div></td>
+                <td><span class="db-badge db-badge--graded"><i class="fa-solid fa-check"></i> Completa</span></td>
+                <td><button class="db-btn db-btn--sm db-btn--ghost" data-open="modal-calificar">Ver</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight:600">Resumen Clasificación</td>
+                <td>Informe</td>
+                <td style="font-family:var(--f-mono);font-size:.78rem">15 mar</td>
+                <td style="font-family:var(--f-mono)">23/24</td>
+                <td><div class="db-grade db-grade--mid">76</div></td>
+                <td><span class="db-badge db-badge--graded"><i class="fa-solid fa-check"></i> Completa</span></td>
+                <td><button class="db-btn db-btn--sm db-btn--ghost" data-open="modal-calificar">Ver</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight:600">Práctica de Topografía</td>
+                <td>Práctica</td>
+                <td style="font-family:var(--f-mono);font-size:.78rem">05 abr</td>
+                <td style="font-family:var(--f-mono)">21/24</td>
+                <td><div class="db-grade db-grade--none">—</div></td>
+                <td><span class="db-badge db-badge--pending"><i class="fa-solid fa-hourglass"></i> Pendiente</span></td>
+                <td><button class="db-btn db-btn--sm db-btn--primary" data-open="modal-calificar">Calificar</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight:600">Análisis de Excavadoras</td>
+                <td>Trabajo</td>
+                <td style="font-family:var(--f-mono);font-size:.78rem">10 abr</td>
+                <td style="font-family:var(--f-mono)">24/24</td>
+                <td><div class="db-grade db-grade--hi">79</div></td>
+                <td><span class="db-badge db-badge--graded"><i class="fa-solid fa-check"></i> Completa</span></td>
+                <td><button class="db-btn db-btn--sm db-btn--ghost" data-open="modal-calificar">Ver</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight:600">Informe de Campo — Compactación</td>
+                <td>Informe</td>
+                <td style="font-family:var(--f-mono);font-size:.78rem">15 abr</td>
+                <td style="font-family:var(--f-mono)">16/24</td>
+                <td><div class="db-grade db-grade--none">—</div></td>
+                <td><span class="db-badge db-badge--pending"><i class="fa-solid fa-hourglass"></i> En curso</span></td>
+                <td><button class="db-btn db-btn--sm db-btn--primary" data-open="modal-calificar">Calificar</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </div><!-- /data-sec A -->
+
+      <!-- ══ Sección B ══ -->
+      <div class="db-sec-content" data-sec="B" style="display:none">
+        <div class="db-stats" style="grid-template-columns:repeat(3,1fr);margin-bottom:1.4rem">
+          <div class="db-stat"><div class="db-stat__head"><div class="db-stat__ico db-stat__ico--blue"><i class="fa-solid fa-calculator"></i></div><span class="db-stat__trend db-stat__trend--up">Aprobatorio</span></div><div class="db-stat__val" data-count="75">75</div><div class="db-stat__lbl">Promedio JTP</div><div class="db-prog" style="margin-top:.5rem"><div class="db-prog__fill db-prog__fill--blue" data-w="75"></div></div></div>
+          <div class="db-stat"><div class="db-stat__head"><div class="db-stat__ico db-stat__ico--green"><i class="fa-solid fa-trophy"></i></div></div><div class="db-stat__val" data-count="88">88</div><div class="db-stat__lbl">Nota más alta</div><div class="db-stat__hint">Lucía Vargas</div></div>
+          <div class="db-stat"><div class="db-stat__head"><div class="db-stat__ico db-stat__ico--orange"><i class="fa-solid fa-flask"></i></div></div><div class="db-stat__val" data-count="4">4</div><div class="db-stat__lbl">Prácticas evaluadas</div><div class="db-stat__hint">De 6 planificadas</div></div>
+        </div>
+        <div class="db-card">
+          <div class="db-tbl-wrap">
+            <table class="db-tbl">
+              <thead><tr><th>Práctica / Actividad</th><th>Tipo</th><th>Cierre</th><th>Entregas</th><th>Promedio</th><th>Estado</th><th>Acción</th></tr></thead>
+              <tbody>
+                <tr><td style="font-weight:600">Formulario de Campo P1</td><td>Práctica</td><td style="font-family:var(--f-mono);font-size:.78rem">10 mar</td><td style="font-family:var(--f-mono)">5/5</td><td><div class="db-grade db-grade--hi">82</div></td><td><span class="db-badge db-badge--graded"><i class="fa-solid fa-check"></i> Completa</span></td><td><button class="db-btn db-btn--sm db-btn--ghost" data-open="modal-calificar">Ver</button></td></tr>
+                <tr><td style="font-weight:600">Formulario de Campo P2</td><td>Práctica</td><td style="font-family:var(--f-mono);font-size:.78rem">20 mar</td><td style="font-family:var(--f-mono)">5/5</td><td><div class="db-grade db-grade--mid">71</div></td><td><span class="db-badge db-badge--graded"><i class="fa-solid fa-check"></i> Completa</span></td><td><button class="db-btn db-btn--sm db-btn--ghost" data-open="modal-calificar">Ver</button></td></tr>
+                <tr><td style="font-weight:600">Análisis de Equipos — P3</td><td>Informe</td><td style="font-family:var(--f-mono);font-size:.78rem">10 abr</td><td style="font-family:var(--f-mono)">5/5</td><td><div class="db-grade db-grade--hi">75</div></td><td><span class="db-badge db-badge--graded"><i class="fa-solid fa-check"></i> Completa</span></td><td><button class="db-btn db-btn--sm db-btn--ghost" data-open="modal-calificar">Ver</button></td></tr>
+                <tr><td style="font-weight:600">Memoria de Práctica 4</td><td>Informe</td><td style="font-family:var(--f-mono);font-size:.78rem">18 abr</td><td style="font-family:var(--f-mono)">1/5</td><td><div class="db-grade db-grade--none">—</div></td><td><span class="db-badge db-badge--pending"><i class="fa-solid fa-hourglass"></i> En curso</span></td><td><button class="db-btn db-btn--sm db-btn--primary" data-open="modal-calificar">Calificar</button></td></tr>
+                <tr><td style="font-weight:600">Informe Técnico JTP — P3</td><td>Informe</td><td style="font-family:var(--f-mono);font-size:.78rem">30 abr</td><td style="font-family:var(--f-mono)">2/5</td><td><div class="db-grade db-grade--none">—</div></td><td><span class="db-badge db-badge--pending"><i class="fa-solid fa-hourglass"></i> En curso</span></td><td><button class="db-btn db-btn--sm db-btn--primary" data-open="modal-calificar">Calificar</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div><!-- /data-sec B -->
+    </div><!-- /view-calificaciones -->
+
+    <!-- ═══════════ VIEW: ASISTENCIA (DOCENTE) ═══════════ -->
+    <div class="db-view" id="view-asistencia">
+    <div id="att-teacher-module">
+
+      <!-- Selector de sección -->
+      <div class="att-sec-hero">
+        <div class="att-sec-hero__label">Vista de sección:</div>
+        <div class="att-sec-hero__btns">
+          <button class="att-sec-btn is-active" data-att-sec="A" id="att-sec-A">
+            <div class="att-sec-btn__dot"></div>
+            <div class="att-sec-btn__info">
+              <strong>Sección A</strong>
+              <span>Teoría</span>
+            </div>
+            <span class="att-sec-btn__tag att-sec-btn__tag--a">A</span>
+          </button>
+          <button class="att-sec-btn" data-att-sec="B" id="att-sec-B">
+            <div class="att-sec-btn__dot att-sec-btn__dot--b"></div>
+            <div class="att-sec-btn__info">
+              <strong>Sección B</strong>
+              <span>JTP / Práctica</span>
+            </div>
+            <span class="att-sec-btn__tag att-sec-btn__tag--b">B</span>
+          </button>
+        </div>
+        <div class="att-sec-hero__actions">
+          <button class="db-btn db-btn--primary" data-att-open-session>
+            <i class="fa-solid fa-play"></i> Abrir asistencia
+          </button>
+        </div>
+      </div>
+
+      <!-- Section header -->
+      <div class="db-sh" style="margin-top:.2rem">
+        <div>
+          <h2 id="att-view-title">Control de Asistencia — Sección A</h2>
+          <p id="att-view-sub">Teoría · CIV 247 · Semestre I 2026</p>
+        </div>
+      </div>
+
+      <!-- Stats usando el sistema db-stat estándar -->
+      <div class="db-stats">
+        <div class="db-stat">
+          <div class="db-stat__head">
+            <div class="db-stat__ico db-stat__ico--blue"><i class="fa-solid fa-calendar-check"></i></div>
+            <span class="db-stat__trend" id="att-stat-open-lbl"></span>
+          </div>
+          <div class="db-stat__val" id="att-stat-total">—</div>
+          <div class="db-stat__lbl">Sesiones registradas</div>
+          <div class="db-stat__hint">Esta sección</div>
+        </div>
+        <div class="db-stat">
+          <div class="db-stat__head">
+            <div class="db-stat__ico db-stat__ico--green"><i class="fa-solid fa-check-double"></i></div>
+          </div>
+          <div class="db-stat__val" id="att-stat-validated">—</div>
+          <div class="db-stat__lbl">Sesiones validadas</div>
+          <div class="db-stat__hint" id="att-stat-pending-hint">— por revisar</div>
+        </div>
+        <div class="db-stat">
+          <div class="db-stat__head">
+            <div class="db-stat__ico db-stat__ico--gold"><i class="fa-solid fa-file-lines"></i></div>
+            <span class="db-stat__trend db-stat__trend--warn" id="att-stat-just-trend" style="display:none">Revisar</span>
+          </div>
+          <div class="db-stat__val" id="att-stat-just-pending">—</div>
+          <div class="db-stat__lbl">Justificaciones pendientes</div>
+          <div class="db-stat__hint">Esperando revisión</div>
+        </div>
+        <div class="db-stat">
+          <div class="db-stat__head">
+            <div class="db-stat__ico db-stat__ico--red"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          </div>
+          <div class="db-stat__val" id="att-stat-risk">—</div>
+          <div class="db-stat__lbl">Estudiantes en riesgo</div>
+          <div class="db-stat__hint" id="att-stat-risk-hint">≥ umbral de riesgo</div>
+        </div>
+      </div>
+
+      <!-- Sesión activa (si existe aparece aquí) -->
+      <div id="att-active-sessions"></div>
+
+      <!-- Filtros / tabs -->
+      <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:1.1rem;flex-wrap:wrap">
+        <button class="db-filter is-active" data-attview="history"><i class="fa-solid fa-clock-rotate-left"></i> Historial de sesiones</button>
+        <button class="db-filter" data-attview="students"><i class="fa-solid fa-users"></i> Estudiantes</button>
+        <button class="db-filter" data-attview="policy"><i class="fa-solid fa-sliders"></i> Reglas</button>
+      </div>
+
+      <!-- Panel: historial -->
+      <div id="att-panel-history">
+        <div id="att-history-list"></div>
+      </div>
+
+      <!-- Panel: estudiantes -->
+      <div id="att-panel-students" style="display:none">
+        <div id="att-risk-list"></div>
+      </div>
+
+      <!-- Panel: reglas configurables -->
+      <div id="att-panel-policy" style="display:none">
+        <div class="db-card">
+          <div class="db-card__head">
+            <div class="db-card__title">
+              <i class="fa-solid fa-sliders"></i> Reglas de asistencia — <span id="att-policy-sec-lbl">Sección A — Teoría</span>
+            </div>
+          </div>
+          <form id="form-att-policy">
+            <div class="att-policy-grid">
+              <div class="form-group">
+                <label class="form-label">Máximo de faltas permitidas</label>
+                <input type="number" class="form-control" id="pol-max_absences" min="1" max="20">
+                <div class="att-policy-hint"><i class="fa-solid fa-circle-info"></i> Al llegar a este límite el estudiante pierde la materia.</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Máximo de justificaciones aceptadas</label>
+                <input type="number" class="form-control" id="pol-max_justifications" min="0" max="10">
+                <div class="att-policy-hint"><i class="fa-solid fa-circle-info"></i> Justificaciones que pueden aceptarse por estudiante.</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Faltas para advertencia</label>
+                <input type="number" class="form-control" id="pol-warning_threshold" min="1" max="10">
+                <div class="att-policy-hint"><i class="fa-solid fa-circle-info"></i> El estudiante recibe alerta al alcanzar esta cantidad.</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Faltas para riesgo académico</label>
+                <input type="number" class="form-control" id="pol-risk_threshold" min="1" max="20">
+                <div class="att-policy-hint"><i class="fa-solid fa-circle-info"></i> Aparece como "en riesgo" en los reportes.</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Faltas para pérdida de materia</label>
+                <input type="number" class="form-control" id="pol-fail_threshold" min="1" max="20">
+                <div class="att-policy-hint"><i class="fa-solid fa-circle-info"></i> Mismo valor que máximo de faltas permitidas.</div>
+              </div>
+            </div>
+            <button type="submit" class="db-btn db-btn--primary">
+              <i class="fa-solid fa-floppy-disk"></i> Guardar reglas de esta sección
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div><!-- /#att-teacher-module -->
+    </div><!-- /view-asistencia -->
+
+  </main>
+</div><!-- /db-main -->
+</div><!-- /db-layout -->
+
+<!-- Mobile sidebar overlay -->
+<div class="db-sb-overlay"></div>
+
+<!-- Bottom nav (mobile) -->
+<nav class="db-bnav">
+  <div class="db-bnav__item is-active" data-view="inicio">
+    <i class="fa-solid fa-house"></i><span>Inicio</span>
+  </div>
+  <div class="db-bnav__item" data-view="tareas">
+    <i class="fa-solid fa-list-check"></i><span>Entregas</span>
+    <span class="db-bnav__badge"></span>
+  </div>
+  <div class="db-bnav__item" data-view="anuncios">
+    <i class="fa-solid fa-bullhorn"></i><span>Anuncios</span>
+  </div>
+  <div class="db-bnav__item" data-view="estudiantes">
+    <i class="fa-solid fa-users"></i><span>Alumnos</span>
+  </div>
+  <div class="db-bnav__item" data-view="calificaciones">
+    <i class="fa-solid fa-star"></i><span>Notas</span>
+  </div>
+  <div class="db-bnav__item" data-view="asistencia">
+    <i class="fa-solid fa-clipboard-user"></i><span>Asistencia</span>
+  </div>
+</nav>
+
+<!-- ══════════════ MODAL: NUEVO ANUNCIO ══════════════ -->
+<div class="db-overlay" id="modal-nuevo-anuncio">
+  <div class="db-modal">
+    <div class="db-modal__head">
+      <div class="db-modal__title"><i class="fa-solid fa-bullhorn" style="color:var(--gold)"></i> Nuevo anuncio</div>
+      <button class="db-modal__close" data-close><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <form class="db-modal__body" data-dash-form data-msg="Anuncio publicado correctamente">
+      <div class="db-form-group">
+        <label class="db-form-label">Título del anuncio</label>
+        <input type="text" class="db-form-input" placeholder="Ej. Recordatorio Examen Parcial II">
+      </div>
+      <div class="db-form-group">
+        <label class="db-form-label">Tipo</label>
+        <select class="db-form-select">
+          <option>General</option>
+          <option>Urgente</option>
+          <option>Recursos</option>
+          <option>Calificaciones</option>
+          <option>Actividad</option>
+        </select>
+      </div>
+      <div class="db-form-group">
+        <label class="db-form-label">Contenido</label>
+        <textarea class="db-form-textarea" style="min-height:110px" placeholder="Redacta el comunicado para el grupo…"></textarea>
+      </div>
+      <div class="db-modal__foot" style="padding:0;border:none">
+        <button type="button" class="db-btn db-btn--outline" data-close>Cancelar</button>
+        <button type="submit" class="db-btn db-btn--primary"><i class="fa-solid fa-paper-plane"></i> Publicar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ══════════════ MODAL: NUEVA TAREA ══════════════ -->
+<div class="db-overlay" id="modal-nueva-tarea">
+  <div class="db-modal">
+    <div class="db-modal__head">
+      <div class="db-modal__title"><i class="fa-solid fa-file-circle-plus" style="color:var(--orange)"></i> Nueva tarea</div>
+      <button class="db-modal__close" data-close><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <form class="db-modal__body" data-dash-form data-msg="Tarea creada y publicada al grupo">
+      <div class="db-form-group">
+        <label class="db-form-label">Título</label>
+        <input type="text" class="db-form-input" placeholder="Ej. Análisis de Ciclos de Trabajo">
+      </div>
+      <div class="db-form-row">
+        <div class="db-form-group">
+          <label class="db-form-label">Unidad</label>
+          <select class="db-form-select">
+            <option>Unidad 1 — Fundamentos</option>
+            <option>Unidad 2 — Movimiento de Tierras</option>
+            <option selected>Unidad 3 — Ciclos de Trabajo</option>
+            <option>Unidad 4 — Compactación</option>
+            <option>Unidad 5 — Proyecto Final</option>
+          </select>
+        </div>
+        <div class="db-form-group">
+          <label class="db-form-label">Tipo</label>
+          <select class="db-form-select">
+            <option>Informe</option>
+            <option>Práctica</option>
+            <option>Cuestionario</option>
+            <option>Exposición</option>
+            <option>Proyecto</option>
+          </select>
+        </div>
+      </div>
+      <div class="db-form-row">
+        <div class="db-form-group">
+          <label class="db-form-label">Fecha límite</label>
+          <input type="date" class="db-form-input">
+        </div>
+        <div class="db-form-group">
+          <label class="db-form-label">Puntaje máximo</label>
+          <input type="number" class="db-form-input" placeholder="100" value="100">
+        </div>
+      </div>
+      <div class="db-form-group">
+        <label class="db-form-label">Descripción</label>
+        <textarea class="db-form-textarea" placeholder="Instrucciones detalladas para los estudiantes…"></textarea>
+      </div>
+      <div class="db-form-group">
+        <label class="db-form-label">Archivo adjunto (opcional)</label>
+        <div class="db-upload">
+          <i class="fa-solid fa-paperclip"></i>
+          <p>Adjuntar rúbrica, plantilla u otro archivo</p>
+          <span>PDF, Word, Excel · máx. 25 MB</span>
+        </div>
+      </div>
+      <div class="db-modal__foot" style="padding:0;border:none">
+        <button type="button" class="db-btn db-btn--outline" data-close>Cancelar</button>
+        <button type="submit" class="db-btn db-btn--primary"><i class="fa-solid fa-paper-plane"></i> Publicar tarea</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ══════════════ MODAL: SUBIR RECURSO ══════════════ -->
+<div class="db-overlay" id="modal-subir-recurso">
+  <div class="db-modal">
+    <div class="db-modal__head">
+      <div class="db-modal__title"><i class="fa-solid fa-cloud-arrow-up" style="color:var(--info)"></i> Subir material</div>
+      <button class="db-modal__close" data-close><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <form class="db-modal__body" data-dash-form data-msg="Material guardado correctamente">
+      <div class="db-form-row">
+        <div class="db-form-group">
+          <label class="db-form-label">Tipo de material</label>
+          <select class="db-form-select">
+            <option>Presentación (PDF/PPT)</option>
+            <option>Video grabado</option>
+            <option>Documento/Informe</option>
+            <option>Hoja de cálculo</option>
+            <option>Enlace externo</option>
+            <option>Normativa/Reglamento</option>
+          </select>
+        </div>
+        <div class="db-form-group">
+          <label class="db-form-label">Unidad</label>
+          <select class="db-form-select">
+            <option>Unidad 1</option>
+            <option>Unidad 2</option>
+            <option selected>Unidad 3</option>
+            <option>Unidad 4</option>
+            <option>Unidad 5</option>
+          </select>
+        </div>
+      </div>
+      <div class="db-form-group">
+        <label class="db-form-label">Título del recurso</label>
+        <input type="text" class="db-form-input" placeholder="Ej. Presentación Ciclos de Trabajo — Clase 21 abr">
+      </div>
+      <div class="db-form-group">
+        <label class="db-form-label">Descripción breve (opcional)</label>
+        <textarea class="db-form-textarea" placeholder="Qué cubre este material, para qué sirve…"></textarea>
+      </div>
+
+      <!-- Visible para (secciones) -->
+      <div class="db-form-group">
+        <label class="db-form-label">Visible para</label>
+        <div style="display:flex;gap:.65rem;flex-wrap:wrap;margin-top:.2rem">
+          <label style="display:flex;align-items:center;gap:.4rem;font-size:.83rem;cursor:pointer;padding:.4rem .7rem;border-radius:var(--r-sm);border:1.5px solid var(--card-border);background:var(--main-bg);transition:all .17s" class="sec-vis-label">
+            <input type="checkbox" checked style="accent-color:var(--gold)"> <span>Sección A — Teoría</span>
+          </label>
+          <label style="display:flex;align-items:center;gap:.4rem;font-size:.83rem;cursor:pointer;padding:.4rem .7rem;border-radius:var(--r-sm);border:1.5px solid var(--card-border);background:var(--main-bg);transition:all .17s" class="sec-vis-label">
+            <input type="checkbox" checked style="accent-color:var(--orange)"> <span>Sección B — JTP</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Cuándo publicar -->
+      <div class="db-form-group">
+        <label class="db-form-label">¿Cuándo publicar?</label>
+        <div class="db-pub-toggle" data-pub-toggle>
+          <button type="button" class="db-pub-btn is-active" data-pub="now">
+            <i class="fa-solid fa-bolt"></i> Publicar ahora
+          </button>
+          <button type="button" class="db-pub-btn" data-pub="scheduled">
+            <i class="fa-solid fa-clock"></i> Programar fecha
+          </button>
+        </div>
+      </div>
+
+      <!-- Campos de programación (se muestran solo si "Programar") -->
+      <div class="db-form-group db-scheduled-fields" id="scheduled-fields" style="display:none">
+        <label class="db-form-label">Fecha y hora de publicación automática</label>
+        <div class="db-form-row">
+          <input type="date" class="db-form-input" id="pub-date">
+          <input type="time" class="db-form-input" id="pub-time" value="08:00">
+        </div>
+        <div style="font-size:.73rem;color:var(--t3);margin-top:.38rem;display:flex;align-items:center;gap:.35rem">
+          <i class="fa-solid fa-circle-info" style="color:var(--info)"></i>
+          Los estudiantes verán este material automáticamente en esa fecha. Tú lo verás siempre como "programado".
+        </div>
+      </div>
+
+      <div class="db-form-group">
+        <label class="db-form-label">Archivo</label>
+        <div class="db-upload">
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+          <p>Arrastra el archivo aquí o haz clic para seleccionar</p>
+          <span>PDF, PPT, MP4, Excel · máx. 500 MB</span>
+        </div>
+      </div>
+      <div class="db-modal__foot" style="padding:0;border:none">
+        <button type="button" class="db-btn db-btn--outline" data-close>Cancelar</button>
+        <button type="submit" class="db-btn db-btn--primary" id="pub-submit-btn">
+          <i class="fa-solid fa-bolt"></i> Publicar ahora
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ══════════════ MODAL: REVISAR ENTREGA ══════════════ -->
+<div class="db-overlay" id="modal-revisar">
+  <div class="db-modal" style="max-width:600px">
+    <div class="db-modal__head">
+      <div class="db-modal__title"><i class="fa-solid fa-magnifying-glass" style="color:var(--gold)"></i> Revisar entrega</div>
+      <button class="db-modal__close" data-close><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <form class="db-modal__body" data-dash-form data-msg="Entrega calificada y retroalimentación enviada">
+      <div style="display:flex;align-items:center;gap:1rem;padding:.9rem 1.1rem;background:var(--main-bg);border-radius:var(--r-sm);border:1px solid var(--card-border);margin-bottom:1.2rem">
+        <div style="width:38px;height:38px;background:linear-gradient(135deg,var(--gold),var(--orange));border-radius:10px;display:grid;place-items:center;font-size:.82rem;font-weight:700;color:#1a1200;flex-shrink:0">AT</div>
+        <div>
+          <div style="font-weight:700;font-size:.92rem;color:var(--t1)">Ana Torres Flores</div>
+          <div style="font-size:.72rem;color:var(--t3);font-family:var(--f-mono)">Informe de Campo – Compactación · Unidad 2 · Entregada hace 2 h</div>
+        </div>
+      </div>
+      <div class="db-submission">
+        <div class="db-submission__head"><i class="fa-solid fa-file-arrow-up"></i> Archivo entregado</div>
+        <div class="db-submission__body">
+          <strong>informe_campo_compactacion_torres.pdf</strong> — 3.4 MB<br>
+          <span style="font-size:.72rem;color:var(--t3)">Nota del estudiante: "Informe de la práctica del 15 de abril, incluye tablas de ensayo Proctor."</span>
+        </div>
+      </div>
+      <div class="db-form-row" style="margin-top:1.2rem">
+        <div class="db-form-group">
+          <label class="db-form-label">Nota (0 – 100)</label>
+          <input type="number" class="db-form-input" placeholder="Ej. 85" min="0" max="100">
+        </div>
+        <div class="db-form-group">
+          <label class="db-form-label">Estado</label>
+          <select class="db-form-select">
+            <option>Aprobado</option>
+            <option>Desaprobado</option>
+            <option>Entrega tardía</option>
+          </select>
+        </div>
+      </div>
+      <div class="db-form-group">
+        <label class="db-form-label">Observaciones para el estudiante</label>
+        <textarea class="db-form-textarea" style="min-height:100px" placeholder="Retroalimentación detallada — puntos fuertes, áreas de mejora…"></textarea>
+      </div>
+      <div class="db-modal__foot" style="padding:0;border:none">
+        <button type="button" class="db-btn db-btn--outline" data-close>Cancelar</button>
+        <button type="submit" class="db-btn db-btn--primary"><i class="fa-solid fa-check"></i> Calificar y enviar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ══════════════ MODAL: CALIFICAR (desde tabla) ══════════════ -->
+<div class="db-overlay" id="modal-calificar">
+  <div class="db-modal" style="max-width:580px">
+    <div class="db-modal__head">
+      <div class="db-modal__title"><i class="fa-solid fa-star" style="color:var(--gold)"></i> Registrar calificaciones</div>
+      <button class="db-modal__close" data-close><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <form class="db-modal__body" data-dash-form data-msg="Calificaciones registradas correctamente">
+      <div style="background:var(--main-bg);border-radius:var(--r-sm);padding:.9rem 1.1rem;margin-bottom:1.2rem;border:1px solid var(--card-border)">
+        <div style="font-size:.72rem;color:var(--t3);font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.2rem">Actividad seleccionada</div>
+        <div style="font-size:.92rem;font-weight:700;color:var(--t1)">Práctica de Topografía — Unidad 2</div>
+        <div style="font-size:.72rem;color:var(--t3);margin-top:.2rem">21 entregas recibidas · 3 sin entregar</div>
+      </div>
+      <div class="db-tbl-wrap" style="max-height:280px;overflow-y:auto">
+        <table class="db-tbl">
+          <thead>
+            <tr><th>Estudiante</th><th>Nota</th><th>Obs.</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-weight:600">Ana Torres</td>
+              <td><input type="number" class="db-form-input" style="width:70px;padding:.4rem .6rem" placeholder="—" min="0" max="100"></td>
+              <td><input type="text" class="db-form-input" style="font-size:.78rem;padding:.4rem .6rem" placeholder="Observación…"></td>
+            </tr>
+            <tr>
+              <td style="font-weight:600">Carlos Reinaga</td>
+              <td><input type="number" class="db-form-input" style="width:70px;padding:.4rem .6rem" placeholder="—" min="0" max="100"></td>
+              <td><input type="text" class="db-form-input" style="font-size:.78rem;padding:.4rem .6rem" placeholder="Observación…"></td>
+            </tr>
+            <tr>
+              <td style="font-weight:600">María Gutierrez</td>
+              <td><input type="number" class="db-form-input" style="width:70px;padding:.4rem .6rem" placeholder="—" min="0" max="100"></td>
+              <td><input type="text" class="db-form-input" style="font-size:.78rem;padding:.4rem .6rem" placeholder="Observación…"></td>
+            </tr>
+            <tr>
+              <td style="font-weight:600">Luis Mamani</td>
+              <td><input type="number" class="db-form-input" style="width:70px;padding:.4rem .6rem" placeholder="—" min="0" max="100"></td>
+              <td><input type="text" class="db-form-input" style="font-size:.78rem;padding:.4rem .6rem" placeholder="Observación…"></td>
+            </tr>
+            <tr>
+              <td style="font-weight:600">Sofía Vargas</td>
+              <td><input type="number" class="db-form-input" style="width:70px;padding:.4rem .6rem" placeholder="—" min="0" max="100"></td>
+              <td><input type="text" class="db-form-input" style="font-size:.78rem;padding:.4rem .6rem" placeholder="Observación…"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="db-modal__foot" style="padding:0;border:none;margin-top:1.1rem">
+        <button type="button" class="db-btn db-btn--outline" data-close>Cancelar</button>
+        <button type="submit" class="db-btn db-btn--primary"><i class="fa-solid fa-save"></i> Guardar notas</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ══════════════ MODAL: NUEVO EVENTO ══════════════ -->
+<div class="db-overlay" id="modal-nuevo-evento">
+  <div class="db-modal">
+    <div class="db-modal__head">
+      <div class="db-modal__title"><i class="fa-solid fa-calendar-plus" style="color:var(--success)"></i> Añadir evento</div>
+      <button class="db-modal__close" data-close><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <form class="db-modal__body" data-dash-form data-msg="Evento añadido al calendario">
+      <div class="db-form-group">
+        <label class="db-form-label">Título del evento</label>
+        <input type="text" class="db-form-input" placeholder="Ej. Examen Parcial II">
+      </div>
+      <div class="db-form-row">
+        <div class="db-form-group">
+          <label class="db-form-label">Tipo</label>
+          <select class="db-form-select">
+            <option value="exam">Examen</option>
+            <option value="task">Entrega</option>
+            <option value="expo">Exposición</option>
+            <option value="class">Clase/Práctica</option>
+          </select>
+        </div>
+        <div class="db-form-group">
+          <label class="db-form-label">Fecha</label>
+          <input type="date" class="db-form-input">
+        </div>
+      </div>
+      <div class="db-form-row">
+        <div class="db-form-group">
+          <label class="db-form-label">Hora</label>
+          <input type="time" class="db-form-input">
+        </div>
+        <div class="db-form-group">
+          <label class="db-form-label">Lugar</label>
+          <input type="text" class="db-form-input" placeholder="Ej. Sala B-201">
+        </div>
+      </div>
+      <div class="db-form-group">
+        <label class="db-form-label">Descripción (opcional)</label>
+        <textarea class="db-form-textarea" placeholder="Detalles adicionales del evento…"></textarea>
+      </div>
+      <div class="db-modal__foot" style="padding:0;border:none">
+        <button type="button" class="db-btn db-btn--outline" data-close>Cancelar</button>
+        <button type="submit" class="db-btn db-btn--primary"><i class="fa-solid fa-calendar-plus"></i> Añadir al calendario</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ══════════════ MODAL: ABRIR ASISTENCIA ══════════════ -->
+<div class="db-overlay" id="modal-att-open">
+  <div class="db-modal">
+    <div class="db-modal__head">
+      <div class="db-modal__title"><i class="fa-solid fa-clipboard-user" style="color:#10b981"></i> Abrir sesión de asistencia</div>
+      <button class="db-modal__close" data-close><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <form id="form-att-open" class="db-modal__body">
+
+      <div class="db-form-group">
+        <label class="db-form-label">Etiqueta de la sesión <span style="color:var(--danger)">*</span></label>
+        <input type="text" id="att-label" class="db-form-input" required placeholder="Ej. Clase 10 — Compactación de suelos">
+      </div>
+
+      <div class="db-form-row">
+        <div class="db-form-group">
+          <label class="db-form-label">Fecha <span style="color:var(--danger)">*</span></label>
+          <input type="date" id="att-date" class="db-form-input" required>
+        </div>
+        <div class="db-form-group">
+          <label class="db-form-label">Hora de apertura</label>
+          <input type="time" id="att-time" class="db-form-input">
+        </div>
+      </div>
+
+      <div class="db-form-row">
+        <div class="db-form-group">
+          <label class="db-form-label">Duración (minutos)</label>
+          <input type="number" id="att-duration" class="db-form-input" value="15" min="5" max="120">
+          <div class="db-form-hint">Ventana disponible para que los estudiantes respondan.</div>
+        </div>
+        <div class="db-form-group">
+          <label class="db-form-label">Cantidad esperada en aula <span style="color:var(--t3);font-weight:400">(opcional)</span></label>
+          <input type="number" id="att-expected" class="db-form-input" placeholder="Ej. 20" min="1">
+          <div class="db-form-hint">Para comparar con lo reportado por los estudiantes.</div>
+        </div>
+      </div>
+
+      <div class="db-form-group">
+        <label class="db-form-label">Observaciones <span style="color:var(--t3);font-weight:400">(opcional)</span></label>
+        <textarea id="att-note" class="db-form-textarea" placeholder="Ej. Unidad 3 · ciclos de trabajo. Traer calculadora."></textarea>
+      </div>
+
+      <div class="db-form-group">
+        <label class="db-form-label">Secciones incluidas</label>
+        <div class="db-att-sec-checks">
+          <label class="db-att-sec-check">
+            <input type="checkbox" name="att-section" value="A" checked>
+            <div class="db-att-sec-check__body">
+              <i class="fa-solid fa-chalkboard"></i>
+              <div>
+                <strong>Sección A</strong>
+                <span>Teoría · 24 estudiantes</span>
+              </div>
+            </div>
+          </label>
+          <label class="db-att-sec-check">
+            <input type="checkbox" name="att-section" value="B">
+            <div class="db-att-sec-check__body">
+              <i class="fa-solid fa-flask"></i>
+              <div>
+                <strong>Sección B</strong>
+                <span>JTP / Práctica · 5 estudiantes</span>
+              </div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="db-form-group">
+        <label class="db-form-label">Opciones</label>
+        <div class="db-att-options">
+          <label class="db-att-option">
+            <input type="checkbox" id="att-allow-just" checked>
+            <div class="db-att-option__body">
+              <i class="fa-solid fa-file-lines" style="color:var(--info)"></i>
+              <div>
+                <strong>Permitir justificaciones</strong>
+                <span>Los estudiantes ausentes pueden enviar un motivo</span>
+              </div>
+            </div>
+          </label>
+          <label class="db-att-option">
+            <input type="checkbox" id="att-auto-close" checked>
+            <div class="db-att-option__body">
+              <i class="fa-solid fa-clock" style="color:var(--att-warning)"></i>
+              <div>
+                <strong>Cerrar automáticamente</strong>
+                <span>La sesión se cierra sola al finalizar el tiempo</span>
+              </div>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div class="db-modal__foot" style="padding:0;border:none">
+        <button type="button" class="db-btn db-btn--outline" data-close>Cancelar</button>
+        <button type="submit" class="db-btn db-btn--primary"><i class="fa-solid fa-play"></i> Abrir asistencia</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ══════════════ MODAL: REVISIÓN DE ASISTENCIA ══════════════ -->
+<div class="db-overlay" id="modal-att-review">
+  <div class="db-modal db-modal--xl">
+    <div class="db-modal__head">
+      <div class="db-modal__title"><i class="fa-solid fa-magnifying-glass-chart" style="color:var(--gold)"></i> Revisión de asistencia</div>
+      <button class="db-modal__close" data-close><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="db-modal__body" style="max-height:75vh;overflow-y:auto">
+
+      <!-- Resumen superior -->
+      <div class="att-rev-summary">
+        <div class="att-rev-summary-left">
+          <div class="att-rev-meta-row"><strong id="rev-label">—</strong></div>
+          <div class="att-rev-meta-row"><i class="fa-solid fa-book-open" style="color:var(--gold);margin-right:.3rem"></i><span id="rev-course">—</span></div>
+          <div class="att-rev-meta-row"><i class="fa-solid fa-calendar" style="color:var(--t3);margin-right:.3rem"></i><span id="rev-date">—</span> · <span id="rev-duration">—</span></div>
+        </div>
+        <div class="att-rev-summary-right">
+          <div class="att-rev-stats">
+            <div class="att-rev-stat att-rev-stat--present">
+              <div class="att-rev-stat__val" id="rev-present">—</div>
+              <div class="att-rev-stat__lbl">Asistieron</div>
+            </div>
+            <div class="att-rev-stat att-rev-stat--absent">
+              <div class="att-rev-stat__val" id="rev-absent">—</div>
+              <div class="att-rev-stat__lbl">Ausentes</div>
+            </div>
+            <div class="att-rev-stat att-rev-stat--just">
+              <div class="att-rev-stat__val" id="rev-just-p">—</div>
+              <div class="att-rev-stat__lbl">Just. pendientes</div>
+            </div>
+            <div class="att-rev-stat att-rev-stat--missing">
+              <div class="att-rev-stat__val" id="rev-missing">—</div>
+              <div class="att-rev-stat__lbl">Sin responder</div>
+            </div>
+          </div>
+          <div id="rev-expected-wrap">
+            <div style="font-size:.75rem;color:var(--t3);margin-top:.3rem">
+              Esperados en aula: <strong id="rev-expected">—</strong>
+              · Diferencia: <strong id="rev-diff">—</strong>
+            </div>
+          </div>
+          <div class="att-rev-progress-wrap" style="margin-top:.5rem">
+            <div class="att-rev-progress-bar"><div class="att-rev-progress-fill" id="rev-progress-fill" style="width:0%"></div></div>
+            <span id="rev-progress-txt" style="font-size:.73rem;color:var(--t3);white-space:nowrap"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabla de revisión -->
+      <div class="att-rev-table-wrap">
+        <table class="att-rev-table">
+          <thead>
+            <tr>
+              <th>Estudiante</th>
+              <th>Reportó</th>
+              <th>Hora envío</th>
+              <th>Nota / Justificación</th>
+              <th>Estado revisión</th>
+              <th>Observación docente</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="rev-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="db-modal__foot">
+      <button class="db-btn db-btn--outline" data-close>Cerrar</button>
+      <button class="db-btn db-btn--danger" data-att-invalidate-all>
+        <i class="fa-solid fa-ban"></i> Invalidar sesión completa
+      </button>
+      <button class="db-btn db-btn--success" data-att-validate-all>
+        <i class="fa-solid fa-check-double"></i> Validar sesión
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/dashboard.js"></script>
+<script src="../assets/js/asistencia.js"></script>
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js').catch(()=>{});
+}
+</script>
+</body>
+</html>

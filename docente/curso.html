@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CIV-305 · Maquinaria y Equipo · Panel Docente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/styles.css">
+  <!-- PWA + iOS -->
+  <meta name="theme-color" content="#FFB800">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MEC EDU">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='38' fill='%23FFB800'/%3E%3Ctext x='90' y='128' text-anchor='middle' font-size='105' font-family='Arial Black' font-weight='900' fill='%231a1200'%3EM%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="app">
+  <aside class="sidebar">
+    <a href="dashboard.html" class="brand">
+      <span class="brand-mark"><i class="fa-solid fa-helmet-safety"></i></span>
+      <div>Maq. y Equipo<small>Panel Docente</small></div>
+    </a>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Principal</div>
+      <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+      <a href="cursos.html" class="nav-item is-active"><i class="fa-solid fa-folder-open"></i> Mis cursos <span class="count">3</span></a>
+      <a href="calendario.html" class="nav-item"><i class="fa-solid fa-calendar-days"></i> Calendario</a>
+      <a href="mensajes.html" class="nav-item"><i class="fa-solid fa-comment-dots"></i> Mensajes <span class="count">5</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Gestión académica</div>
+      <a href="tareas.html" class="nav-item"><i class="fa-solid fa-file-circle-check"></i> Tareas <span class="count">7</span></a>
+      <a href="materiales.html" class="nav-item"><i class="fa-solid fa-folder-tree"></i> Materiales</a>
+      <a href="anuncios.html" class="nav-item"><i class="fa-solid fa-bullhorn"></i> Anuncios</a>
+      <a href="estudiantes.html" class="nav-item"><i class="fa-solid fa-users"></i> Estudiantes</a>
+      <a href="calificaciones.html" class="nav-item"><i class="fa-solid fa-award"></i> Calificaciones</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Herramientas técnicas</div>
+      <a href="herramientas.html" class="nav-item"><i class="fa-solid fa-toolbox"></i> Módulos técnicos</a>
+    </div>
+    <div class="sidebar-foot">
+      <div class="avatar">CR</div>
+      <div style="flex:1;min-width:0"><div class="name">Ing. Carlos Rojas</div><div class="role">Docente · Ing. Civil</div></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn btn-sidebar-toggle" data-sidebar-toggle><i class="fa-solid fa-bars"></i></button>
+      <div class="topbar-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Buscar en este curso…">
+        <kbd>⌘K</kbd>
+      </div>
+      <div class="topbar-actions">
+        <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="dot-badge"></span></button>
+        <a href="../perfil.html" class="user-chip"><span class="avatar">CR</span><span class="name hide-mobile">Carlos R.</span></a>
+      </div>
+    </header>
+
+    <div class="content">
+      <!-- Header del curso -->
+      <div class="profile-head reveal" style="margin-bottom:1.5rem">
+        <div class="profile-head-inner">
+          <div class="profile-avatar" style="background:linear-gradient(135deg,#FFB800,#FF8F1C);font-size:2rem"><i class="fa-solid fa-truck-front"></i></div>
+          <div style="flex:1;min-width:0">
+            <div class="crumbs" style="font-size:0.8rem;color:var(--text-tertiary);margin-bottom:0.3rem"><a href="dashboard.html">Inicio</a> <i class="fa-solid fa-chevron-right" style="font-size:0.6rem"></i> <a href="cursos.html">Cursos</a> <i class="fa-solid fa-chevron-right" style="font-size:0.6rem"></i> <span>CIV-305</span></div>
+            <h2>Maquinaria y Equipo de Construcción</h2>
+            <div style="display:flex;gap:0.5rem;align-items:center;margin-top:0.3rem;flex-wrap:wrap">
+              <span class="badge badge--yellow">CIV-305</span>
+              <span class="badge">2025-I · Gestión 1</span>
+              <span class="badge badge--green"><span class="badge-dot"></span> Visible</span>
+            </div>
+            <div class="profile-stats">
+              <div class="profile-stat"><strong>42</strong> estudiantes</div>
+              <div class="profile-stat"><strong>12</strong> módulos</div>
+              <div class="profile-stat"><strong>28</strong> recursos</div>
+              <div class="profile-stat"><strong>78%</strong> progreso</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
+            <button class="btn btn-ghost"><i class="fa-solid fa-eye-slash"></i> Ocultar</button>
+            <button class="btn btn-secondary"><i class="fa-solid fa-pen"></i> Editar</button>
+            <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Nuevo contenido</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs" data-tabs>
+        <button class="tab is-active" data-tab="resumen"><i class="fa-solid fa-gauge"></i> Resumen</button>
+        <button class="tab" data-tab="modulos"><i class="fa-solid fa-cubes-stacked"></i> Módulos <span class="count">12</span></button>
+        <button class="tab" data-tab="tareas"><i class="fa-solid fa-file-circle-check"></i> Tareas <span class="count">7</span></button>
+        <button class="tab" data-tab="anuncios"><i class="fa-solid fa-bullhorn"></i> Anuncios</button>
+        <button class="tab" data-tab="estudiantes"><i class="fa-solid fa-users"></i> Estudiantes <span class="count">42</span></button>
+        <button class="tab" data-tab="calificaciones"><i class="fa-solid fa-award"></i> Calificaciones</button>
+      </div>
+
+      <!-- Panel resumen -->
+      <div data-tab-panel="resumen">
+        <div class="stat-grid">
+          <div class="stat-card"><div class="label"><i class="fa-solid fa-users"></i> Inscritos</div><div class="value">42</div><div class="delta">Cap. 45</div></div>
+          <div class="stat-card s-orange"><div class="label"><i class="fa-solid fa-list-check"></i> Tareas activas</div><div class="value">7</div><div class="delta">3 cierran esta semana</div></div>
+          <div class="stat-card s-blue"><div class="label"><i class="fa-solid fa-inbox"></i> Por revisar</div><div class="value">24</div><div class="delta down">5 atrasadas</div></div>
+          <div class="stat-card s-green"><div class="label"><i class="fa-solid fa-chart-line"></i> Promedio</div><div class="value">86<span style="font-size:1rem;color:var(--text-tertiary)">%</span></div><div class="delta">+3.2%</div></div>
+        </div>
+
+        <div class="grid-2">
+          <div class="panel">
+            <div class="panel-header"><h3>Módulos del curso</h3><button class="btn btn-ghost btn-sm" onclick="document.querySelector('[data-tab=modulos]').click()">Ver todos</button></div>
+            <div class="panel-body">
+              <div class="module is-open">
+                <div class="module-head">
+                  <div class="module-index">01</div>
+                  <div class="info">
+                    <h3>Introducción a la Maquinaria de Construcción</h3>
+                    <div class="meta"><span><i class="fa-solid fa-file"></i> 4 recursos</span><span><i class="fa-solid fa-clock"></i> 6h</span></div>
+                  </div>
+                  <i class="fa-solid fa-chevron-down chev"></i>
+                </div>
+                <div class="module-body">
+                  <div class="resource-item">
+                    <div class="resource-ico pdf"><i class="fa-solid fa-file-pdf"></i></div>
+                    <div class="info"><h4>Clasificación general de equipos</h4><div class="meta">PDF · 2.4 MB</div></div>
+                    <button class="btn btn-ghost btn-sm">Descargar</button>
+                  </div>
+                  <div class="resource-item">
+                    <div class="resource-ico video"><i class="fa-solid fa-circle-play"></i></div>
+                    <div class="info"><h4>Video introductorio · Tipos de excavadoras</h4><div class="meta">MP4 · 12 min</div></div>
+                    <button class="btn btn-ghost btn-sm">Ver</button>
+                  </div>
+                  <div class="resource-item">
+                    <div class="resource-ico link"><i class="fa-solid fa-link"></i></div>
+                    <div class="info"><h4>Enlace externo · Manual Caterpillar</h4><div class="meta">cat.com</div></div>
+                    <button class="btn btn-ghost btn-sm">Abrir</button>
+                  </div>
+                </div>
+              </div>
+              <div class="module">
+                <div class="module-head">
+                  <div class="module-index">02</div>
+                  <div class="info">
+                    <h3>Equipos de Movimiento de Tierras</h3>
+                    <div class="meta"><span><i class="fa-solid fa-file"></i> 6 recursos</span><span><i class="fa-solid fa-clock"></i> 10h</span></div>
+                  </div>
+                  <i class="fa-solid fa-chevron-down chev"></i>
+                </div>
+              </div>
+              <div class="module">
+                <div class="module-head">
+                  <div class="module-index">03</div>
+                  <div class="info">
+                    <h3>Equipos de Compactación</h3>
+                    <div class="meta"><span><i class="fa-solid fa-file"></i> 5 recursos</span><span><i class="fa-solid fa-clock"></i> 8h</span></div>
+                  </div>
+                  <i class="fa-solid fa-chevron-down chev"></i>
+                </div>
+              </div>
+              <div class="module">
+                <div class="module-head">
+                  <div class="module-index">04</div>
+                  <div class="info">
+                    <h3>Equipos de Transporte (Volquetas)</h3>
+                    <div class="meta"><span><i class="fa-solid fa-file"></i> 4 recursos</span><span><i class="fa-solid fa-clock"></i> 6h</span></div>
+                  </div>
+                  <i class="fa-solid fa-chevron-down chev"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="panel" style="margin-bottom:1.5rem">
+              <div class="panel-header"><h3>Último anuncio</h3><button class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> Nuevo</button></div>
+              <div class="panel-body">
+                <h4 style="font-size:1rem;margin-bottom:0.5rem">Visita técnica a obra vial</h4>
+                <p style="font-size:0.88rem;line-height:1.6">Recordatorio: la visita programada al Viaducto Norte será el martes 02 de mayo. Punto de encuentro: portal principal de la facultad, 7:30 AM. Llevar casco y chaleco reflectante.</p>
+                <div style="display:flex;gap:0.6rem;margin-top:1rem;align-items:center;flex-wrap:wrap">
+                  <span class="badge badge--yellow"><i class="fa-solid fa-envelope"></i> Enviado al correo</span>
+                  <span style="font-size:0.78rem;color:var(--text-tertiary);font-family:var(--font-mono)">Ayer · 14:22</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-header"><h3>Próxima clase</h3></div>
+              <div class="panel-body">
+                <div style="display:flex;align-items:center;gap:1rem;padding:0.5rem 0">
+                  <div style="width:56px;text-align:center;background:rgba(255,184,0,0.1);border:1px solid rgba(255,184,0,0.25);border-radius:12px;padding:0.55rem 0">
+                    <div style="font-family:var(--font-mono);font-size:0.7rem;color:var(--brand-yellow);text-transform:uppercase">Lun</div>
+                    <div style="font-family:var(--font-display);font-size:1.4rem;font-weight:700">21</div>
+                  </div>
+                  <div style="flex:1">
+                    <h4 style="font-size:0.95rem">Compactadoras tipo pata de cabra</h4>
+                    <div style="font-size:0.78rem;color:var(--text-tertiary);margin-top:0.25rem">Aula 302 · 14:00 - 16:00 · Módulo 3</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel módulos -->
+      <div data-tab-panel="modulos" style="display:none">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem">
+          <p style="margin:0">Organiza el contenido del curso en unidades temáticas. Cada módulo puede contener PDFs, videos, enlaces y tareas.</p>
+          <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Agregar módulo</button>
+        </div>
+        <div class="module is-open">
+          <div class="module-head">
+            <div class="module-index">01</div>
+            <div class="info">
+              <h3>Introducción a la Maquinaria de Construcción</h3>
+              <div class="meta"><span><i class="fa-solid fa-file"></i> 4 recursos</span><span><i class="fa-solid fa-clock"></i> 6h</span><span><i class="fa-solid fa-eye"></i> Publicado</span></div>
+            </div>
+            <i class="fa-solid fa-chevron-down chev"></i>
+          </div>
+          <div class="module-body">
+            <div class="resource-item">
+              <div class="resource-ico pdf"><i class="fa-solid fa-file-pdf"></i></div>
+              <div class="info"><h4>Clasificación general de equipos de construcción</h4><div class="meta">PDF · 2.4 MB · Subido 05/03</div></div>
+              <div style="display:flex;gap:0.3rem"><button class="tool-btn"><i class="fa-solid fa-pen"></i></button><button class="tool-btn"><i class="fa-solid fa-trash"></i></button></div>
+            </div>
+            <div class="resource-item">
+              <div class="resource-ico video"><i class="fa-solid fa-circle-play"></i></div>
+              <div class="info"><h4>Video introductorio · Tipos de excavadoras</h4><div class="meta">MP4 · 12 min · Subido 06/03</div></div>
+              <div style="display:flex;gap:0.3rem"><button class="tool-btn"><i class="fa-solid fa-pen"></i></button><button class="tool-btn"><i class="fa-solid fa-trash"></i></button></div>
+            </div>
+            <div class="resource-item">
+              <div class="resource-ico link"><i class="fa-solid fa-link"></i></div>
+              <div class="info"><h4>Manual técnico Caterpillar · Equipos pesados</h4><div class="meta">cat.com/manuals · Enlace externo</div></div>
+              <div style="display:flex;gap:0.3rem"><button class="tool-btn"><i class="fa-solid fa-pen"></i></button><button class="tool-btn"><i class="fa-solid fa-trash"></i></button></div>
+            </div>
+            <div class="resource-item">
+              <div class="resource-ico"><i class="fa-solid fa-file-lines"></i></div>
+              <div class="info"><h4>Guía de trabajo · Unidad 1</h4><div class="meta">DOCX · 340 KB</div></div>
+              <div style="display:flex;gap:0.3rem"><button class="tool-btn"><i class="fa-solid fa-pen"></i></button><button class="tool-btn"><i class="fa-solid fa-trash"></i></button></div>
+            </div>
+            <div style="padding-top:1rem;display:flex;gap:0.4rem;flex-wrap:wrap">
+              <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-file-arrow-up"></i> Subir archivo</button>
+              <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-link"></i> Agregar enlace</button>
+              <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-clipboard-list"></i> Crear tarea</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="module">
+          <div class="module-head">
+            <div class="module-index">02</div>
+            <div class="info">
+              <h3>Equipos de Movimiento de Tierras</h3>
+              <div class="meta"><span><i class="fa-solid fa-file"></i> 6 recursos</span><span><i class="fa-solid fa-clock"></i> 10h</span><span><i class="fa-solid fa-eye"></i> Publicado</span></div>
+            </div>
+            <i class="fa-solid fa-chevron-down chev"></i>
+          </div>
+        </div>
+        <div class="module">
+          <div class="module-head">
+            <div class="module-index">03</div>
+            <div class="info">
+              <h3>Equipos de Compactación</h3>
+              <div class="meta"><span><i class="fa-solid fa-file"></i> 5 recursos</span><span><i class="fa-solid fa-clock"></i> 8h</span><span><i class="fa-solid fa-eye"></i> Publicado</span></div>
+            </div>
+            <i class="fa-solid fa-chevron-down chev"></i>
+          </div>
+        </div>
+        <div class="module">
+          <div class="module-head">
+            <div class="module-index">04</div>
+            <div class="info">
+              <h3>Equipos de Transporte (Volquetas y Camiones)</h3>
+              <div class="meta"><span><i class="fa-solid fa-file"></i> 4 recursos</span><span><i class="fa-solid fa-clock"></i> 6h</span><span><i class="fa-solid fa-eye"></i> Publicado</span></div>
+            </div>
+            <i class="fa-solid fa-chevron-down chev"></i>
+          </div>
+        </div>
+        <div class="module">
+          <div class="module-head">
+            <div class="module-index">05</div>
+            <div class="info">
+              <h3>Equipos para Concreto y Mezcladoras</h3>
+              <div class="meta"><span><i class="fa-solid fa-file"></i> 3 recursos</span><span><i class="fa-solid fa-clock"></i> 6h</span><span class="badge-dot" style="background:var(--warning)"></span><span style="color:var(--warning)">Borrador</span></div>
+            </div>
+            <i class="fa-solid fa-chevron-down chev"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel tareas -->
+      <div data-tab-panel="tareas" style="display:none">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem">
+          <p style="margin:0">Administra las tareas y prácticas del curso. Define fechas límite y revisa entregas.</p>
+          <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Nueva tarea</button>
+        </div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr><th>Tarea</th><th>Módulo</th><th>Fecha límite</th><th>Entregas</th><th>Estado</th><th></th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Informe · Análisis de volquetas 6x4</strong><br><span style="color:var(--text-tertiary);font-size:0.78rem">Entrega individual · PDF</span></td>
+                <td><span class="badge">Módulo 4</span></td>
+                <td class="mono">22 Abr 2025 · 23:59</td>
+                <td><div style="display:flex;align-items:center;gap:0.5rem"><div class="progress" style="width:80px"><div class="progress-bar" style="width:42%"></div></div><span class="mono" style="font-size:0.78rem">18/42</span></div></td>
+                <td><span class="badge badge--yellow">Abierta</span></td>
+                <td><button class="btn btn-ghost btn-sm">Revisar</button></td>
+              </tr>
+              <tr>
+                <td><strong>Cuestionario · Motoniveladora</strong><br><span style="color:var(--text-tertiary);font-size:0.78rem">10 preguntas · online</span></td>
+                <td><span class="badge">Módulo 2</span></td>
+                <td class="mono">18 Abr 2025 · 18:00</td>
+                <td><div style="display:flex;align-items:center;gap:0.5rem"><div class="progress" style="width:80px"><div class="progress-bar green" style="width:95%"></div></div><span class="mono" style="font-size:0.78rem">40/42</span></div></td>
+                <td><span class="badge badge--red">Vencida</span></td>
+                <td><button class="btn btn-ghost btn-sm">Calificar</button></td>
+              </tr>
+              <tr>
+                <td><strong>Práctica 04 · Rendimiento excavadora</strong><br><span style="color:var(--text-tertiary);font-size:0.78rem">Cálculo + planilla</span></td>
+                <td><span class="badge">Módulo 3</span></td>
+                <td class="mono">25 Abr 2025 · 23:59</td>
+                <td><div style="display:flex;align-items:center;gap:0.5rem"><div class="progress" style="width:80px"><div class="progress-bar" style="width:28%"></div></div><span class="mono" style="font-size:0.78rem">12/42</span></div></td>
+                <td><span class="badge badge--yellow">Abierta</span></td>
+                <td><button class="btn btn-ghost btn-sm">Revisar</button></td>
+              </tr>
+              <tr>
+                <td><strong>Examen parcial · Unidad 2</strong><br><span style="color:var(--text-tertiary);font-size:0.78rem">Presencial · Aula 302</span></td>
+                <td><span class="badge">Unidad 2</span></td>
+                <td class="mono">30 Abr 2025 · 14:00</td>
+                <td><span style="color:var(--text-tertiary);font-size:0.82rem">—</span></td>
+                <td><span class="badge badge--blue">Programada</span></td>
+                <td><button class="btn btn-ghost btn-sm">Editar</button></td>
+              </tr>
+              <tr>
+                <td><strong>Visita técnica · Informe de campo</strong><br><span style="color:var(--text-tertiary);font-size:0.78rem">Grupal · PDF + fotos</span></td>
+                <td><span class="badge">Unidad 3</span></td>
+                <td class="mono">10 May 2025 · 23:59</td>
+                <td><span style="color:var(--text-tertiary);font-size:0.82rem">—</span></td>
+                <td><span class="badge badge--steel">Borrador</span></td>
+                <td><button class="btn btn-ghost btn-sm">Publicar</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Panel anuncios -->
+      <div data-tab-panel="anuncios" style="display:none">
+        <div class="announce-card" style="margin-bottom:1.5rem">
+          <h3 style="font-size:1.05rem;margin-bottom:0.5rem">Publicar nuevo anuncio</h3>
+          <input type="text" class="form-control" placeholder="Título del anuncio…" style="margin-bottom:0.8rem">
+          <textarea class="form-control" placeholder="Redacta tu comunicado aquí…" rows="4"></textarea>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1rem;flex-wrap:wrap;gap:0.6rem">
+            <label class="checkbox"><input type="checkbox" checked> Enviar notificación al correo institucional</label>
+            <div style="display:flex;gap:0.4rem">
+              <button class="btn btn-secondary"><i class="fa-solid fa-paperclip"></i> Adjuntar</button>
+              <button class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Publicar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="feed">
+          <div class="feed-item">
+            <div class="feed-ico"><i class="fa-solid fa-bullhorn"></i></div>
+            <div class="feed-body">
+              <h4>Visita técnica a obra vial <span class="badge badge--green" style="font-size:0.65rem">Fijado</span></h4>
+              <p>Recordatorio: la visita al Viaducto Norte será el martes 02 de mayo. Punto de encuentro: portal principal. Llevar casco y chaleco.</p>
+              <div class="feed-meta"><span><i class="fa-regular fa-clock"></i> Ayer · 14:22</span><span><i class="fa-solid fa-envelope"></i> 42 notificados</span><span><i class="fa-solid fa-eye"></i> 38 leídos</span></div>
+            </div>
+            <div style="display:flex;gap:0.3rem"><button class="tool-btn"><i class="fa-solid fa-thumbtack"></i></button><button class="tool-btn"><i class="fa-solid fa-pen"></i></button></div>
+          </div>
+          <div class="feed-item">
+            <div class="feed-ico blue"><i class="fa-solid fa-file-pdf"></i></div>
+            <div class="feed-body">
+              <h4>Material complementario · Tablas de rendimiento</h4>
+              <p>Subí al Módulo 3 las tablas oficiales de rendimiento de excavadoras hidráulicas Caterpillar serie 336.</p>
+              <div class="feed-meta"><span><i class="fa-regular fa-clock"></i> Hace 3 días</span><span><i class="fa-solid fa-envelope"></i> 42 notificados</span></div>
+            </div>
+          </div>
+          <div class="feed-item">
+            <div class="feed-ico orange"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <div class="feed-body">
+              <h4>Fecha límite próxima · Práctica 04</h4>
+              <p>La Práctica 04 sobre rendimiento de excavadora cierra el viernes 25 a las 23:59. No habrá prórroga.</p>
+              <div class="feed-meta"><span><i class="fa-regular fa-clock"></i> Hace 5 días</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel estudiantes -->
+      <div data-tab-panel="estudiantes" style="display:none">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem;flex-wrap:wrap;gap:0.6rem">
+          <div class="topbar-search" style="max-width:360px;margin:0">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Buscar estudiante…">
+          </div>
+          <div style="display:flex;gap:0.4rem">
+            <button class="btn btn-secondary"><i class="fa-solid fa-file-export"></i> Exportar</button>
+            <button class="btn btn-primary"><i class="fa-solid fa-user-plus"></i> Añadir estudiante</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr><th>Estudiante</th><th>Código</th><th>Carrera</th><th>Asistencia</th><th>Promedio</th><th>Estado</th><th></th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="student"><div class="avatar" style="background:rgba(255,184,0,0.18);color:var(--brand-yellow)">MQ</div><div><div style="font-weight:500">María Quispe Alarcón</div><div style="font-size:0.75rem;color:var(--text-tertiary)">maria.quispe@est.umss.edu</div></div></div></td>
+                <td class="mono">2024-05678</td>
+                <td>Ing. Civil</td>
+                <td><div style="display:flex;align-items:center;gap:0.5rem"><div class="progress" style="width:70px"><div class="progress-bar green" style="width:96%"></div></div><span class="mono" style="font-size:0.78rem">96%</span></div></td>
+                <td><strong style="color:var(--success)">92</strong></td>
+                <td><span class="badge badge--green">Activo</span></td>
+                <td><button class="btn btn-ghost btn-sm">Ver</button></td>
+              </tr>
+              <tr>
+                <td><div class="student"><div class="avatar" style="background:rgba(59,130,246,0.18);color:var(--brand-blue-light)">LM</div><div><div style="font-weight:500">Luis Mendoza Paredes</div><div style="font-size:0.75rem;color:var(--text-tertiary)">luis.mendoza@est.umss.edu</div></div></div></td>
+                <td class="mono">2024-04321</td>
+                <td>Ing. Civil</td>
+                <td><div style="display:flex;align-items:center;gap:0.5rem"><div class="progress" style="width:70px"><div class="progress-bar" style="width:88%"></div></div><span class="mono" style="font-size:0.78rem">88%</span></div></td>
+                <td><strong>85</strong></td>
+                <td><span class="badge badge--green">Activo</span></td>
+                <td><button class="btn btn-ghost btn-sm">Ver</button></td>
+              </tr>
+              <tr>
+                <td><div class="student"><div class="avatar" style="background:rgba(255,107,53,0.18);color:var(--brand-orange-soft)">DV</div><div><div style="font-weight:500">Diego Vargas Rojas</div><div style="font-size:0.75rem;color:var(--text-tertiary)">diego.vargas@est.umss.edu</div></div></div></td>
+                <td class="mono">2024-05102</td>
+                <td>Ing. Construcción</td>
+                <td><div style="display:flex;align-items:center;gap:0.5rem"><div class="progress" style="width:70px"><div class="progress-bar" style="width:72%;background:var(--warning)"></div></div><span class="mono" style="font-size:0.78rem">72%</span></div></td>
+                <td><strong style="color:var(--warning)">68</strong></td>
+                <td><span class="badge badge--yellow">Riesgo</span></td>
+                <td><button class="btn btn-ghost btn-sm">Ver</button></td>
+              </tr>
+              <tr>
+                <td><div class="student"><div class="avatar" style="background:rgba(16,185,129,0.18);color:#34d399">AF</div><div><div style="font-weight:500">Ana Flores Huanca</div><div style="font-size:0.75rem;color:var(--text-tertiary)">ana.flores@est.umss.edu</div></div></div></td>
+                <td class="mono">2024-05221</td>
+                <td>Ing. Civil</td>
+                <td><div style="display:flex;align-items:center;gap:0.5rem"><div class="progress" style="width:70px"><div class="progress-bar green" style="width:94%"></div></div><span class="mono" style="font-size:0.78rem">94%</span></div></td>
+                <td><strong style="color:var(--success)">90</strong></td>
+                <td><span class="badge badge--green">Activo</span></td>
+                <td><button class="btn btn-ghost btn-sm">Ver</button></td>
+              </tr>
+              <tr>
+                <td><div class="student"><div class="avatar" style="background:rgba(148,163,184,0.18);color:var(--brand-steel-light)">PS</div><div><div style="font-weight:500">Pedro Salas Chávez</div><div style="font-size:0.75rem;color:var(--text-tertiary)">pedro.salas@est.umss.edu</div></div></div></td>
+                <td class="mono">2024-04877</td>
+                <td>Ing. Civil</td>
+                <td><div style="display:flex;align-items:center;gap:0.5rem"><div class="progress" style="width:70px"><div class="progress-bar" style="width:80%"></div></div><span class="mono" style="font-size:0.78rem">80%</span></div></td>
+                <td><strong>78</strong></td>
+                <td><span class="badge badge--green">Activo</span></td>
+                <td><button class="btn btn-ghost btn-sm">Ver</button></td>
+              </tr>
+              <tr>
+                <td><div class="student"><div class="avatar">CR</div><div><div style="font-weight:500">Camila Rocha Torrico</div><div style="font-size:0.75rem;color:var(--text-tertiary)">camila.rocha@est.umss.edu</div></div></div></td>
+                <td class="mono">2024-05440</td>
+                <td>Ing. Construcción</td>
+                <td><div style="display:flex;align-items:center;gap:0.5rem"><div class="progress" style="width:70px"><div class="progress-bar green" style="width:98%"></div></div><span class="mono" style="font-size:0.78rem">98%</span></div></td>
+                <td><strong style="color:var(--success)">95</strong></td>
+                <td><span class="badge badge--green">Activo</span></td>
+                <td><button class="btn btn-ghost btn-sm">Ver</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Panel calificaciones -->
+      <div data-tab-panel="calificaciones" style="display:none">
+        <div class="empty">
+          <i class="fa-solid fa-award"></i>
+          <h3>Panel de calificaciones</h3>
+          <p>Aquí verás una tabla cruzada con estudiantes y todas las evaluaciones del curso. Disponible tras la primera entrega calificada.</p>
+          <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Crear primera evaluación</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/main.js"></script>
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js').catch(()=>{});
+}
+</script>
+</body>
+</html>

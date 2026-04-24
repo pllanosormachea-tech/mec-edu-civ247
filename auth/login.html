@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iniciar sesión · Maquinaria y Equipo de Construcción</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FFB800'/%3E%3Cpath d='M16 44 L28 24 L36 36 L48 20' stroke='%231a1200' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <!-- PWA + iOS -->
+  <meta name="theme-color" content="#FFB800">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MEC EDU">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='38' fill='%23FFB800'/%3E%3Ctext x='90' y='128' text-anchor='middle' font-size='105' font-family='Arial Black' font-weight='900' fill='%231a1200'%3EM%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="auth-page">
+  <!-- Panel lateral ilustrativo -->
+  <aside class="auth-aside">
+    <a href="../index.html" class="brand" style="position:relative;z-index:2">
+      <span class="brand-mark"><i class="fa-solid fa-helmet-safety"></i></span>
+      <div>Maq. y Equipo<small>de Construcción</small></div>
+    </a>
+
+    <div class="auth-aside-content">
+      <span class="eyebrow">BIENVENIDO DE VUELTA</span>
+      <h2 style="margin-top:0.8rem">Accede al entorno académico de tu materia de maquinaria y equipo.</h2>
+      <p>Una sola sesión para gestionar cursos, tareas, anuncios y herramientas técnicas profesionales.</p>
+
+      <div class="auth-feat-list">
+        <div class="auth-feat">
+          <i class="fa-solid fa-shield-halved"></i>
+          <div><h4>Acceso seguro</h4><p>Autenticación por correo institucional universitario.</p></div>
+        </div>
+        <div class="auth-feat">
+          <i class="fa-solid fa-bolt"></i>
+          <div><h4>Sincronización instantánea</h4><p>Los anuncios llegan también a tu bandeja de correo.</p></div>
+        </div>
+        <div class="auth-feat">
+          <i class="fa-solid fa-tools"></i>
+          <div><h4>Herramientas técnicas</h4><p>Módulos futuros de precios, rendimientos y presupuestos.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="auth-aside-foot">// M.E.C. · v2.4 · secure login portal</div>
+  </aside>
+
+  <!-- Formulario -->
+  <main class="auth-main">
+    <div class="auth-form-wrap">
+      <a href="../index.html" class="brand hide-mobile" style="display:none">
+        <span class="brand-mark"><i class="fa-solid fa-helmet-safety"></i></span>
+        <div>Maq. y Equipo<small>de Construcción</small></div>
+      </a>
+
+      <a href="../index.html" style="color:var(--text-tertiary);font-size:0.85rem;display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:1.5rem"><i class="fa-solid fa-arrow-left"></i> Volver al inicio</a>
+
+      <div data-auth-tabs class="auth-tabs">
+        <button class="auth-tab is-active" data-role="teacher"><i class="fa-solid fa-chalkboard-user"></i> Docente</button>
+        <button class="auth-tab" data-role="student"><i class="fa-solid fa-user-graduate"></i> Estudiante</button>
+      </div>
+
+      <!-- FORMULARIO DOCENTE -->
+      <form class="auth-form" data-auth-form="teacher" data-fake-submit data-redirect="../docente/dashboard.html">
+        <h2>Hola docente <span style="color:var(--brand-yellow)">👋</span></h2>
+        <p>Ingresa con tus credenciales institucionales para acceder a tu panel.</p>
+
+        <div class="form-group">
+          <label class="form-label" for="email-t">Correo institucional</label>
+          <div class="input-group">
+            <span class="input-icon"><i class="fa-solid fa-envelope"></i></span>
+            <input type="email" id="email-t" class="form-control" placeholder="docente@universidad.edu" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="pass-t">Contraseña</label>
+          <div class="input-group">
+            <span class="input-icon"><i class="fa-solid fa-lock"></i></span>
+            <input type="password" id="pass-t" class="form-control" placeholder="••••••••" required>
+          </div>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem">
+          <label class="checkbox"><input type="checkbox"> Mantener sesión iniciada</label>
+          <a href="recuperar.html" style="font-size:0.85rem;color:var(--brand-yellow)">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg"><i class="fa-solid fa-right-to-bracket"></i> Entrar como docente</button>
+
+        <div class="divider">o</div>
+
+        <button type="button" class="btn btn-secondary btn-block"><i class="fa-brands fa-google"></i> Continuar con correo institucional (SSO)</button>
+
+        <div class="auth-footer-link">
+          ¿Primera vez? <a href="registro.html">Crear cuenta</a>
+        </div>
+      </form>
+
+      <!-- FORMULARIO ESTUDIANTE -->
+      <form class="auth-form" data-auth-form="student" style="display:none" data-fake-submit data-redirect="../estudiante/dashboard.html">
+        <h2>Hola estudiante <span style="color:var(--brand-blue-light)">👷</span></h2>
+        <p>Inicia sesión con tu correo universitario para acceder a tus cursos.</p>
+
+        <div class="form-group">
+          <label class="form-label" for="email-s">Correo institucional</label>
+          <div class="input-group">
+            <span class="input-icon"><i class="fa-solid fa-envelope"></i></span>
+            <input type="email" id="email-s" class="form-control" placeholder="nombre.apellido@est.universidad.edu" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="pass-s">Contraseña</label>
+          <div class="input-group">
+            <span class="input-icon"><i class="fa-solid fa-lock"></i></span>
+            <input type="password" id="pass-s" class="form-control" placeholder="••••••••" required>
+          </div>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem">
+          <label class="checkbox"><input type="checkbox"> Recordarme</label>
+          <a href="recuperar.html" style="font-size:0.85rem;color:var(--brand-blue-light)">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <button type="submit" class="btn btn-blue btn-block btn-lg"><i class="fa-solid fa-right-to-bracket"></i> Entrar como estudiante</button>
+
+        <div class="divider">o</div>
+
+        <button type="button" class="btn btn-secondary btn-block"><i class="fa-brands fa-google"></i> Continuar con correo institucional (SSO)</button>
+
+        <div class="auth-footer-link">
+          ¿Aún no tienes cuenta? <a href="registro.html" style="color:var(--brand-blue-light)">Registrarme ahora</a>
+        </div>
+      </form>
+    </div>
+  </main>
+</div>
+
+<script src="../assets/js/main.js"></script>
+<script>
+  // Si viene ?role=student en la URL, activa esa pestaña
+  const params = new URLSearchParams(window.location.search);
+  if(params.get('role')==='student'){
+    document.querySelector('.auth-tab[data-role="student"]').click();
+  }
+</script>
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js').catch(()=>{});
+}
+</script>
+</body>
+</html>

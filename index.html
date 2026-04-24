@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maquinaria y Equipo de Construcción · Plataforma Académica de Maquinaria y Equipo de Construcción</title>
+<meta name="description" content="Entorno virtual universitario especializado en maquinaria pesada, equipos de obra y gestión técnica de construcción.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FFB800'/%3E%3Cpath d='M16 44 L28 24 L36 36 L48 20' stroke='%231a1200' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <!-- PWA + iOS -->
+  <meta name="theme-color" content="#FFB800">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MEC EDU">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='38' fill='%23FFB800'/%3E%3Ctext x='90' y='128' text-anchor='middle' font-size='105' font-family='Arial Black' font-weight='900' fill='%231a1200'%3EM%3C/text%3E%3C/svg%3E">
+</head>
+<body class="lp-page">
+
+<!-- Partículas flotantes -->
+<canvas id="lp-particles"></canvas>
+
+<!-- ===================================================
+     HERO · Video full-bleed
+     =================================================== -->
+<section class="hero-video">
+  <video class="hero-video__media" autoplay loop muted playsinline>
+    <source src="video final.mp4" type="video/mp4">
+  </video>
+  <!-- Blueprint grid sutil encima del video -->
+  <div class="hero-video__blueprint"></div>
+
+  <!-- Navbar flotante liquid-glass -->
+  <div class="hero-video__top">
+    <nav class="hero-video__nav liquid-glass">
+      <a href="index.html" class="hero-video__logo">
+        <img src="article.png" alt="Maquinaria y Equipo de Construcción" class="hero-video__logo-img">
+        <div>Maquinaria y Equipo de Construcción<small>CIV 247</small></div>
+      </a>
+      <div class="hero-video__links">
+        <a href="#plataforma">Plataforma</a>
+        <a href="#docente">Docente</a>
+        <a href="#estudiante">Estudiante</a>
+        <a href="#modulos">Módulos</a>
+      </div>
+      <a href="auth/login.html" class="hero-video__cta">Iniciar sesión</a>
+    </nav>
+  </div>
+
+  <!-- Contenido al pie del hero -->
+  <div class="hero-video__bottom">
+    <div class="hero-video__grid">
+      <div>
+        <h1 class="hero-video__heading"
+            data-animated-heading
+            data-text="La plataforma académica
+de la obra civil."></h1>
+
+        <p class="hero-video__sub hero-video__sub--pill" data-fade-delay="800">
+          Entorno virtual especializado en maquinaria y equipo de
+          construcción — cursos, materiales y evaluaciones para
+          docentes y estudiantes de ingeniería.
+        </p>
+
+        <div class="hero-video__actions" data-fade-delay="1200">
+          <a href="auth/login.html?role=teacher" class="hero-video__btn hero-video__btn--yellow">
+            <i class="fa-solid fa-chalkboard-user"></i> Soy docente
+          </a>
+          <a href="auth/login.html?role=student" class="hero-video__btn hero-video__btn--orange">
+            <i class="fa-solid fa-user-graduate"></i> Soy estudiante
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     STATS BAR
+     =================================================== -->
+<div class="lp-stats">
+  <div class="lp-container">
+    <div class="lp-stats__grid">
+      <div class="lp-stat">
+        <div class="lp-stat__value"><span data-count="12">0</span>+</div>
+        <div class="lp-stat__label">Módulos técnicos</div>
+      </div>
+      <div class="lp-stat">
+        <div class="lp-stat__value"><span data-count="98.5" data-suffix="%">0</span></div>
+        <div class="lp-stat__label">Disponibilidad</div>
+      </div>
+      <div class="lp-stat">
+        <div class="lp-stat__value"><span data-count="24">0</span>/7</div>
+        <div class="lp-stat__label">Acceso al aula</div>
+      </div>
+      <div class="lp-stat">
+        <div class="lp-stat__value"><span data-count="126">0</span>+</div>
+        <div class="lp-stat__label">Estudiantes activos</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================================================
+     DOCENTE · Bio y presentación
+     =================================================== -->
+<section id="plataforma" class="lp-section lp-prof">
+  <div class="lp-blueprint-overlay"></div>
+  <div class="lp-container">
+    <div class="lp-prof__grid">
+
+      <!-- FOTO -->
+      <div class="lp-prof__photo-wrap reveal">
+        <div class="lp-prof__photo">
+          <img src="Foto Perfil Gomez.png" alt="José Luis Gómez Reintsch" class="lp-prof__photo-img">
+          <div class="lp-prof__available">
+            <span class="lp-prof__available-dot"></span>Disponible
+          </div>
+        </div>
+        <div class="lp-prof__frame"></div>
+        <div class="lp-prof__badge">
+          <i class="fa-solid fa-star"></i> 4.8 &nbsp;·&nbsp; Valoración docente
+        </div>
+        <img src="Firma final.png" alt="Firma" class="lp-prof__firma">
+      </div>
+
+      <!-- BIO -->
+      <div class="lp-prof__content reveal" data-delay="1">
+        <div class="lp-eyebrow"><i class="fa-solid fa-chalkboard-user"></i> Docente del curso</div>
+        <h2 class="lp-heading">José Luis<br><span class="grad">Gómez Reintsch</span></h2>
+        <div class="lp-prof__role">Docente Titular · Ingeniería Civil</div>
+        <div class="lp-prof__divider"></div>
+        <p class="lp-prof__bio">
+          Ingeniero Civil con más de 12 años de experiencia en infraestructura vial y gestión de maquinaria pesada. Docente titular de la Facultad de Ingeniería desde 2018, con enfoque en formación práctica y aplicación directa al campo profesional.
+        </p>
+
+        <div class="lp-prof__stats">
+          <div class="lp-prof__stat">
+            <strong>12+</strong>
+            <span>Años de experiencia</span>
+          </div>
+          <div class="lp-prof__stat">
+            <strong>126</strong>
+            <span>Estudiantes activos</span>
+          </div>
+          <div class="lp-prof__stat">
+            <strong>3</strong>
+            <span>Cursos activos</span>
+          </div>
+        </div>
+
+        <div class="lp-prof__specialties">
+          <span><i class="fa-solid fa-tractor"></i> Maquinaria pesada</span>
+          <span><i class="fa-solid fa-road"></i> Infraestructura vial</span>
+          <span><i class="fa-solid fa-gears"></i> Gestión de equipos</span>
+        </div>
+
+        <div class="lp-prof__contact-row">
+          <div class="lp-prof__contact">
+            <div class="lp-prof__contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:jl.gomez@umss.edu">jl.gomez@umss.edu</a>
+            </div>
+            <div class="lp-prof__contact-item">
+              <i class="fa-regular fa-clock"></i>
+              <span>Lunes y Miércoles · 14:00–16:00</span>
+            </div>
+          </div>
+          <a href="mailto:jl.gomez@umss.edu" class="lp-prof__btn">
+            <i class="fa-solid fa-paper-plane"></i> Contactar
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     PRESENTACIÓN DE LA MATERIA v3 — tabs interactivos
+     =================================================== -->
+<section class="lp-section lp-course" id="materia">
+  <div class="lp-blueprint-overlay"></div>
+
+  <!-- Decoración: silueta técnica de excavadora -->
+  <div class="lp-course__deco" aria-hidden="true">
+    <svg class="lp-course__deco-svg" viewBox="0 0 480 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="30" y="200" width="220" height="22" rx="11" stroke="rgba(255,184,0,0.14)" stroke-width="1.5" fill="rgba(255,184,0,0.02)"/>
+      <circle cx="55" cy="211" r="8" stroke="rgba(255,184,0,0.14)" stroke-width="1.5" fill="none"/>
+      <circle cx="83" cy="211" r="5" stroke="rgba(255,184,0,0.1)" stroke-width="1" fill="none"/>
+      <circle cx="111" cy="211" r="5" stroke="rgba(255,184,0,0.1)" stroke-width="1" fill="none"/>
+      <circle cx="139" cy="211" r="5" stroke="rgba(255,184,0,0.1)" stroke-width="1" fill="none"/>
+      <circle cx="167" cy="211" r="5" stroke="rgba(255,184,0,0.1)" stroke-width="1" fill="none"/>
+      <circle cx="222" cy="211" r="8" stroke="rgba(255,184,0,0.14)" stroke-width="1.5" fill="none"/>
+      <rect x="70" y="155" width="150" height="50" rx="6" stroke="rgba(255,184,0,0.12)" stroke-width="1.5" fill="rgba(255,184,0,0.02)"/>
+      <rect x="145" y="115" width="75" height="45" rx="5" stroke="rgba(255,184,0,0.14)" stroke-width="1.5" fill="rgba(255,184,0,0.03)"/>
+      <rect x="152" y="122" width="33" height="22" rx="2" stroke="rgba(255,184,0,0.08)" stroke-width="1" fill="rgba(255,184,0,0.02)"/>
+      <rect x="70" y="160" width="32" height="28" rx="3" stroke="rgba(255,184,0,0.1)" stroke-width="1.5" fill="rgba(255,184,0,0.02)"/>
+      <line x1="200" y1="128" x2="325" y2="48" stroke="rgba(255,184,0,0.22)" stroke-width="3" stroke-linecap="round"/>
+      <line x1="208" y1="138" x2="330" y2="58" stroke="rgba(255,184,0,0.07)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="325" y1="48" x2="395" y2="118" stroke="rgba(255,184,0,0.18)" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M395 118 L418 142 L398 162 L370 140 Z" stroke="rgba(255,184,0,0.18)" stroke-width="1.5" fill="rgba(255,184,0,0.04)"/>
+      <line x1="398" y1="160" x2="395" y2="175" stroke="rgba(255,184,0,0.16)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="408" y1="156" x2="406" y2="172" stroke="rgba(255,184,0,0.16)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="418" y1="151" x2="417" y2="167" stroke="rgba(255,184,0,0.16)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="218" y1="155" x2="272" y2="95" stroke="rgba(255,107,53,0.14)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 3"/>
+      <line x1="20" y1="222" x2="460" y2="222" stroke="rgba(255,184,0,0.07)" stroke-width="1" stroke-dasharray="8 5"/>
+      <circle cx="325" cy="48" r="4" fill="rgba(255,184,0,0.35)"/>
+      <circle cx="395" cy="118" r="4" fill="rgba(255,184,0,0.35)"/>
+      <circle cx="200" cy="128" r="4" fill="rgba(255,184,0,0.3)"/>
+      <text x="332" y="40" font-size="9" fill="rgba(255,184,0,0.4)" font-family="monospace">A</text>
+      <text x="402" y="112" font-size="9" fill="rgba(255,184,0,0.4)" font-family="monospace">B</text>
+    </svg>
+  </div>
+
+  <div class="lp-container">
+
+    <!-- Encabezado -->
+    <div class="lp-course__header reveal">
+      <div class="lp-eyebrow"><i class="fa-solid fa-book-open"></i> CIV 247 · Presentación de la materia</div>
+      <h2 class="lp-heading">La materia que conecta la ingeniería<br><span class="grad">con la obra real</span></h2>
+      <p class="lp-course__intro">Maquinaria y Equipo de Construcción forma profesionales capaces de tomar decisiones técnicas y económicas sobre los equipos que construyen, mueven y transforman la infraestructura civil.</p>
+    </div>
+
+
+    <!-- Barra de tabs -->
+    <div class="lp-course__tabs reveal" data-course-tabs>
+      <button class="lp-course__tab is-active" data-target="proposito">
+        <i class="fa-solid fa-bullseye"></i><span>Propósito</span>
+      </button>
+      <button class="lp-course__tab" data-target="objetivos">
+        <i class="fa-solid fa-list-check"></i><span>Objetivos</span>
+      </button>
+      <button class="lp-course__tab" data-target="resultados">
+        <i class="fa-solid fa-graduation-cap"></i><span>Resultados</span>
+      </button>
+      <button class="lp-course__tab" data-target="competencias">
+        <i class="fa-solid fa-brain"></i><span>Competencias</span>
+      </button>
+      <button class="lp-course__tab" data-target="actividades">
+        <i class="fa-solid fa-clipboard-list"></i><span>Actividades</span>
+      </button>
+      <button class="lp-course__tab" data-target="areas">
+        <i class="fa-solid fa-map"></i><span>Áreas temáticas</span>
+      </button>
+    </div>
+
+    <!-- Paneles de contenido -->
+    <div class="lp-course__panels">
+
+      <!-- PROPÓSITO -->
+      <div class="lp-course__panel is-active" id="lp-panel-proposito">
+        <div class="lp-course__purpose-grid">
+          <div class="lp-course__purpose-left">
+            <div class="lp-course__big-quote">
+              <span class="lp-course__bq-mark">"</span>
+              <p>El estudiante deja de calcular en abstracto y empieza a <strong>decidir</strong>: qué equipo usar, cuánto cuesta por hora, cuánto rinde y cómo organizarlo dentro de una obra real.</p>
+            </div>
+            <div class="lp-course__bq-stat">
+              <strong>30 – 50%</strong>
+              <span>del costo directo de obra representa la maquinaria pesada en un proyecto de ingeniería civil</span>
+            </div>
+          </div>
+          <div class="lp-course__purpose-right">
+            <div class="lp-course__info-card lp-course__info-card--yellow">
+              <div class="lp-course__info-icon"><i class="fa-solid fa-bullseye"></i></div>
+              <h4>Propósito del curso</h4>
+              <p>Desarrollar competencias técnicas y analíticas para la selección, operación y gestión económica de equipos en proyectos de construcción civil, con criterios de eficiencia, seguridad y sostenibilidad.</p>
+            </div>
+            <div class="lp-course__info-card lp-course__info-card--orange">
+              <div class="lp-course__info-icon lp-course__info-icon--orange"><i class="fa-solid fa-triangle-exclamation"></i></div>
+              <h4>¿Por qué es importante?</h4>
+              <p>Un profesional que domina este campo tiene ventaja decisiva en planificación de proyectos, control de costos y toma de decisiones críticas en condiciones reales de obra.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OBJETIVOS -->
+      <div class="lp-course__panel" id="lp-panel-objetivos">
+        <div class="lp-course__obj-grid">
+          <div class="lp-course__obj">
+            <div class="lp-course__obj-num">01</div>
+            <div>
+              <h5>Identificar y clasificar la maquinaria</h5>
+              <p>Reconocer los principales tipos de equipos pesados y sus aplicaciones: movimiento de tierras, transporte, compactación y plantas.</p>
+            </div>
+          </div>
+          <div class="lp-course__obj">
+            <div class="lp-course__obj-num">02</div>
+            <div>
+              <h5>Calcular rendimientos y costos horarios</h5>
+              <p>Determinar la productividad real de cada equipo, sus costos de propiedad y operación, y elaborar análisis de precios unitarios.</p>
+            </div>
+          </div>
+          <div class="lp-course__obj">
+            <div class="lp-course__obj-num">03</div>
+            <div>
+              <h5>Planificar la selección óptima</h5>
+              <p>Evaluar y seleccionar la maquinaria más adecuada según tipo de obra, condiciones del terreno, volumen de trabajo y restricciones presupuestarias.</p>
+            </div>
+          </div>
+          <div class="lp-course__obj">
+            <div class="lp-course__obj-num">04</div>
+            <div>
+              <h5>Gestionar equipos en proyectos reales</h5>
+              <p>Aplicar criterios técnicos y económicos para la administración de flotas, contratos de alquiler, mantenimiento y control de operación en obra.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESULTADOS -->
+      <div class="lp-course__panel" id="lp-panel-resultados">
+        <p class="lp-course__outcomes-intro">Al finalizar el curso, el estudiante habrá desarrollado las siguientes capacidades concretas:</p>
+        <div class="lp-course__outcomes">
+          <span class="lp-course__outcome"><i class="fa-solid fa-check"></i> Selección técnica de equipos</span>
+          <span class="lp-course__outcome"><i class="fa-solid fa-check"></i> Cálculo de costos horarios</span>
+          <span class="lp-course__outcome"><i class="fa-solid fa-check"></i> Análisis de rendimiento</span>
+          <span class="lp-course__outcome"><i class="fa-solid fa-check"></i> Planificación de recursos de obra</span>
+          <span class="lp-course__outcome"><i class="fa-solid fa-check"></i> Presupuestos con maquinaria</span>
+          <span class="lp-course__outcome"><i class="fa-solid fa-check"></i> Gestión de contratos de equipos</span>
+          <span class="lp-course__outcome"><i class="fa-solid fa-check"></i> Seguridad en operación</span>
+          <span class="lp-course__outcome"><i class="fa-solid fa-check"></i> Evaluación técnico-económica</span>
+          <span class="lp-course__outcome"><i class="fa-solid fa-check"></i> Elaboración de informes técnicos</span>
+          <span class="lp-course__outcome"><i class="fa-solid fa-check"></i> Uso de tablas de rendimiento</span>
+          <span class="lp-course__outcome"><i class="fa-solid fa-check"></i> Comparativa de alternativas</span>
+          <span class="lp-course__outcome"><i class="fa-solid fa-check"></i> Criterios de sostenibilidad</span>
+        </div>
+      </div>
+
+      <!-- COMPETENCIAS -->
+      <div class="lp-course__panel" id="lp-panel-competencias">
+        <div class="lp-course__comp-grid">
+          <div class="lp-course__comp-card">
+            <div class="lp-course__comp-icon"><i class="fa-solid fa-wrench"></i></div>
+            <h4>Competencia técnica</h4>
+            <p>Identificar, clasificar y analizar maquinaria con criterios de selección basados en rendimiento, condiciones de obra y especificaciones del fabricante.</p>
+            <ul class="lp-course__comp-list">
+              <li>Clasificación de equipos pesados</li>
+              <li>Lectura de fichas técnicas</li>
+              <li>Análisis de rendimiento real</li>
+            </ul>
+          </div>
+          <div class="lp-course__comp-card">
+            <div class="lp-course__comp-icon lp-course__comp-icon--orange"><i class="fa-solid fa-calculator"></i></div>
+            <h4>Competencia analítica</h4>
+            <p>Calcular costos horarios, evaluar alternativas económicas y elaborar análisis de precios unitarios para ítems de maquinaria en presupuestos de obra.</p>
+            <ul class="lp-course__comp-list">
+              <li>Costos de propiedad y operación</li>
+              <li>Análisis de precios unitarios</li>
+              <li>Comparativa de alternativas</li>
+            </ul>
+          </div>
+          <div class="lp-course__comp-card">
+            <div class="lp-course__comp-icon lp-course__comp-icon--teal"><i class="fa-solid fa-diagram-project"></i></div>
+            <h4>Competencia de gestión</h4>
+            <p>Planificar y administrar recursos de maquinaria en obra civil considerando contratos, mantenimiento, seguridad y sostenibilidad operativa.</p>
+            <ul class="lp-course__comp-list">
+              <li>Administración de flotas</li>
+              <li>Contratos de alquiler y operación</li>
+              <li>Seguridad y sostenibilidad</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACTIVIDADES -->
+      <div class="lp-course__panel" id="lp-panel-actividades">
+        <div class="lp-course__act-grid">
+          <div class="lp-course__act-item">
+            <div class="lp-course__act-icon"><i class="fa-solid fa-calculator"></i></div>
+            <div>
+              <h5>Talleres de cálculo</h5>
+              <p>Costos horarios, rendimientos y comparativa económica de equipos en escenarios reales de obra.</p>
+            </div>
+          </div>
+          <div class="lp-course__act-item">
+            <div class="lp-course__act-icon"><i class="fa-solid fa-gears"></i></div>
+            <div>
+              <h5>Simulación de selección</h5>
+              <p>Evaluación del equipo óptimo para casos específicos: tipo de suelo, distancia de acarreo y presupuesto disponible.</p>
+            </div>
+          </div>
+          <div class="lp-course__act-item">
+            <div class="lp-course__act-icon"><i class="fa-solid fa-hard-hat"></i></div>
+            <div>
+              <h5>Visitas técnicas</h5>
+              <p>Observación directa de equipos en obras civiles activas con análisis de operación y protocolos de seguridad.</p>
+            </div>
+          </div>
+          <div class="lp-course__act-item">
+            <div class="lp-course__act-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+            <div>
+              <h5>Análisis de casos</h5>
+              <p>Estudio de casos reales con decisiones de maquinaria en proyectos bolivianos e internacionales de infraestructura vial.</p>
+            </div>
+          </div>
+          <div class="lp-course__act-item">
+            <div class="lp-course__act-icon"><i class="fa-solid fa-file-lines"></i></div>
+            <div>
+              <h5>Informes técnicos</h5>
+              <p>Elaboración de documentos con análisis de equipos, justificación de selección y presupuesto detallado.</p>
+            </div>
+          </div>
+          <div class="lp-course__act-item">
+            <div class="lp-course__act-icon"><i class="fa-solid fa-users-gear"></i></div>
+            <div>
+              <h5>Trabajo colaborativo</h5>
+              <p>Proyectos grupales de planificación de recursos de obra con roles diferenciados: técnico, económico y de seguridad.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ÁREAS TEMÁTICAS -->
+      <div class="lp-course__panel" id="lp-panel-areas">
+        <div class="lp-course__areas">
+          <div class="lp-course__area">
+            <div class="lp-course__area-ico"><i class="fa-solid fa-hill-rockslide"></i></div>
+            <h4>Movimiento de tierras</h4>
+            <p>Excavadoras, motoniveladoras, tractores, compactadoras y bulldozers en obra vial.</p>
+          </div>
+          <div class="lp-course__area">
+            <div class="lp-course__area-ico"><i class="fa-solid fa-truck"></i></div>
+            <h4>Transporte y acarreo</h4>
+            <p>Volquetas, dumpers articulados, cintas transportadoras y logística de material.</p>
+          </div>
+          <div class="lp-course__area">
+            <div class="lp-course__area-ico"><i class="fa-solid fa-gears"></i></div>
+            <h4>Plantas y equipos especiales</h4>
+            <p>Plantas de asfalto, mezcladoras, bombas de concreto, grúas y equipos de perforación.</p>
+          </div>
+          <div class="lp-course__area">
+            <div class="lp-course__area-ico"><i class="fa-solid fa-calculator"></i></div>
+            <h4>Análisis económico</h4>
+            <p>Costos horarios, rendimientos, amortización, mantenimiento y comparativa de equipos.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /panels -->
+  </div>
+</section>
+
+<!-- ===================================================
+     ROL · Docente / Estudiante
+     =================================================== -->
+<section class="lp-section lp-roles" style="padding-top:4rem;padding-bottom:4rem">
+  <div class="lp-blueprint-overlay"></div>
+  <div class="lp-container">
+    <div class="reveal" style="text-align:center;margin-bottom:2.5rem">
+      <div class="lp-eyebrow" style="justify-content:center"><i class="fa-solid fa-bolt"></i> Acceso diferenciado</div>
+      <h2 class="lp-heading" style="text-align:center">Ingresa según tu <span class="grad">rol académico</span></h2>
+      <p class="lp-subtext" style="margin:0 auto;text-align:center">Dos perfiles con permisos y vistas específicas. Elige el tuyo para comenzar.</p>
+    </div>
+    <div class="lp-roles__grid">
+      <a href="auth/login.html?role=teacher" class="lp-role-card reveal" data-delay="1">
+        <div class="lp-role-card__bg"><i class="fa-solid fa-chalkboard-user"></i></div>
+        <div class="lp-role-card__tag">Docente</div>
+        <div class="lp-role-card__icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+        <h3 class="lp-role-card__title">Panel Docente</h3>
+        <p class="lp-role-card__desc">Crea cursos, administra contenido, revisa entregas y comunica anuncios con un panel profesional diseñado para la gestión académica de alto nivel.</p>
+        <ul class="lp-role-card__list">
+          <li><i class="fa-solid fa-check"></i> Gestión completa de cursos y módulos</li>
+          <li><i class="fa-solid fa-check"></i> Publicación de tareas, materiales y anuncios</li>
+          <li><i class="fa-solid fa-check"></i> Calificación, observaciones y estadísticas</li>
+          <li><i class="fa-solid fa-check"></i> Calendario académico y lista de estudiantes</li>
+        </ul>
+        <span class="lp-role-card__cta">Acceder como docente <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+      <a href="auth/login.html?role=student" class="lp-role-card lp-role-card--student reveal" data-delay="2">
+        <div class="lp-role-card__bg"><i class="fa-solid fa-user-graduate"></i></div>
+        <div class="lp-role-card__tag">Estudiante</div>
+        <div class="lp-role-card__icon"><i class="fa-solid fa-user-graduate"></i></div>
+        <h3 class="lp-role-card__title">Panel Estudiante</h3>
+        <p class="lp-role-card__desc">Consulta anuncios, entrega tareas, accede a materiales y revisa tu progreso académico en una interfaz clara y ordenada pensada para rendir más.</p>
+        <ul class="lp-role-card__list">
+          <li><i class="fa-solid fa-check"></i> Tareas pendientes, enviadas y calificadas</li>
+          <li><i class="fa-solid fa-check"></i> Descarga de materiales y recursos técnicos</li>
+          <li><i class="fa-solid fa-check"></i> Calendario de entregas y eventos</li>
+          <li><i class="fa-solid fa-check"></i> Calificaciones y retroalimentación del docente</li>
+        </ul>
+        <span class="lp-role-card__cta">Acceder como estudiante <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     FEATURES · Capacidades
+     =================================================== -->
+<section id="docente" class="lp-section lp-features">
+  <div class="lp-blueprint-overlay"></div>
+  <div class="lp-container">
+    <div class="reveal">
+      <div class="lp-eyebrow"><i class="fa-solid fa-gear"></i> Capacidades</div>
+      <h2 class="lp-heading">Todo lo que una materia de obra <span class="grad">necesita</span></h2>
+      <p class="lp-subtext">Diseñado para materias técnicas donde la información crítica, los cálculos y los equipos son parte del día a día.</p>
+    </div>
+
+    <div class="lp-features__grid">
+      <div class="lp-feat-card reveal" data-delay="1">
+        <div class="lp-feat-num">01</div>
+        <div class="lp-feat-icon"><i class="fa-solid fa-bullhorn"></i></div>
+        <h3>Anuncios institucionales</h3>
+        <p>Publica comunicados que llegan directo al correo institucional de los estudiantes. Nunca más un aviso pasa desapercibido.</p>
+      </div>
+      <div class="lp-feat-card reveal" data-delay="2">
+        <div class="lp-feat-num">02</div>
+        <div class="lp-feat-icon"><i class="fa-solid fa-cubes-stacked"></i></div>
+        <h3>Organización por módulos</h3>
+        <p>Estructura el curso en unidades o semanas. Carga PDFs, videos, enlaces y documentos técnicos en un lugar ordenado.</p>
+      </div>
+      <div class="lp-feat-card reveal" data-delay="3">
+        <div class="lp-feat-num">03</div>
+        <div class="lp-feat-icon"><i class="fa-solid fa-file-circle-check"></i></div>
+        <h3>Tareas y entregas</h3>
+        <p>Define fechas límite, recibe archivos, califica con comentarios y mantén un historial limpio por cada estudiante.</p>
+      </div>
+      <div class="lp-feat-card reveal" data-delay="1">
+        <div class="lp-feat-num">04</div>
+        <div class="lp-feat-icon"><i class="fa-solid fa-calendar-days"></i></div>
+        <h3>Calendario académico</h3>
+        <p>Eventos, evaluaciones y prácticas de campo visibles para docentes y estudiantes en un calendario interactivo.</p>
+      </div>
+      <div class="lp-feat-card reveal" data-delay="2">
+        <div class="lp-feat-num">05</div>
+        <div class="lp-feat-icon"><i class="fa-solid fa-chart-pie"></i></div>
+        <h3>Estadísticas del curso</h3>
+        <p>Inscritos, tareas activas y entregas pendientes. Todo en un panel ejecutivo claro con datos en tiempo real.</p>
+      </div>
+      <div class="lp-feat-card reveal" data-delay="3">
+        <div class="lp-feat-num">06</div>
+        <div class="lp-feat-icon"><i class="fa-solid fa-eye-slash"></i></div>
+        <h3>Control de visibilidad</h3>
+        <p>Decide qué ven los estudiantes y cuándo. Publica borradores, programa fechas o mantén material privado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     MÓDULOS TÉCNICOS
+     =================================================== -->
+<section id="modulos" class="lp-section lp-modules">
+  <div class="lp-blueprint-overlay"></div>
+  <div class="lp-container">
+    <div class="reveal">
+      <div class="lp-eyebrow" style="color:var(--brand-orange)"><i class="fa-solid fa-road"></i> Arquitectura escalable</div>
+      <h2 class="lp-heading">Preparado para herramientas <span class="grad">técnicas especializadas</span></h2>
+      <p class="lp-subtext">Maquinaria y Equipo de Construcción nace como aula virtual, pero su arquitectura modular permite sumar herramientas propias del rubro de construcción progresivamente.</p>
+    </div>
+
+    <div class="lp-modules__grid">
+      <div class="lp-mod-chip reveal" data-delay="1">
+        <div class="lp-mod-badge">Q3 2025</div>
+        <i class="lp-mod-ico fa-solid fa-calculator"></i>
+        <h4>Precios unitarios</h4>
+        <p>Análisis y descomposición de ítems de obra.</p>
+      </div>
+      <div class="lp-mod-chip reveal" data-delay="2">
+        <div class="lp-mod-badge">Q3 2025</div>
+        <i class="lp-mod-ico fa-solid fa-table-list"></i>
+        <h4>Tablas técnicas</h4>
+        <p>Rendimientos, capacidades y coeficientes.</p>
+      </div>
+      <div class="lp-mod-chip reveal" data-delay="3">
+        <div class="lp-mod-badge">Q4 2025</div>
+        <i class="lp-mod-ico fa-solid fa-sack-dollar"></i>
+        <h4>Presupuestos</h4>
+        <p>Estimaciones paramétricas y comparativas.</p>
+      </div>
+      <div class="lp-mod-chip reveal" data-delay="4">
+        <div class="lp-mod-badge">Q4 2025</div>
+        <i class="lp-mod-ico fa-solid fa-truck-front"></i>
+        <h4>Fichas de maquinaria</h4>
+        <p>Catálogo de equipos pesados y livianos.</p>
+      </div>
+      <div class="lp-mod-chip reveal" data-delay="1">
+        <div class="lp-mod-badge">Q1 2026</div>
+        <i class="lp-mod-ico fa-solid fa-gauge-high"></i>
+        <h4>Rendimiento de equipos</h4>
+        <p>Productividad por hora y factores de uso.</p>
+      </div>
+      <div class="lp-mod-chip reveal" data-delay="2">
+        <div class="lp-mod-badge">Q1 2026</div>
+        <i class="lp-mod-ico fa-solid fa-chart-column"></i>
+        <h4>Análisis de costos</h4>
+        <p>Costos directos, indirectos y horarios.</p>
+      </div>
+      <div class="lp-mod-chip reveal" data-delay="3">
+        <div class="lp-mod-badge">Q2 2026</div>
+        <i class="lp-mod-ico fa-solid fa-code-compare"></i>
+        <h4>Comparativas</h4>
+        <p>Equipo A vs. equipo B según escenario.</p>
+      </div>
+      <div class="lp-mod-chip reveal" data-delay="4">
+        <div class="lp-mod-badge">Q2 2026</div>
+        <i class="lp-mod-ico fa-solid fa-file-invoice"></i>
+        <h4>Reportes</h4>
+        <p>Exportación técnica y académica.</p>
+      </div>
+    </div>
+
+    <p style="text-align:center;margin-top:2rem;font-size:.83rem;color:var(--text-tertiary);font-family:var(--font-mono)">
+      <i class="fa-solid fa-circle-info" style="color:var(--brand-yellow)"></i> &nbsp;
+      Módulos habilitados progresivamente · arquitectura ya lista para integrarlos.
+    </p>
+  </div>
+</section>
+
+<!-- ===================================================
+     PROCESO EN 4 PASOS
+     =================================================== -->
+<section id="proceso" class="lp-section lp-process">
+  <div class="lp-blueprint-overlay" style="opacity:.5"></div>
+  <div class="lp-container">
+    <div class="reveal" style="text-align:center">
+      <div class="lp-eyebrow" style="justify-content:center"><i class="fa-solid fa-list-ol"></i> En 4 pasos</div>
+      <h2 class="lp-heading" style="text-align:center;max-width:700px;margin-left:auto;margin-right:auto">Así funciona el <span class="grad">flujo académico</span></h2>
+      <p class="lp-subtext" style="margin:0 auto">Desde el registro hasta la entrega final, cada interacción está pensada para ser clara y profesional.</p>
+    </div>
+
+    <div class="lp-process__timeline reveal">
+      <div class="lp-process__line"></div>
+      <div class="lp-proc-step">
+        <div class="lp-proc-node">01</div>
+        <h4>Registro institucional</h4>
+        <p>Ingresa con tu correo universitario oficial (.edu) y valida tu identidad académica.</p>
+      </div>
+      <div class="lp-proc-step">
+        <div class="lp-proc-node">02</div>
+        <h4>Curso y módulos</h4>
+        <p>El docente crea el curso, lo organiza en unidades y sube recursos técnicos.</p>
+      </div>
+      <div class="lp-proc-step">
+        <div class="lp-proc-node">03</div>
+        <h4>Interacción activa</h4>
+        <p>Tareas, anuncios, entregas y observaciones en tiempo real para todos.</p>
+      </div>
+      <div class="lp-proc-step">
+        <div class="lp-proc-node">04</div>
+        <h4>Seguimiento</h4>
+        <p>Estadísticas, calendario y retroalimentación para cerrar el ciclo académico.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     CTA FINAL
+     =================================================== -->
+<section id="estudiante" class="lp-section lp-cta">
+  <div class="lp-container">
+    <div class="lp-cta__card reveal">
+      <div class="lp-cta__g1"></div>
+      <div class="lp-cta__g2"></div>
+      <div class="lp-cta__inner">
+        <div class="lp-eyebrow" style="justify-content:center"><i class="fa-solid fa-rocket"></i> Comienza ya</div>
+        <h2>Una plataforma profesional para estudiar maquinaria
+          <span style="background:linear-gradient(90deg,#FFB800,#FF6B35);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text"> como se trabaja en campo.</span>
+        </h2>
+        <p>Accede, explora el dashboard y organiza tu semestre con una herramienta diseñada para ingeniería real, no para plataformas genéricas.</p>
+        <div class="lp-cta__btns">
+          <a href="auth/registro.html" class="lp-btn lp-btn--primary"><i class="fa-solid fa-user-plus"></i> Crear cuenta</a>
+          <a href="auth/login.html" class="lp-btn lp-btn--outline"><i class="fa-solid fa-arrow-right-to-bracket"></i> Ya tengo cuenta</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     FOOTER
+     =================================================== -->
+<footer class="lp-footer">
+  <div class="lp-container">
+    <div class="lp-footer__grid">
+      <div>
+        <a href="index.html" class="lp-footer__brand">
+          <div class="lp-footer__brand-mark"><i class="fa-solid fa-helmet-safety"></i></div>
+          <div>
+            <span class="lp-footer__brand-name">Maquinaria y Equipo de Construcción</span>
+            <span class="lp-footer__brand-sub">aula técnica · maquinaria</span>
+          </div>
+        </a>
+        <p class="lp-footer__desc">Entorno académico especializado en maquinaria y equipo de construcción. Diseñado para universidades que enseñan ingeniería en serio.</p>
+      </div>
+      <div class="lp-footer__col">
+        <h5>Plataforma</h5>
+        <ul>
+          <li><a href="#plataforma">Descripción</a></li>
+          <li><a href="#docente">Panel docente</a></li>
+          <li><a href="#estudiante">Panel estudiante</a></li>
+          <li><a href="#modulos">Módulos técnicos</a></li>
+        </ul>
+      </div>
+      <div class="lp-footer__col">
+        <h5>Acceso</h5>
+        <ul>
+          <li><a href="auth/login.html">Iniciar sesión</a></li>
+          <li><a href="auth/registro.html">Registro</a></li>
+          <li><a href="auth/recuperar.html">Recuperar contraseña</a></li>
+        </ul>
+      </div>
+      <div class="lp-footer__col">
+        <h5>Soporte</h5>
+        <ul>
+          <li><a href="#">Manual de uso</a></li>
+          <li><a href="#">Contacto académico</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="lp-footer__bottom">
+      <span>© <span data-year>2026</span> Maquinaria y Equipo de Construcción · Plataforma académica universitaria. Todos los derechos reservados.</span>
+      <span class="lp-footer__mono">v2.4 · build.<span data-year>2025</span>.04</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+(function(){
+  /* Heading: animación letra por letra */
+  const heading = document.querySelector('[data-animated-heading]');
+  if(heading){
+    const raw = heading.getAttribute('data-text') || '';
+    const lines = raw.split('\n');
+    const charDelay = 30, initialDelay = 200;
+    heading.textContent = '';
+    lines.forEach((line, li) => {
+      const lineEl = document.createElement('span');
+      lineEl.className = 'line';
+      [...line].forEach((ch, ci) => {
+        const s = document.createElement('span');
+        s.className = 'char';
+        s.textContent = ch === ' ' ? '\u00A0' : ch;
+        s.style.transitionDelay = (initialDelay + li * line.length * charDelay + ci * charDelay) + 'ms';
+        lineEl.appendChild(s);
+      });
+      heading.appendChild(lineEl);
+    });
+    requestAnimationFrame(() => heading.classList.add('is-on'));
+  }
+  /* Elementos con fade-in por delay */
+  document.querySelectorAll('[data-fade-delay]').forEach(el => {
+    setTimeout(() => el.classList.add('is-on'), parseInt(el.getAttribute('data-fade-delay')) || 0);
+  });
+  /* Tabs de presentación de la materia */
+  const courseTabs = document.querySelector('[data-course-tabs]');
+  if(courseTabs){
+    const tabs = courseTabs.querySelectorAll('.lp-course__tab');
+    tabs.forEach(t=>{
+      t.addEventListener('click',()=>{
+        tabs.forEach(x=>x.classList.remove('is-active'));
+        t.classList.add('is-active');
+        document.querySelectorAll('.lp-course__panel').forEach(p=>p.classList.remove('is-active'));
+        const panel = document.getElementById('lp-panel-'+t.dataset.target);
+        if(panel) panel.classList.add('is-active');
+      });
+    });
+  }
+})();
+</script>
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js').catch(()=>{});
+}
+</script>
+</body>
+</html>

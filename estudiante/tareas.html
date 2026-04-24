@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mis tareas · Maquinaria y Equipo de Construcción</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<style>
+  .nav-item.is-active{background:linear-gradient(90deg,rgba(59,130,246,0.12),rgba(59,130,246,0.02))}
+  .nav-item.is-active i{color:var(--brand-blue-light)}
+  .nav-item.is-active::before{background:var(--brand-blue)}
+  .sidebar-foot .avatar{background:var(--grad-blue);color:#fff}
+  .tab.is-active{color:var(--brand-blue-light);border-bottom-color:var(--brand-blue)}
+  .tab.is-active .count{background:rgba(59,130,246,0.18);color:var(--brand-blue-light)}
+</style>
+  <!-- PWA + iOS -->
+  <meta name="theme-color" content="#FFB800">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MEC EDU">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='38' fill='%23FFB800'/%3E%3Ctext x='90' y='128' text-anchor='middle' font-size='105' font-family='Arial Black' font-weight='900' fill='%231a1200'%3EM%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="app">
+  <aside class="sidebar">
+    <a href="dashboard.html" class="brand">
+      <span class="brand-mark"><i class="fa-solid fa-helmet-safety"></i></span>
+      <div>Maq. y Equipo<small>Panel Estudiante</small></div>
+    </a>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Aula virtual</div>
+      <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-house"></i> Inicio</a>
+      <a href="cursos.html" class="nav-item"><i class="fa-solid fa-graduation-cap"></i> Mis cursos <span class="count">3</span></a>
+      <a href="calendario.html" class="nav-item"><i class="fa-solid fa-calendar-days"></i> Calendario</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Académico</div>
+      <a href="tareas.html" class="nav-item is-active"><i class="fa-solid fa-clipboard-list"></i> Tareas <span class="count">4</span></a>
+      <a href="materiales.html" class="nav-item"><i class="fa-solid fa-folder-tree"></i> Materiales</a>
+      <a href="anuncios.html" class="nav-item"><i class="fa-solid fa-bullhorn"></i> Anuncios</a>
+      <a href="calificaciones.html" class="nav-item"><i class="fa-solid fa-award"></i> Calificaciones</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Cuenta</div>
+      <a href="../perfil.html" class="nav-item"><i class="fa-solid fa-user"></i> Mi perfil</a>
+      <a href="../configuracion.html" class="nav-item"><i class="fa-solid fa-gear"></i> Configuración</a>
+      <a href="../index.html" class="nav-item"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</a>
+    </div>
+    <div class="sidebar-foot">
+      <div class="avatar">MQ</div>
+      <div style="flex:1;min-width:0"><div class="name">María Quispe</div><div class="role">Ing. Civil · 4to año</div></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn btn-sidebar-toggle" data-sidebar-toggle><i class="fa-solid fa-bars"></i></button>
+      <div class="topbar-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Buscar tarea…"></div>
+      <div class="topbar-actions">
+        <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="dot-badge"></span></button>
+        <a href="../perfil.html" class="user-chip"><span class="avatar blue">MQ</span><span class="name hide-mobile">María Q.</span></a>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="page-head anim-up">
+        <div>
+          <div class="crumbs"><a href="dashboard.html">Inicio</a> <i class="fa-solid fa-chevron-right"></i> <span>Tareas</span></div>
+          <h1>Mis tareas</h1>
+          <p>Todas las tareas activas de tus 3 cursos. Filtra por estado para ver qué necesita tu atención.</p>
+        </div>
+        <div class="actions">
+          <select class="form-control" style="width:auto;padding:0.6rem 2.2rem 0.6rem 0.9rem"><option>Todos los cursos</option><option>CIV-305</option><option>CIV-412</option><option>CIV-198</option></select>
+        </div>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card s-orange"><div class="label"><i class="fa-solid fa-circle-exclamation"></i> Pendientes</div><div class="value">4</div></div>
+        <div class="stat-card s-blue"><div class="label"><i class="fa-solid fa-paper-plane"></i> Enviadas</div><div class="value">14</div></div>
+        <div class="stat-card s-green"><div class="label"><i class="fa-solid fa-circle-check"></i> Calificadas</div><div class="value">11</div></div>
+        <div class="stat-card"><div class="label"><i class="fa-solid fa-xmark"></i> Vencidas</div><div class="value">0</div><div class="delta">Excelente</div></div>
+      </div>
+
+      <div class="tabs" data-tabs>
+        <button class="tab is-active" data-tab="pendientes"><i class="fa-solid fa-clock"></i> Pendientes <span class="count">4</span></button>
+        <button class="tab" data-tab="enviadas"><i class="fa-solid fa-paper-plane"></i> Enviadas <span class="count">14</span></button>
+        <button class="tab" data-tab="calificadas"><i class="fa-solid fa-circle-check"></i> Calificadas <span class="count">11</span></button>
+        <button class="tab" data-tab="vencidas"><i class="fa-solid fa-xmark"></i> Vencidas</button>
+      </div>
+
+      <!-- Pendientes -->
+      <div data-tab-panel="pendientes">
+        <div class="feed">
+          <div class="feed-item">
+            <div class="feed-ico orange"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <div class="feed-body">
+              <h4>Informe · Volquetas 6x4 <span class="badge badge--orange" style="font-size:0.65rem">Cierra en 3 días</span></h4>
+              <p>Análisis técnico del comportamiento de volquetas 6x4 en obras de movimiento masivo de tierras.</p>
+              <div class="feed-meta"><span><i class="fa-solid fa-book"></i> CIV-305</span><span><i class="fa-regular fa-clock"></i> 22 Abr · 23:59</span><span><i class="fa-solid fa-paperclip"></i> Entrega: PDF</span></div>
+            </div>
+            <button class="btn btn-blue btn-sm">Entregar</button>
+          </div>
+          <div class="feed-item">
+            <div class="feed-ico"><i class="fa-solid fa-clipboard-list"></i></div>
+            <div class="feed-body">
+              <h4>Práctica 04 · Rendimiento de excavadora</h4>
+              <p>Cálculo del rendimiento horario de una excavadora hidráulica CAT 336 según condiciones de obra.</p>
+              <div class="feed-meta"><span><i class="fa-solid fa-book"></i> CIV-305</span><span><i class="fa-regular fa-clock"></i> 25 Abr · 23:59</span><span><i class="fa-solid fa-paperclip"></i> PDF + planilla</span></div>
+            </div>
+            <button class="btn btn-secondary btn-sm">Comenzar</button>
+          </div>
+          <div class="feed-item">
+            <div class="feed-ico blue"><i class="fa-solid fa-pencil"></i></div>
+            <div class="feed-body">
+              <h4>Examen parcial · Unidad 2</h4>
+              <p>Examen presencial sobre equipos de movimiento de tierras. Material permitido: tabla de coeficientes.</p>
+              <div class="feed-meta"><span><i class="fa-solid fa-book"></i> CIV-305</span><span><i class="fa-regular fa-clock"></i> 30 Abr · 14:00</span><span><i class="fa-solid fa-location-dot"></i> Aula 302</span></div>
+            </div>
+            <button class="btn btn-ghost btn-sm">Detalles</button>
+          </div>
+          <div class="feed-item">
+            <div class="feed-ico"><i class="fa-solid fa-people-group"></i></div>
+            <div class="feed-body">
+              <h4>Cronograma de obra (grupal) <span class="badge" style="font-size:0.65rem">Equipo 4</span></h4>
+              <p>Planificación de obra con MS Project. Entrega grupal con asignación de equipos por frente.</p>
+              <div class="feed-meta"><span><i class="fa-solid fa-book"></i> CIV-412</span><span><i class="fa-regular fa-clock"></i> 05 May · 23:59</span><span><i class="fa-solid fa-paperclip"></i> MPP + PDF</span></div>
+            </div>
+            <button class="btn btn-secondary btn-sm">Ver equipo</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enviadas -->
+      <div data-tab-panel="enviadas" style="display:none">
+        <div class="table-wrap">
+          <table class="table">
+            <thead><tr><th>Tarea</th><th>Curso</th><th>Enviada</th><th>Estado</th><th></th></tr></thead>
+            <tbody>
+              <tr><td><strong>Práctica 03 · Compactación</strong></td><td><span class="badge badge--yellow">CIV-305</span></td><td class="mono">14 Abr</td><td><span class="badge badge--green">A tiempo</span></td><td><button class="btn btn-ghost btn-sm">Ver</button></td></tr>
+              <tr><td><strong>Cuestionario · Motoniveladora</strong></td><td><span class="badge badge--yellow">CIV-305</span></td><td class="mono">17 Abr</td><td><span class="badge badge--green">A tiempo</span></td><td><button class="btn btn-ghost btn-sm">Ver</button></td></tr>
+              <tr><td><strong>Informe planificación inicial</strong></td><td><span class="badge badge--blue">CIV-412</span></td><td class="mono">12 Abr</td><td><span class="badge badge--green">A tiempo</span></td><td><button class="btn btn-ghost btn-sm">Ver</button></td></tr>
+              <tr><td><strong>Ensayo materiales sostenibles</strong></td><td><span class="badge">CIV-198</span></td><td class="mono">10 Abr</td><td><span class="badge badge--green">A tiempo</span></td><td><button class="btn btn-ghost btn-sm">Ver</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Calificadas -->
+      <div data-tab-panel="calificadas" style="display:none">
+        <div class="table-wrap">
+          <table class="table">
+            <thead><tr><th>Tarea</th><th>Curso</th><th>Calificada</th><th>Nota</th><th>Observación</th><th></th></tr></thead>
+            <tbody>
+              <tr><td><strong>Práctica 03 · Compactación</strong></td><td><span class="badge badge--yellow">CIV-305</span></td><td class="mono">15 Abr</td><td><strong style="color:var(--success)">95</strong></td><td>Excelente análisis</td><td><button class="btn btn-ghost btn-sm">Ver</button></td></tr>
+              <tr><td><strong>Práctica 02 · Mov. tierras</strong></td><td><span class="badge badge--yellow">CIV-305</span></td><td class="mono">02 Abr</td><td><strong>92</strong></td><td>Buen trabajo</td><td><button class="btn btn-ghost btn-sm">Ver</button></td></tr>
+              <tr><td><strong>Cuestionario · Excavadoras</strong></td><td><span class="badge badge--yellow">CIV-305</span></td><td class="mono">28 Mar</td><td><strong style="color:var(--success)">98</strong></td><td>—</td><td><button class="btn btn-ghost btn-sm">Ver</button></td></tr>
+              <tr><td><strong>Práctica 01 · Identificación</strong></td><td><span class="badge badge--yellow">CIV-305</span></td><td class="mono">14 Mar</td><td><strong>90</strong></td><td>Faltó referencia</td><td><button class="btn btn-ghost btn-sm">Ver</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div data-tab-panel="vencidas" style="display:none">
+        <div class="empty">
+          <i class="fa-solid fa-medal"></i>
+          <h3>¡Sin tareas vencidas!</h3>
+          <p>Mantén la racha. Llevas 14 entregas consecutivas a tiempo este semestre.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/main.js"></script>
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js').catch(()=>{});
+}
+</script>
+</body>
+</html>

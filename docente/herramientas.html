@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulos técnicos · Maquinaria y Equipo de Construcción</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/styles.css">
+  <!-- PWA + iOS -->
+  <meta name="theme-color" content="#FFB800">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MEC EDU">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='38' fill='%23FFB800'/%3E%3Ctext x='90' y='128' text-anchor='middle' font-size='105' font-family='Arial Black' font-weight='900' fill='%231a1200'%3EM%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="app">
+  <aside class="sidebar">
+    <a href="dashboard.html" class="brand">
+      <span class="brand-mark"><i class="fa-solid fa-helmet-safety"></i></span>
+      <div>Maq. y Equipo<small>Panel Docente</small></div>
+    </a>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Principal</div>
+      <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+      <a href="cursos.html" class="nav-item"><i class="fa-solid fa-folder-open"></i> Mis cursos <span class="count">3</span></a>
+      <a href="calendario.html" class="nav-item"><i class="fa-solid fa-calendar-days"></i> Calendario</a>
+      <a href="mensajes.html" class="nav-item"><i class="fa-solid fa-comment-dots"></i> Mensajes</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Gestión académica</div>
+      <a href="tareas.html" class="nav-item"><i class="fa-solid fa-file-circle-check"></i> Tareas</a>
+      <a href="materiales.html" class="nav-item"><i class="fa-solid fa-folder-tree"></i> Materiales</a>
+      <a href="anuncios.html" class="nav-item"><i class="fa-solid fa-bullhorn"></i> Anuncios</a>
+      <a href="estudiantes.html" class="nav-item"><i class="fa-solid fa-users"></i> Estudiantes</a>
+      <a href="calificaciones.html" class="nav-item"><i class="fa-solid fa-award"></i> Calificaciones</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Herramientas técnicas</div>
+      <a href="herramientas.html" class="nav-item is-active"><i class="fa-solid fa-toolbox"></i> Módulos técnicos</a>
+    </div>
+    <div class="sidebar-foot">
+      <div class="avatar">CR</div>
+      <div style="flex:1;min-width:0"><div class="name">Ing. Carlos Rojas</div><div class="role">Docente</div></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn btn-sidebar-toggle" data-sidebar-toggle><i class="fa-solid fa-bars"></i></button>
+      <div class="topbar-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Buscar herramienta…"></div>
+      <div class="topbar-actions">
+        <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
+        <a href="../perfil.html" class="user-chip"><span class="avatar">CR</span><span class="name hide-mobile">Carlos R.</span></a>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <div class="page-head anim-up">
+        <div>
+          <div class="crumbs"><a href="dashboard.html">Inicio</a> <i class="fa-solid fa-chevron-right"></i> <span>Módulos técnicos</span></div>
+          <h1>Módulos técnicos especializados</h1>
+          <p>Herramientas profesionales del rubro de construcción que se integrarán en próximas versiones de la plataforma. La arquitectura ya está preparada para ellas.</p>
+        </div>
+        <div class="actions">
+          <button class="btn btn-secondary"><i class="fa-solid fa-bell"></i> Avisarme cuando estén listas</button>
+        </div>
+      </div>
+
+      <!-- Aviso futuro -->
+      <div class="card-glass reveal" style="padding:1.5rem;display:flex;align-items:center;gap:1.2rem;margin-bottom:2rem;flex-wrap:wrap">
+        <div style="width:54px;height:54px;border-radius:14px;background:rgba(255,184,0,0.15);border:1px solid rgba(255,184,0,0.3);display:grid;place-items:center;color:var(--brand-yellow);font-size:1.4rem">
+          <i class="fa-solid fa-flask"></i>
+        </div>
+        <div style="flex:1;min-width:240px">
+          <h3 style="font-size:1.05rem;margin-bottom:0.2rem">Arquitectura preparada · Roadmap activo</h3>
+          <p style="font-size:0.88rem;margin:0">Cada módulo se integrará sin afectar el funcionamiento del aula virtual. Diseño pensado para ingeniería real.</p>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.8rem">
+          <div style="text-align:right">
+            <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--brand-yellow)">12</div>
+            <div style="font-size:0.7rem;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:0.1em">Módulos planificados</div>
+          </div>
+          <span class="badge badge--yellow"><span class="badge-dot"></span> Roadmap 2025-2026</span>
+        </div>
+      </div>
+
+      <h3 style="margin-bottom:1rem;font-size:1.05rem">Análisis económico</h3>
+      <div class="tool-grid" style="margin-bottom:2rem">
+        <div class="tool-card reveal">
+          <div class="ico"><i class="fa-solid fa-calculator"></i></div>
+          <h3>Análisis de Precios Unitarios</h3>
+          <p>Descomposición de ítems de obra: materiales, mano de obra, equipo, herramientas e indirectos. Plantillas reutilizables y exportación a PDF/Excel.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center"><span class="soon"><i class="fa-solid fa-clock"></i> Q3 2025</span><span style="font-size:0.75rem;color:var(--text-tertiary)">v1.0</span></div>
+        </div>
+        <div class="tool-card reveal" data-delay="1">
+          <div class="ico"><i class="fa-solid fa-sack-dollar"></i></div>
+          <h3>Generador de Presupuestos</h3>
+          <p>Estimaciones paramétricas, comparación de escenarios y curvas de avance económico para proyectos de construcción.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center"><span class="soon"><i class="fa-solid fa-clock"></i> Q3 2025</span><span style="font-size:0.75rem;color:var(--text-tertiary)">v1.0</span></div>
+        </div>
+        <div class="tool-card reveal" data-delay="2">
+          <div class="ico"><i class="fa-solid fa-chart-column"></i></div>
+          <h3>Análisis de Costos</h3>
+          <p>Costos directos, indirectos, costos horarios de equipos y desviaciones presupuestarias por partida.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center"><span class="soon"><i class="fa-solid fa-clock"></i> Q4 2025</span><span style="font-size:0.75rem;color:var(--text-tertiary)">v1.0</span></div>
+        </div>
+      </div>
+
+      <h3 style="margin-bottom:1rem;font-size:1.05rem">Equipos y maquinaria</h3>
+      <div class="tool-grid" style="margin-bottom:2rem">
+        <div class="tool-card reveal">
+          <div class="ico"><i class="fa-solid fa-truck-front"></i></div>
+          <h3>Fichas de Maquinaria</h3>
+          <p>Catálogo técnico con especificaciones, fotos, capacidades, consumos y referencias de equipos pesados y livianos.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center"><span class="soon"><i class="fa-solid fa-clock"></i> Q3 2025</span><span style="font-size:0.75rem;color:var(--text-tertiary)">v1.0</span></div>
+        </div>
+        <div class="tool-card reveal" data-delay="1">
+          <div class="ico"><i class="fa-solid fa-gauge-high"></i></div>
+          <h3>Rendimiento de Equipos</h3>
+          <p>Cálculo de productividad horaria, factor de uso, tiempos de ciclo y eficiencia operativa de la maquinaria.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center"><span class="soon"><i class="fa-solid fa-clock"></i> Q3 2025</span><span style="font-size:0.75rem;color:var(--text-tertiary)">v1.0</span></div>
+        </div>
+        <div class="tool-card reveal" data-delay="2">
+          <div class="ico"><i class="fa-solid fa-code-compare"></i></div>
+          <h3>Comparativas Técnicas</h3>
+          <p>Equipo A vs. equipo B según escenario de obra, volumen, distancia y costo. Recomendación automatizada.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center"><span class="soon"><i class="fa-solid fa-clock"></i> Q4 2025</span><span style="font-size:0.75rem;color:var(--text-tertiary)">v1.0</span></div>
+        </div>
+      </div>
+
+      <h3 style="margin-bottom:1rem;font-size:1.05rem">Datos y reportes</h3>
+      <div class="tool-grid" style="margin-bottom:2rem">
+        <div class="tool-card reveal">
+          <div class="ico"><i class="fa-solid fa-table-list"></i></div>
+          <h3>Tablas Técnicas</h3>
+          <p>Coeficientes de rendimiento, tablas oficiales de capacidad de carga, potencias, normativas y referencias.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center"><span class="soon"><i class="fa-solid fa-clock"></i> Q3 2025</span><span style="font-size:0.75rem;color:var(--text-tertiary)">v1.0</span></div>
+        </div>
+        <div class="tool-card reveal" data-delay="1">
+          <div class="ico"><i class="fa-solid fa-square-root-variable"></i></div>
+          <h3>Calculadoras Técnicas</h3>
+          <p>Cálculo rápido de volúmenes, pendientes, consumos, dosificaciones de hormigón y áridos.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center"><span class="soon"><i class="fa-solid fa-clock"></i> Q4 2025</span><span style="font-size:0.75rem;color:var(--text-tertiary)">v1.0</span></div>
+        </div>
+        <div class="tool-card reveal" data-delay="2">
+          <div class="ico"><i class="fa-solid fa-file-invoice"></i></div>
+          <h3>Reportes Académico-Técnicos</h3>
+          <p>Exportación profesional de análisis, comparativas y presupuestos como informes estructurados.</p>
+          <div style="display:flex;justify-content:space-between;align-items:center"><span class="soon"><i class="fa-solid fa-clock"></i> Q1 2026</span><span style="font-size:0.75rem;color:var(--text-tertiary)">v1.0</span></div>
+        </div>
+      </div>
+
+      <h3 style="margin-bottom:1rem;font-size:1.05rem">Módulos académico-técnicos especializados</h3>
+      <div class="tool-grid">
+        <div class="tool-card reveal">
+          <div class="ico"><i class="fa-solid fa-route"></i></div>
+          <h3>Planificación de Obras</h3>
+          <p>Cronogramas, ruta crítica, asignación de equipo a frentes de trabajo.</p>
+          <span class="soon"><i class="fa-solid fa-clock"></i> Q1 2026</span>
+        </div>
+        <div class="tool-card reveal" data-delay="1">
+          <div class="ico"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Seguridad en Obra</h3>
+          <p>Checklists, EPP, normativa y bitácoras digitales para campo.</p>
+          <span class="soon"><i class="fa-solid fa-clock"></i> Q2 2026</span>
+        </div>
+        <div class="tool-card reveal" data-delay="2">
+          <div class="ico"><i class="fa-solid fa-leaf"></i></div>
+          <h3>Sostenibilidad y Energía</h3>
+          <p>Huella de carbono por equipo, alternativas eléctricas/híbridas.</p>
+          <span class="soon"><i class="fa-solid fa-clock"></i> Q2 2026</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/main.js"></script>
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js').catch(()=>{});
+}
+</script>
+</body>
+</html>

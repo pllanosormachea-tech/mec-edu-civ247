@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Materiales · Panel Docente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/styles.css">
+  <!-- PWA + iOS -->
+  <meta name="theme-color" content="#FFB800">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MEC EDU">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='38' fill='%23FFB800'/%3E%3Ctext x='90' y='128' text-anchor='middle' font-size='105' font-family='Arial Black' font-weight='900' fill='%231a1200'%3EM%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="app">
+  <aside class="sidebar">
+    <a href="dashboard.html" class="brand">
+      <span class="brand-mark"><i class="fa-solid fa-helmet-safety"></i></span>
+      <div>Maq. y Equipo<small>Panel Docente</small></div>
+    </a>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Principal</div>
+      <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+      <a href="cursos.html" class="nav-item"><i class="fa-solid fa-folder-open"></i> Mis cursos <span class="count">3</span></a>
+      <a href="calendario.html" class="nav-item"><i class="fa-solid fa-calendar-days"></i> Calendario</a>
+      <a href="mensajes.html" class="nav-item"><i class="fa-solid fa-comment-dots"></i> Mensajes <span class="count">5</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Gestión académica</div>
+      <a href="tareas.html" class="nav-item"><i class="fa-solid fa-file-circle-check"></i> Tareas <span class="count">7</span></a>
+      <a href="materiales.html" class="nav-item is-active"><i class="fa-solid fa-folder-tree"></i> Materiales</a>
+      <a href="anuncios.html" class="nav-item"><i class="fa-solid fa-bullhorn"></i> Anuncios</a>
+      <a href="estudiantes.html" class="nav-item"><i class="fa-solid fa-users"></i> Estudiantes</a>
+      <a href="calificaciones.html" class="nav-item"><i class="fa-solid fa-award"></i> Calificaciones</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Herramientas técnicas</div>
+      <a href="herramientas.html" class="nav-item"><i class="fa-solid fa-toolbox"></i> Módulos técnicos</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Cuenta</div>
+      <a href="../perfil.html" class="nav-item"><i class="fa-solid fa-user"></i> Perfil</a>
+      <a href="../configuracion.html" class="nav-item"><i class="fa-solid fa-gear"></i> Configuración</a>
+      <a href="../index.html" class="nav-item"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</a>
+    </div>
+    <div class="sidebar-foot">
+      <div class="avatar">CR</div>
+      <div style="flex:1;min-width:0"><div class="name">Ing. Carlos Rojas</div><div class="role">Docente</div></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn btn-sidebar-toggle" data-sidebar-toggle><i class="fa-solid fa-bars"></i></button>
+      <div class="topbar-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Buscar material…"></div>
+      <div class="topbar-actions">
+        <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
+        <a href="../perfil.html" class="user-chip"><span class="avatar">CR</span><span class="name hide-mobile">Carlos R.</span></a>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="page-head anim-up">
+        <div>
+          <div class="crumbs"><a href="dashboard.html">Inicio</a> <i class="fa-solid fa-chevron-right"></i> <span>Materiales</span></div>
+          <h1>Biblioteca de materiales</h1>
+          <p>Gestiona PDFs, videos, enlaces y documentos técnicos compartidos en tus cursos.</p>
+        </div>
+        <div class="actions">
+          <button class="btn btn-secondary"><i class="fa-solid fa-folder-plus"></i> Nueva carpeta</button>
+          <button class="btn btn-primary"><i class="fa-solid fa-file-arrow-up"></i> Subir archivo</button>
+        </div>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card"><div class="label"><i class="fa-solid fa-folder"></i> Carpetas</div><div class="value">12</div></div>
+        <div class="stat-card s-blue"><div class="label"><i class="fa-solid fa-file-pdf"></i> Documentos</div><div class="value">68</div><div class="delta">+5 esta semana</div></div>
+        <div class="stat-card s-orange"><div class="label"><i class="fa-solid fa-video"></i> Videos</div><div class="value">14</div></div>
+        <div class="stat-card s-green"><div class="label"><i class="fa-solid fa-database"></i> Almacenamiento</div><div class="value">2.4<span style="font-size:1rem;color:var(--text-tertiary)"> GB</span></div><div class="delta">de 10 GB</div></div>
+      </div>
+
+      <div class="grid-2">
+        <div class="panel">
+          <div class="panel-header">
+            <h3>Archivos recientes</h3>
+            <div style="display:flex;gap:0.4rem">
+              <button class="btn btn-ghost btn-sm"><i class="fa-solid fa-arrow-down-wide-short"></i></button>
+              <button class="btn btn-ghost btn-sm"><i class="fa-solid fa-table-cells-large"></i></button>
+            </div>
+          </div>
+          <div class="panel-body" style="padding:0">
+            <div class="resource-item" style="padding:1rem 1.5rem">
+              <div class="resource-ico pdf"><i class="fa-solid fa-file-pdf"></i></div>
+              <div class="info"><h4>Tablas de rendimiento · Excavadoras CAT 336</h4><div class="meta">PDF · 4.2 MB · CIV-305 · Mód. 3</div></div>
+              <div style="display:flex;gap:0.3rem"><button class="tool-btn"><i class="fa-solid fa-download"></i></button><button class="tool-btn"><i class="fa-solid fa-share-nodes"></i></button><button class="tool-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button></div>
+            </div>
+            <div class="resource-item" style="padding:1rem 1.5rem">
+              <div class="resource-ico video"><i class="fa-solid fa-circle-play"></i></div>
+              <div class="info"><h4>Operación de motoniveladora · Caso real</h4><div class="meta">MP4 · 18 min · CIV-305 · Mód. 2</div></div>
+              <div style="display:flex;gap:0.3rem"><button class="tool-btn"><i class="fa-solid fa-play"></i></button><button class="tool-btn"><i class="fa-solid fa-share-nodes"></i></button><button class="tool-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button></div>
+            </div>
+            <div class="resource-item" style="padding:1rem 1.5rem">
+              <div class="resource-ico"><i class="fa-solid fa-file-excel"></i></div>
+              <div class="info"><h4>Planilla de cálculo · Costos horarios</h4><div class="meta">XLSX · 220 KB · CIV-412</div></div>
+              <div style="display:flex;gap:0.3rem"><button class="tool-btn"><i class="fa-solid fa-download"></i></button><button class="tool-btn"><i class="fa-solid fa-share-nodes"></i></button><button class="tool-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button></div>
+            </div>
+            <div class="resource-item" style="padding:1rem 1.5rem">
+              <div class="resource-ico pdf"><i class="fa-solid fa-file-pdf"></i></div>
+              <div class="info"><h4>Manual de operación · Compactador vibratorio</h4><div class="meta">PDF · 6.8 MB · CIV-305 · Mód. 3</div></div>
+              <div style="display:flex;gap:0.3rem"><button class="tool-btn"><i class="fa-solid fa-download"></i></button><button class="tool-btn"><i class="fa-solid fa-share-nodes"></i></button><button class="tool-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button></div>
+            </div>
+            <div class="resource-item" style="padding:1rem 1.5rem">
+              <div class="resource-ico link"><i class="fa-solid fa-link"></i></div>
+              <div class="info"><h4>Catálogo digital Komatsu · Equipos pesados</h4><div class="meta">komatsu.com · CIV-305</div></div>
+              <div style="display:flex;gap:0.3rem"><button class="tool-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i></button><button class="tool-btn"><i class="fa-solid fa-share-nodes"></i></button><button class="tool-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button></div>
+            </div>
+            <div class="resource-item" style="padding:1rem 1.5rem">
+              <div class="resource-ico"><i class="fa-solid fa-image"></i></div>
+              <div class="info"><h4>Foto técnica · Acopio de áridos</h4><div class="meta">JPG · 1.4 MB · CIV-412</div></div>
+              <div style="display:flex;gap:0.3rem"><button class="tool-btn"><i class="fa-solid fa-eye"></i></button><button class="tool-btn"><i class="fa-solid fa-share-nodes"></i></button><button class="tool-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button></div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="panel" style="margin-bottom:1.5rem">
+            <div class="panel-header"><h3>Carpetas por curso</h3></div>
+            <div class="panel-body">
+              <div class="resource-item">
+                <div class="resource-ico" style="color:var(--brand-yellow);background:rgba(255,184,0,0.08);border-color:rgba(255,184,0,0.25)"><i class="fa-solid fa-folder"></i></div>
+                <div class="info"><h4>CIV-305 · Maquinaria</h4><div class="meta">42 archivos · 1.6 GB</div></div>
+                <i class="fa-solid fa-chevron-right" style="color:var(--text-tertiary);font-size:0.8rem"></i>
+              </div>
+              <div class="resource-item">
+                <div class="resource-ico" style="color:var(--brand-blue-light);background:rgba(59,130,246,0.08);border-color:rgba(59,130,246,0.25)"><i class="fa-solid fa-folder"></i></div>
+                <div class="info"><h4>CIV-412 · Obras Civiles</h4><div class="meta">28 archivos · 720 MB</div></div>
+                <i class="fa-solid fa-chevron-right" style="color:var(--text-tertiary);font-size:0.8rem"></i>
+              </div>
+              <div class="resource-item">
+                <div class="resource-ico" style="color:var(--brand-orange-soft);background:rgba(255,107,53,0.08);border-color:rgba(255,107,53,0.25)"><i class="fa-solid fa-folder"></i></div>
+                <div class="info"><h4>CIV-218 · Equipos Auxiliares</h4><div class="meta">12 archivos · 88 MB · borrador</div></div>
+                <i class="fa-solid fa-chevron-right" style="color:var(--text-tertiary);font-size:0.8rem"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header"><h3>Subir nuevo material</h3></div>
+            <div class="panel-body">
+              <div style="border:2px dashed var(--border-default);border-radius:var(--r-md);padding:2rem;text-align:center">
+                <i class="fa-solid fa-cloud-arrow-up" style="font-size:2rem;color:var(--brand-yellow);margin-bottom:0.8rem;display:block"></i>
+                <p style="margin-bottom:0.4rem;color:var(--text-primary);font-weight:500">Arrastra archivos aquí</p>
+                <p style="font-size:0.82rem;margin-bottom:1rem">o haz clic para seleccionar desde tu equipo</p>
+                <button class="btn btn-primary btn-sm"><i class="fa-solid fa-folder-open"></i> Examinar archivos</button>
+                <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.8rem;font-family:var(--font-mono)">PDF · DOCX · XLSX · MP4 · JPG · ZIP · máx. 100 MB</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/js/main.js"></script>
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js').catch(()=>{});
+}
+</script>
+</body>
+</html>

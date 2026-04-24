@@ -1,0 +1,22 @@
+# Claude Code internals
+.agents/
+skills-lock.json
+.claude/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+*.code-workspace
+
+# Node (por si se agrega después)
+node_modules/
+npm-debug.log*
+
+# Archivos temporales
+*.tmp
+*.bak
+*.swp
